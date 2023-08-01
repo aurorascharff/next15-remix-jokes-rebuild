@@ -37,7 +37,7 @@ export default async function JokesLayout({
           <ul>
             {jokes.map(({ id, name }) => (
               <li key={id}>
-                <Link href={"jokes/" + id}>{name}</Link>
+                <Link href={"/jokes/" + id}>{name}</Link>
               </li>
             ))}
           </ul>

@@ -1,4 +1,4 @@
-import JokeDisplay from "@/app/components/joke";
+import JokeDisplay from "@/components/joke";
 import { prisma } from "@/db";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -20,5 +20,9 @@ export default async function JokePage({ params }: PageProps) {
     notFound();
   }
 
-  return <JokeDisplay joke={joke} />;
+  return (
+    <div className="jokes-outlet">
+      <JokeDisplay joke={joke} />
+    </div>
+  );
 }

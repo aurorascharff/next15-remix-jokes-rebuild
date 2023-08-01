@@ -19,7 +19,9 @@ export default async function JokesPage() {
       <div>
         <p>Heres a random joke:</p>
         <p>{randomJoke.content}</p>
-        <Link href={"jokes/" + randomJoke.id}>{randomJoke.name} Permalink</Link>
+        <Link href={"/jokes/" + randomJoke.id}>
+          {randomJoke.name} Permalink
+        </Link>
       </div>
     </main>
   );
