@@ -2,9 +2,18 @@ import Joke from '@/components/Joke';
 import { prisma } from '@/db';
 import { notFound } from 'next/navigation';
 import React from 'react';
+import { redirect } from 'next/navigation';
+import { revalidatePath } from 'next/cache';
 
 interface Props {
   params: any;
+}
+
+async function deleteJoke(jokeId: string) {
+  'use server';
+
+  await prisma.joke.delete({ where: { id: jokeId } });
+  revalidatePath('/jokes');
 }
 
 function getJoke(jokeId: string) {
@@ -20,5 +29,5 @@ export default async function JokePage({ params }: Props) {
     notFound();
   }
 
-  return <Joke joke={joke} />;
+  return <Joke joke={joke} deleteJoke={deleteJoke} />;
 }

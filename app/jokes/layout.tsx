@@ -43,7 +43,7 @@ export default async function JokesLayout({ children }: { children: React.ReactN
               </li>
             ))}
           </ul>
-          <NavigateButton to="'/jokes/new">Add your own</NavigateButton>
+          <NavigateButton href="/jokes/new">Add your own</NavigateButton>
         </div>
         {children}
       </div>
