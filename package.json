@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma.init": "npx prisma init --datasource-provider sqlite",
+    "prisma.studio": "npx prisma studio",
+    "prisma.seed": "npx prisma db seed",
+    "eslint": "eslint --ext js,ts,tsx ./"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
@@ -27,6 +31,8 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@types/eslint": "^8.44.0",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-autofix": "^1.1.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -37,6 +43,6 @@
     "tsconfig-paths": "^4.2.0"
   },
   "prisma": {
-    "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
+    "seed": "ts-node prisma/seed.ts"
   }
 }

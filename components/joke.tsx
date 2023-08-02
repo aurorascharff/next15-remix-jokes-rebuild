@@ -15,7 +15,7 @@ export default function Joke({ joke, deleteJoke }: Props) {
     <div>
       <p className="text-white">Heres your hilarious joke:</p>
       <p className="text-white">{joke.content}</p>
-      <Link className="text-yellow" href=".">
+      <Link className="text-yellow hover:underline" href=".">
         "{joke.name}" Permalink
       </Link>
       <form
