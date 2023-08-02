@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { prisma } from "@/db";
+import Link from 'next/link';
+import { prisma } from '@/db';
 
 async function getRandomJoke() {
   const count = await prisma.joke.count();
@@ -15,11 +15,11 @@ export default async function JokesPage() {
   const randomJoke = await getRandomJoke();
 
   return (
-    <main className="jokes-main">
+    <main className="pt-8 pb-8">
       <div>
-        <p>Heres a random joke:</p>
-        <p>{randomJoke.content}</p>
-        <Link href={"/jokes/" + randomJoke.id}>
+        <p className="text-white">Heres a random joke:</p>
+        <p className="text-white">{randomJoke.content}</p>
+        <Link className="text-white" href={'/jokes/' + randomJoke.id}>
           {randomJoke.name} Permalink
         </Link>
       </div>

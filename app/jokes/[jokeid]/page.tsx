@@ -1,9 +1,9 @@
-import JokeDisplay from "@/components/joke";
-import { prisma } from "@/db";
-import { notFound } from "next/navigation";
-import React from "react";
+import Joke from '@/components/Joke';
+import { prisma } from '@/db';
+import { notFound } from 'next/navigation';
+import React from 'react';
 
-interface PageProps {
+interface Props {
   params: any;
 }
 
@@ -13,16 +13,12 @@ function getJoke(jokeId: string) {
   });
 }
 
-export default async function JokePage({ params }: PageProps) {
+export default async function JokePage({ params }: Props) {
   const joke = await getJoke(params.jokeid);
 
   if (!joke) {
     notFound();
   }
 
-  return (
-    <div className="jokes-outlet">
-      <JokeDisplay joke={joke} />
-    </div>
-  );
+  return <Joke joke={joke} />;
 }

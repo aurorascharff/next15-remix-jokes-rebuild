@@ -1,5 +1,3 @@
 export default function NotFound() {
-  return (
-    <div className="error-container">Huh? What the heck is this joke!</div>
-  );
+  return <div className="rounded bg-red text-white">Huh? What the heck is this joke!</div>;
 }

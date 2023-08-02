@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'baloo';
+  src: url('/fonts/baloo/baloo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
