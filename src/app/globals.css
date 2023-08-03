@@ -23,11 +23,11 @@
   }
 
   input {
-    @apply pl-4;
+    @apply pl-4 appearance-none flex items-center w-full h-10 m-0 rounded shadow-none text-base font-normal leading-normal border-purple-light border-2 bg-layer bg-opacity-10;
   }
 
   textarea {
-    @apply pl-4 pt-2;
+    @apply appearance-none flex items-center w-full h-10 m-0 rounded shadow-none text-base font-normal leading-normal border-purple-light border-2 bg-layer bg-opacity-10 pl-4 pt-2;
   }
 
   ul {
