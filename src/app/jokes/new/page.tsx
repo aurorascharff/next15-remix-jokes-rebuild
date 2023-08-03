@@ -4,7 +4,7 @@ import Button from '@/src/components/Button';
 
 export default function NewJokePage() {
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       <p>Add your own hilarious joke</p>
       <form action={createJoke}>
         <div>
@@ -30,7 +30,7 @@ export default function NewJokePage() {
             />
           </label>
         </div>
-        <div>
+        <div className="flex justify-end">
           <Button type="submit">Add</Button>
         </div>
       </form>

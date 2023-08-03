@@ -12,7 +12,7 @@ export default function JokesLayout({ children }: { children: React.ReactNode })
   return (
     <div className="flex flex-col bg-purple gap-5 h-full">
       <Header />
-      <div className="flex py-3 gap-5 mx-40 h-full">
+      <div className="flex py-3 gap-10 mx-40 h-full">
         <Sidebar />
         <div className="flex-1">{children}</div>
       </div>
