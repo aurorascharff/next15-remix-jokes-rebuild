@@ -8,6 +8,7 @@ export default function Footer() {
         <Link prefetch href="/jokes.rss">
           RSS
         </Link>
+        <Link href="https://remix.run/docs/en/main/tutorials/jokes">Remix Jokes</Link>
       </div>
     </footer>
   );

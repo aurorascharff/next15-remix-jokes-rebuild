@@ -8,7 +8,7 @@ export default function IndexPage() {
           <h1 className="text-center font-display text-shadow text-6xl">
             Next <span className="block text-9xl leading-none uppercase font-display">Jokes!</span>
           </h1>
-          <h1 className="pb-2 text-center font-display text-shadow">Rebuild of &quot;Remix Jokes&quot;</h1>
+          <h3 className="pb-2 text-center font-display text-shadow">Next 13 rebuild of Remix Jokes</h3>
           <nav>
             <ul className=" p-0 flex gap-4 text-lg leading-none font-display list-none">
               <li>
