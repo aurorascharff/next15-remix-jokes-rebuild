@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+// shout-out to https://icanhazdadjoke.com/
 const JOKES = [
   {
     content:
