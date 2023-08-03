@@ -1,5 +1,7 @@
 'use client';
 
+import ErrorMessage from '@/src/components/ErrorMessage';
+
 export default function Error() {
-  return <div className="error-container">Something went wrong.</div>;
+  return <ErrorMessage>Something went wrong.</ErrorMessage>;
 }

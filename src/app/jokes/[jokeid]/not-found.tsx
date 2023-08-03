@@ -1,3 +1,5 @@
+import ErrorMessage from '@/src/components/ErrorMessage';
+
 export default function NotFound() {
-  return <div className="rounded bg-red">Huh? What the heck is this joke!</div>;
+  return <ErrorMessage>Huh? What the heck is this joke!</ErrorMessage>;
 }
