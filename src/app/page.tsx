@@ -11,12 +11,12 @@ export default function IndexPage() {
           <nav>
             <ul className="m-0 p-0 flex gap-4 text-lg leading-none font-display">
               <li>
-                <Link className=" decoration-wavy " href="jokes">
+                <Link prefetch className=" decoration-wavy " href="jokes">
                   Read Jokes
                 </Link>
               </li>
               <li>
-                <Link className=" decoration-wavy " href="/jokes.rss">
+                <Link prefetch className=" decoration-wavy " href="/jokes.rss">
                   RSS
                 </Link>
               </li>

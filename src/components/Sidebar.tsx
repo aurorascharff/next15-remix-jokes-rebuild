@@ -13,7 +13,9 @@ export default async function Sidebar() {
 
   return (
     <div className="max-w-xl">
-      <Link href="/jokes">Get a random joke</Link>
+      <Link prefetch href="/jokes">
+        Get a random joke
+      </Link>
       <JokesList jokes={jokes} />
       <NavigateButton href="/jokes/new">Add your own</NavigateButton>
     </div>

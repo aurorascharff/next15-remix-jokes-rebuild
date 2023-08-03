@@ -13,7 +13,7 @@ export default function NavigateButton({ href, ...rest }: Props) {
     'cursor-pointer inline-flex items-center justify-center font-bold leading-none text-lg m-0 rounded bg-yellow text-purple font-display p-2 shadow-lg';
 
   return (
-    <Link href={href} className={className} {...rest}>
+    <Link prefetch href={href} className={className} {...rest}>
       {rest.children}
     </Link>
   );

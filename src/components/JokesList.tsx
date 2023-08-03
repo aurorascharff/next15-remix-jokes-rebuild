@@ -14,7 +14,9 @@ export default function JokesList({ jokes }: Props) {
         {jokes.map(({ id, name }) => {
           return (
             <li key={id}>
-              <Link href={'/jokes/' + id}>{name}</Link>
+              <Link href={'/jokes/' + id} prefetch>
+                {name}
+              </Link>
             </li>
           );
         })}
