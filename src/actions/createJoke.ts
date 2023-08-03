@@ -1,9 +1,9 @@
+'use server';
+
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 
 export async function createJoke(data: FormData) {
-  'use server';
-
   const name = data.get('name')?.valueOf();
   const content = data.get('content')?.valueOf();
 

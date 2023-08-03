@@ -6,7 +6,7 @@ export default function NewJokePage() {
   return (
     <div>
       <p>Add your own hilarious joke</p>
-      <form action={createJoke} className="flex flex-col gap-4 w-full">
+      <form action={createJoke}>
         <div>
           <label>
             Name:

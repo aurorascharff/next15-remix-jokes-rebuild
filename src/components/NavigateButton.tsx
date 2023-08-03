@@ -10,7 +10,7 @@ interface Props {
 
 export default function NavigateButton({ href, ...rest }: Props) {
   const className =
-    'cursor-pointer inline-flex items-center justify-center font-bold leading-none text-lg m-0 rounded bg-yellow text-purple font-display p-2 shadow-lg';
+    'cursor-pointer inline-flex items-center justify-center font-bold leading-none text-lg m-0 rounded mr-10 bg-yellow text-purple font-display p-2 shadow-lg hover:no-underline hover:transform hover:-translate-y-px';
 
   return (
     <Link prefetch href={href} className={className} {...rest}>

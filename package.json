@@ -31,13 +31,14 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@types/eslint": "^8.44.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-autofix": "^1.1.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.4.1",
     "prisma": "^5.0.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0"

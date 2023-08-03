@@ -11,7 +11,31 @@
 
 @layer base {
   html {
-    @apply text-white;
+    @apply text-white bg-purple min-h-screen;
+  }
+
+  fieldset {
+    @apply border-0 p-0 m-0;
+  }
+
+  form {
+    @apply flex flex-col gap-5 w-full;
+  }
+
+  input {
+    @apply pl-4;
+  }
+
+  textarea {
+    @apply pl-4 pt-2;
+  }
+
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  hr {
+    @apply block h-px mt-8 mb-8 text-purple-light;
   }
 
   a {
@@ -36,5 +60,9 @@
 
   h5 {
     @apply text-lg;
+  }
+
+  :focus {
+    @apply outline-1 outline-yellow;
   }
 }

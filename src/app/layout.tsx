@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const className = 'bg-gradient-to-r from-purple to-purple-light';
+  const className = 'bg-gradient-radial h-screen';
 
   return (
     <html lang="en">

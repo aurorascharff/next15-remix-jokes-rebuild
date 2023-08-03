@@ -12,7 +12,7 @@ export default async function Sidebar() {
   const jokes = await getJokes();
 
   return (
-    <div className="max-w-xl">
+    <div className="gap-y-5 flex flex-col">
       <Link prefetch href="/jokes">
         Get a random joke
       </Link>
