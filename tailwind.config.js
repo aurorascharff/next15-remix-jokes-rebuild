@@ -1,20 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
       colors: {
+        layer: '#ffffff1a',
         purple: {
           DEFAULT: '#3a0d54',
           light: '#740fb3',
         },
-        yellow: '#e6b800',
         red: '#e74651be',
-        layer: '#ffffff1a',
+        yellow: '#e6b800',
       },
       fontFamily: {
         display: ['baloo', 'sans-serif'],
@@ -22,14 +23,14 @@ module.exports = {
       typography: theme => ({
         DEFAULT: {
           css: {
-            color: theme('colors.white'),
             a: {
-              color: theme('colors.links.main'),
               '&:hover': {
                 color: theme('colors.links.hover'),
                 textDecoration: 'underline',
               },
+              color: theme('colors.links.main'),
             },
+            color: theme('colors.white'),
             h1: {
               fontSize: '2.25rem',
               lineHeight: '2.5rem',
@@ -49,15 +50,14 @@ module.exports = {
               lineHeight: '1.75rem',
             },
             h6: {
+              fontFamily: 'font.display',
               fontSize: '0.875rem',
               lineHeight: '1.25rem',
               margin: '0',
-              fontFamily: 'font.display',
             },
           },
         },
       }),
     },
   },
-  plugins: [require('@tailwindcss/typography')],
 };

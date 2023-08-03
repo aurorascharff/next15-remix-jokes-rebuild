@@ -1,5 +1,5 @@
-import { prisma } from '@/db';
 import { revalidatePath } from 'next/cache';
+import { prisma } from '@/db';
 
 export async function deleteJoke(jokeId: string) {
   'use server';

@@ -1,5 +1,5 @@
-import { prisma } from '@/db';
 import { headers } from 'next/headers';
+import { prisma } from '@/db';
 
 function escapeCdata(s: string) {
   return s.replace(/\]\]>/g, ']]]]><![CDATA[>');
@@ -38,8 +38,8 @@ export async function GET() {
         <generator>Kody the Koala</generator>
         <ttl>40</ttl>
         ${jokes
-          .map(joke =>
-            `
+          .map(joke => {
+            return `
             <item>
               <title><![CDATA[${escapeCdata(joke.name)}]]></title>
               <description><![CDATA[A funny joke called ${escapeHtml(joke.name)}]]></description>
@@ -47,8 +47,8 @@ export async function GET() {
               <link>${jokesUrl}/${joke.id}</link>
               <guid>${jokesUrl}/${joke.id}</guid>
             </item>
-          `.trim(),
-          )
+          `.trim();
+          })
           .join('\n')}
       </channel>
     </rss>
@@ -57,8 +57,8 @@ export async function GET() {
   return new Response(rssString, {
     headers: {
       'Cache-Control': `public, max-age=${60 * 10}, s-maxage=${60 * 60 * 24}`,
-      'Content-Type': 'application/xml',
       'Content-Length': String(Buffer.byteLength(rssString)),
+      'Content-Type': 'application/xml',
     },
   });
 }

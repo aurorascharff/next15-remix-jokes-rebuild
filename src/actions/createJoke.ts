@@ -1,5 +1,5 @@
-import { prisma } from '@/db';
 import { revalidatePath } from 'next/cache';
+import { prisma } from '@/db';
 
 export async function createJoke(data: FormData) {
   'use server';
@@ -17,8 +17,8 @@ export async function createJoke(data: FormData) {
 
   await prisma.joke.create({
     data: {
-      name,
       content,
+      name,
     },
   });
   revalidatePath('/jokes');

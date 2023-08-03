@@ -1,8 +1,8 @@
-import React from 'react';
-import JokesList from '@/components/JokesList';
-import NavigateButton from '@/components/NavigateButton';
-import { prisma } from '@/db';
 import Link from 'next/link';
+import React from 'react';
+import { prisma } from '@/db';
+import JokesList from './JokesList';
+import NavigateButton from './NavigateButton';
 
 function getJokes() {
   return prisma.joke.findMany();

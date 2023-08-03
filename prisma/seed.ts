@@ -4,39 +4,48 @@ const prisma = new PrismaClient();
 
 const JOKES = [
   {
+    content:
+      'I never wanted to believe that my Dad was stealing from his job as a road worker. But when I got home, all the signs were there.',
     name: 'Road worker',
-    content: `I never wanted to believe that my Dad was stealing from his job as a road worker. But when I got home, all the signs were there.`,
   },
   {
+    content: 'I was wondering why the frisbee was getting bigger, then it hit me.',
     name: 'Frisbee',
-    content: `I was wondering why the frisbee was getting bigger, then it hit me.`,
   },
   {
+    content: 'Why do trees seem suspicious on sunny days? Dunno, theyre just a bit shady.',
     name: 'Trees',
-    content: `Why do trees seem suspicious on sunny days? Dunno, they're just a bit shady.`,
   },
   {
+    content: 'Why dont skeletons ride roller coasters? They dont have the stomach for it.',
     name: 'Skeletons',
-    content: `Why don't skeletons ride roller coasters? They don't have the stomach for it.`,
   },
   {
+    content: 'Why dont you find hippopotamuses hiding in trees? Theyre really good at it.',
     name: 'Hippos',
-    content: `Why don't you find hippopotamuses hiding in trees? They're really good at it.`,
   },
   {
+    content: 'What did one plate say to the other plate? Dinner is on me!',
     name: 'Dinner',
-    content: `What did one plate say to the other plate? Dinner is on me!`,
   },
   {
+    content: 'My first time using an elevator was an uplifting experience. The second time let me down.',
     name: 'Elevator',
-    content: `My first time using an elevator was an uplifting experience. The second time let me down.`,
   },
 ];
 
 function seedJokes() {
-  Promise.all(JOKES.map(n => prisma.joke.create({ data: { name: n.name, content: n.content } })))
-    .then(() => console.info('[SEED] Succussfully create joke records'))
-    .catch(e => console.error('[SEED] Failed to create joke records', e));
+  Promise.all(
+    JOKES.map(n => {
+      return prisma.joke.create({ data: { content: n.content, name: n.name } });
+    }),
+  )
+    .then(() => {
+      return console.info('[SEED] Succussfully create joke records');
+    })
+    .catch(e => {
+      return console.error('[SEED] Failed to create joke records', e);
+    });
 }
 
 seedJokes();

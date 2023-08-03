@@ -1,22 +1,22 @@
 'use client';
 
-import { Joke } from '@prisma/client';
 import Link from 'next/link';
 import React from 'react';
 import Button from './Button';
+import type { Joke } from '@prisma/client';
 
 interface Props {
   joke: Pick<Joke, 'content' | 'name' | 'id'>;
-  deleteJoke: (id: string) => void;
+  deleteJoke: (_id: string) => void;
 }
 
-export default function Joke({ joke, deleteJoke }: Props) {
+export default function JokeDisplay({ joke, deleteJoke }: Props) {
   return (
     <div>
       <p className="text-white">Heres your hilarious joke:</p>
       <p className="text-white">{joke.content}</p>
       <Link className="text-yellow hover:underline" href={'/jokes/' + joke.id}>
-        "{joke.name}" Permalink
+        &quot;{joke.name}&quot; Permalink
       </Link>
       <form
         action={() => {

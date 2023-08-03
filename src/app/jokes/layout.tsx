@@ -1,11 +1,11 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import Sidebar from '@/components/Sidebar';
+import Footer from '@/src/components/Footer';
+import Header from '@/src/components/Header';
+import Sidebar from '@/src/components/Sidebar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Jokes',
   description: 'Jokes Demo',
+  title: 'Jokes',
 };
 
 export default function JokesLayout({ children }: { children: React.ReactNode }) {
