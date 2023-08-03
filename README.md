@@ -18,6 +18,28 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Prisma setup
+
+Initialize prisma:
+
+```sh
+npm i @prisma/client
+npm i -D prisma
+npx prisma init --datasource-provider sqlite
+```
+
+Update prisma/schema.prisma and run gui:
+
+```sh
+npx prisma db push
+npx prisma studio
+```
+
+Seed prisma/seed.ts for initial data:
+
+```sh
+npx prisma db seed
+```
 
 ## Learn More
 
