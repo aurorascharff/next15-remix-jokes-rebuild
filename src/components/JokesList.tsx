@@ -9,14 +9,12 @@ interface Props {
 export default function JokesList({ jokes }: Props) {
   return (
     <>
-      <p className="text-white">Here are a few more jokes to check out:</p>
+      <p>Here are a few more jokes to check out:</p>
       <ul>
         {jokes.map(({ id, name }) => {
           return (
             <li key={id}>
-              <Link className="text-yellow hover:underline" href={'/jokes/' + id}>
-                {name}
-              </Link>
+              <Link href={'/jokes/' + id}>{name}</Link>
             </li>
           );
         })}

@@ -5,10 +5,10 @@ import Button from '@/src/components/Button';
 export default function NewJokePage() {
   return (
     <div>
-      <p className="text-white">Add your own hilarious joke</p>
+      <p>Add your own hilarious joke</p>
       <form action={createJoke} className="flex flex-col gap-4 w-full">
         <div>
-          <label className="text-white">
+          <label>
             Name:
             <input
               className="appearance-none flex items-center w-full h-10 m-0 rounded shadow-none text-base font-normal leading-normal border-purple-light border-2 bg-layer bg-opacity-10"
@@ -20,7 +20,7 @@ export default function NewJokePage() {
           </label>
         </div>
         <div>
-          <label className="text-white">
+          <label>
             Content:
             <textarea
               className="appearance-none flex items-center w-full h-10 m-0 rounded shadow-none text-base font-normal leading-normal border-purple-light border-2 bg-layer bg-opacity-10"

@@ -13,11 +13,9 @@ interface Props {
 export default function JokeDisplay({ joke, deleteJoke }: Props) {
   return (
     <div>
-      <p className="text-white">Heres your hilarious joke:</p>
-      <p className="text-white">{joke.content}</p>
-      <Link className="text-yellow hover:underline" href={'/jokes/' + joke.id}>
-        &quot;{joke.name}&quot; Permalink
-      </Link>
+      <p>Heres your hilarious joke:</p>
+      <p>{joke.content}</p>
+      <Link href={'/jokes/' + joke.id}>&quot;{joke.name}&quot; Permalink</Link>
       <form
         action={() => {
           deleteJoke(joke.id);
