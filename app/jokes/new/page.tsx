@@ -1,37 +1,12 @@
-import { prisma } from '@/db';
 import React from 'react';
-import { redirect } from 'next/navigation';
-import { revalidatePath } from 'next/cache';
 import Button from '@/components/Button';
-
-async function createTodo(data: FormData) {
-  'use server';
-
-  const name = data.get('name')?.valueOf();
-  const content = data.get('content')?.valueOf();
-
-  if (typeof name !== 'string' || name.length === 0) {
-    throw new Error('Invalid name');
-  }
-
-  if (typeof content !== 'string' || content.length === 0) {
-    throw new Error('Invalid content');
-  }
-
-  await prisma.joke.create({
-    data: {
-      name,
-      content,
-    },
-  });
-  redirect('/jokes');
-}
+import { createJoke } from '@/actions/createJoke';
 
 export default function NewJokePage() {
   return (
     <div>
       <p className="text-white">Add your own hilarious joke</p>
-      <form action={createTodo} className="flex flex-col gap-4 w-full">
+      <form action={createJoke} className="flex flex-col gap-4 w-full">
         <div>
           <label className="text-white">
             Name:

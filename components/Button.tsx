@@ -11,11 +11,11 @@ type Props = {
 };
 
 export default function Button({ disabled, color = 'default', ...rest }: Props) {
-  const className =
-    'cursor-pointer inline-flex items-center justify-center font-bold leading-none text-lg m-0 rounded bg-yellow text-purple font-display p-2 shadow-lg';
-
   return (
-    <button className={className} {...rest}>
+    <button
+      className="cursor-pointer inline-flex items-center justify-center font-bold leading-none text-lg m-0 rounded bg-yellow text-purple font-display p-2 shadow-lg"
+      {...rest}
+    >
       {rest.children}
     </button>
   );

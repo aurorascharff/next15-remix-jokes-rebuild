@@ -1,15 +1,5 @@
+import { getRandomJoke } from '@/actions/getRandomJoke';
 import Link from 'next/link';
-import { prisma } from '@/db';
-
-async function getRandomJoke() {
-  const count = await prisma.joke.count();
-  const randomRowNumber = Math.floor(Math.random() * count);
-  const [randomJoke] = await prisma.joke.findMany({
-    skip: randomRowNumber,
-    take: 1,
-  });
-  return randomJoke;
-}
 
 export default async function JokesPage() {
   const randomJoke = await getRandomJoke();
