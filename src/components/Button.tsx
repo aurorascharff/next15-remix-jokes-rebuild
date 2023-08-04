@@ -14,7 +14,7 @@ export default function Button({ disabled, ...rest }: Props) {
   return (
     <button
       disabled={disabled}
-      className="w-fit cursor-pointer inline-flex items-center justify-center font-bold leading-none text-lg rounded bg-yellow text-purple font-display py-3 px-5 shadow-lg hover:no-underline hover:transform hover:-translate-y-px"
+      className="inline-flex w-fit cursor-pointer items-center justify-center rounded bg-yellow px-5 py-3 font-display text-lg font-bold leading-none text-purple shadow-lg hover:-translate-y-px hover:transform hover:no-underline"
       {...rest}
     >
       {rest.children}

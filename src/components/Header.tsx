@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function Header() {
   return (
-    <header className="pt-4 pb-4 border-b-2 border-purple-light ">
-      <div className="flex justify-between items-center max-w-xl mx-40">
+    <header className="border-b-2 border-purple-light pb-4 pt-4 ">
+      <div className="mx-40 flex max-w-xl items-center justify-between">
         <h1 className="text-5xl">
           <Link
             prefetch

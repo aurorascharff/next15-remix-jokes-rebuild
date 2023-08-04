@@ -5,7 +5,7 @@ export default async function JokesPage() {
   const randomJoke = await getRandomJoke();
 
   return (
-    <main className="pt-8 pb-8 h-full">
+    <main className="h-full pb-8 pt-8">
       <div>
         <p>Heres a random joke:</p>
         <p>{randomJoke.content}</p>

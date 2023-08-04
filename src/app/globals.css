@@ -11,31 +11,31 @@
 
 @layer base {
   html {
-    @apply text-white bg-purple min-h-screen;
+    @apply min-h-screen bg-purple text-white;
   }
 
   fieldset {
-    @apply border-0 p-0 m-0;
+    @apply m-0 border-0 p-0;
   }
 
   form {
-    @apply flex flex-col gap-5 w-full;
+    @apply flex w-full flex-col gap-5;
   }
 
   input {
-    @apply pl-4 appearance-none flex items-center w-full h-10 m-0 rounded shadow-none text-base font-normal leading-normal border-purple-light border-2 bg-layer bg-opacity-10;
+    @apply m-0 flex h-10 w-full appearance-none items-center rounded border-2 border-purple-light bg-layer bg-opacity-10 pl-4 text-base font-normal leading-normal shadow-none;
   }
 
   textarea {
-    @apply appearance-none flex items-center w-full h-10 m-0 rounded shadow-none text-base font-normal leading-normal border-purple-light border-2 bg-layer bg-opacity-10 pl-4 pt-2;
+    @apply m-0 flex h-10 w-full appearance-none items-center rounded border-2 border-purple-light bg-layer bg-opacity-10 pl-4 pt-2 text-base font-normal leading-normal shadow-none;
   }
 
   ul {
-    @apply list-disc list-inside;
+    @apply list-inside list-disc;
   }
 
   hr {
-    @apply block h-px mt-8 mb-8 text-purple-light;
+    @apply mb-8 mt-8 block h-px text-purple-light;
   }
 
   a {

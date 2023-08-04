@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="pt-8 pb-4 border-t-2 border-purple-light">
-      <div className="flex gap-4 max-w-xl mx-40">
+    <footer className="border-t-2 border-purple-light pb-4 pt-8">
+      <div className="mx-40 flex max-w-xl gap-4">
         <Link prefetch href="/jokes.rss">
           RSS
         </Link>
