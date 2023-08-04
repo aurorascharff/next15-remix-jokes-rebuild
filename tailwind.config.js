@@ -32,7 +32,10 @@ export const theme = {
         light: '#740fb3',
       },
       red: '#e74651be',
-      yellow: '#e6b800',
+      yellow: {
+        DEFAULT: '#ffcc00',
+        dark: '#e6b800',
+      },
     },
     fontFamily: {
       display: ['baloo', 'sans-serif'],
