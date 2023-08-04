@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-
 import JokesList from './JokesList';
-import NavigateButton from './NavigateButton';
+import NavButton from './NavButton';
 
 export default async function Sidebar() {
   return (
@@ -11,7 +10,7 @@ export default async function Sidebar() {
         Get a random joke
       </Link>
       <JokesList />
-      <NavigateButton href="/jokes/new">Add your own</NavigateButton>
+      <NavButton href="/jokes/new">Add your own</NavButton>
     </div>
   );
 }
