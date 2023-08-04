@@ -1,9 +1,5 @@
 import React from 'react';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export default function ErrorMessage({ children }: Props) {
+export default function ErrorMessage({ children }: { children: React.ReactNode }) {
   return <div className="rounded bg-red p-2">{children}</div>;
 }
