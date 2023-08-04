@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
-import type { Joke } from '@prisma/client';
+import { prisma } from '@/db';
 
-interface Props {
-  jokes: Pick<Joke, 'content' | 'name' | 'id'>[];
+function getJokes() {
+  return prisma.joke.findMany();
 }
 
-export default function JokesList({ jokes }: Props) {
+export default async function JokesList() {
+  const jokes = await getJokes();
+
   return (
     <>
       <p>Here are a few more jokes to check out:</p>
@@ -14,7 +16,7 @@ export default function JokesList({ jokes }: Props) {
         {jokes.map(({ id, name }) => {
           return (
             <li key={id}>
-              <Link href={'/jokes/' + id} prefetch>
+              <Link href={`/jokes/${id}`} prefetch>
                 {name}
               </Link>
             </li>

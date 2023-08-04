@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function JokesLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-full flex-col gap-5 bg-purple">
+    <main className="flex h-full flex-col gap-5 bg-purple">
       <Header />
       <div className="mx-40 flex h-full gap-10 py-3">
         <Sidebar />
         <div className="flex-1">{children}</div>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 }

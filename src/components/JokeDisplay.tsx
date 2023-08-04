@@ -15,7 +15,7 @@ export default function JokeDisplay({ joke, deleteJoke }: Props) {
     <div className="flex flex-col gap-y-4">
       <p>Heres your hilarious joke:</p>
       <p>{joke.content}</p>
-      <Link prefetch href={'/jokes/' + joke.id}>
+      <Link prefetch href={`/jokes/${joke.id}`}>
         &quot;{joke.name}&quot; Permalink
       </Link>
       <form
