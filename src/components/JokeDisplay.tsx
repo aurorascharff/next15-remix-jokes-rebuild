@@ -16,7 +16,7 @@ export default function JokeDisplay({ joke, deleteJoke }: Props) {
       <p>Heres your hilarious joke:</p>
       <p>{joke.content}</p>
       <Link prefetch href={`/jokes/${joke.id}`}>
-        &quot;{joke.name}&quot; Permalink
+        {`"${joke.name}" Permalink`}
       </Link>
       <form
         action={() => {

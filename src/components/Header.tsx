@@ -4,7 +4,7 @@ import React from 'react';
 export default function Header() {
   return (
     <header className="border-b-2 border-purple-light pb-4 pt-4 ">
-      <div className="mx-40 flex max-w-xl items-center justify-between">
+      <div className="mx-10 flex max-w-xl items-center justify-between md:mx-40">
         <h1 className="text-5xl">
           <Link
             prefetch

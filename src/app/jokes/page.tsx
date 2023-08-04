@@ -9,7 +9,7 @@ export default async function JokesPage() {
       <p>Heres a random joke:</p>
       <p>{randomJoke.content}</p>
       <Link prefetch href={`/jokes/${randomJoke.id}`}>
-        &quot;{randomJoke.name}&quot; Permalink
+        {`"${randomJoke.name}" Permalink`}
       </Link>
     </div>
   );
