@@ -16,7 +16,7 @@ export default function IndexPage() {
               </Link>
             </li>
             <li>
-              <Link prefetch className=" decoration-wavy decoration-1" href="jokes.rss">
+              <Link prefetch className=" decoration-wavy decoration-1" href="api/jokes.rss">
                 RSS
               </Link>
             </li>

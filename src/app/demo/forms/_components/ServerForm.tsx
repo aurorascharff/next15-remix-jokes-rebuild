@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Button from '@/src/components/Button';
 import { createJokeServerValidation } from '../../_actions/createJokeServerValidation';
 
