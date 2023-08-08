@@ -9,6 +9,7 @@ export default async function Sidebar() {
       <Link prefetch href="/jokes">
         Get a random joke
       </Link>
+      <p>Here are a few more jokes to check out:</p>
       <JokesList />
       <NavButton href="/jokes/new">Add your own</NavButton>
     </div>

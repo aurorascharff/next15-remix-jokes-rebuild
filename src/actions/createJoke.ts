@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
 
 export async function createJoke(data: FormData) {
@@ -21,6 +21,5 @@ export async function createJoke(data: FormData) {
       name,
     },
   });
-  // should be redirect('/jokes') here but there is a bug with server actions
-  revalidatePath('/jokes');
+  redirect('/jokes');
 }

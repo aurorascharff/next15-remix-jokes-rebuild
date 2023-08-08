@@ -16,8 +16,13 @@ export default function IndexPage() {
               </Link>
             </li>
             <li>
-              <Link prefetch className=" decoration-wavy decoration-1" href="/jokes.rss">
+              <Link prefetch className=" decoration-wavy decoration-1" href="jokes.rss">
                 RSS
+              </Link>
+            </li>
+            <li>
+              <Link prefetch className=" decoration-wavy decoration-1" href="demo">
+                Demo
               </Link>
             </li>
           </ul>
