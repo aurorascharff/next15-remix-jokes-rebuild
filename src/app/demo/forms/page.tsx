@@ -1,5 +1,5 @@
 import React from 'react';
-import JokesList from '@/src/_components/JokesList';
+import JokesList from '@/src/components/JokesList';
 import ClientForm from './_components/ClientForm';
 import ServerForm from './_components/ServerForm';
 

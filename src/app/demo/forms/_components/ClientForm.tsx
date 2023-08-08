@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Button from '@/src/_components/Button';
+import Button from '@/src/components/Button';
 import { JokeSchema } from '@/src/validations/joke';
 import { createJokeClientValidation } from '../../_actions/createJokeClientValidation';
 import type { Joke } from '@prisma/client';

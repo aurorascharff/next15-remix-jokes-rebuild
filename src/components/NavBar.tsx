@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from '@/src/_components/NavLink';
+import { NavLink } from '@/src/components/NavLink';
 
 export interface Route {
   path: string;

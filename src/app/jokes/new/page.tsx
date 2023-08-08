@@ -1,6 +1,6 @@
 import React from 'react';
 import { createJoke } from '@/src/actions/createJoke';
-import Button from '@/src/_components/Button';
+import Button from '@/src/components/Button';
 
 export default function NewJokePage() {
   return (

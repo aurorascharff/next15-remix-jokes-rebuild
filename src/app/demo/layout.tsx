@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '@/src/_components/NavBar';
+import NavBar from '@/src/components/NavBar';
 
 export default function DemoLayout({ children }: { children: React.ReactNode }) {
   return (
