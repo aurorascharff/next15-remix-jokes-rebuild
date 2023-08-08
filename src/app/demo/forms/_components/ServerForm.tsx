@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '@/src/components/Button';
+import Button from '@/src/_components/Button';
 import { createJokeServerValidation } from '../../_actions/createJokeServerValidation';
 
 export default function ServerForm() {

@@ -13,7 +13,7 @@ export default function ClientComponent({ children }: { children: React.ReactNod
           className="rounded border-2 border-purple px-2"
           onClick={() => {
             return setCount(count => {
-              console.log('Client rendering: this should only be printed on the client');
+              console.log('CLIENT: this should only be printed on the client');
               return count + 1;
             });
           }}
