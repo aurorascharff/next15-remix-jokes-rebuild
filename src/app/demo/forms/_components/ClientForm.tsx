@@ -3,9 +3,8 @@
 import React from 'react';
 
 import Button from '@/src/components/Button';
-import { JokeSchema } from '@/src/validations/joke';
+import { JokeSchema } from '@/src/validations/jokeSchema';
 import { createJokeClientValidation } from '../../_actions/createJokeClientValidation';
-import type { Joke } from '@prisma/client';
 
 export default function ClientForm() {
   const clientAction = async (formData: FormData) => {
@@ -15,10 +14,10 @@ export default function ClientForm() {
     };
     const result = JokeSchema.safeParse(newJoke);
     if (!result.success) {
-      console.log('CLIENT ERROR ' + result.error.message);
+      console.log('CLIENT ERROR: ' + result.error.message);
       return;
     }
-    await createJokeClientValidation(result.data as Joke);
+    await createJokeClientValidation(result.data);
   };
 
   return (

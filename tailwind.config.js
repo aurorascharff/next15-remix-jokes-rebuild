@@ -34,7 +34,7 @@ export const theme = {
       red: '#e74651be',
       yellow: {
         DEFAULT: '#ffcc00',
-        dark: '#e6b800',
+        dark: '#CBA200',
       },
     },
     fontFamily: {

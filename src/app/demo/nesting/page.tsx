@@ -3,7 +3,7 @@ import ClientComponent from './_components/ClientComponent';
 import ServerComponent from './_components/ServerComponent';
 
 export default function NestingPage() {
-  console.log('PARENT SERVER: this should only be printed on the server');
+  console.log('OUTER SERVER: this should only be printed on the server');
 
   return (
     <div className=" flex flex-col gap-y-10">

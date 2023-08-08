@@ -1,7 +1,7 @@
 import React from 'react';
 import JokesList from '@/src/components/JokesList';
 import ClientForm from './_components/ClientForm';
-import Form from './_components/Form';
+import ReactHookForm from './_components/ReactHookForm';
 import ServerForm from './_components/ServerForm';
 
 export default function FormsPage() {
@@ -9,7 +9,7 @@ export default function FormsPage() {
     <div className="flex flex-row gap-10">
       <ClientForm />
       <ServerForm />
-      <Form />
+      <ReactHookForm />
       <div className="flex flex-col gap-5">
         <h4>Jokes</h4>
         <JokesList />

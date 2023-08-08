@@ -4,7 +4,7 @@ import Sidebar from '@/src/components/Sidebar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  description: 'Jokes Demo',
+  description: 'Jokes Rebuild',
   title: 'Jokes',
 };
 
