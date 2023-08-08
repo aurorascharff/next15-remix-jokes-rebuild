@@ -14,7 +14,9 @@ export async function createJokeServerValidation(data: FormData) {
 
   if (!result.success) {
     console.log('SERVER ERROR' + result.error.message);
-    return;
+    return {
+      error: result.error.message,
+    };
   }
 
   await prisma.joke.create({
