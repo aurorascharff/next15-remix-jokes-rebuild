@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 13 and Tailwind CSS.
 
+Additional /demo route for React Server Component and Next 13 functionality examples.
+
 ## Getting Started
 
 First, run the development server:
