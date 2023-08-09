@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
-import type { JokeSchemaType } from '../validations/jokeSchema';
+import type { Joke } from '@prisma/client';
 
 interface Props {
-  jokes: JokeSchemaType[];
+  jokes: Pick<Joke, 'id' | 'name'>[];
 }
 
 export default function JokesList({ jokes }: Props) {
