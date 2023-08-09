@@ -5,7 +5,7 @@ import { getJoke } from '@/src/actions/getJoke';
 import JokeDisplay from '@/src/components/JokeDisplay';
 import type { Metadata } from 'next';
 
-interface PageProps {
+type PageProps = {
   params: { jokeid: string };
 }
 

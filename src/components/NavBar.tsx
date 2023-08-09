@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from '@/src/components/NavLink';
 
-export interface Route {
+export type Route = {
   path: string;
   name: string;
 }
 
-interface Props {
+type Props = {
   routes: Route[];
 }
 

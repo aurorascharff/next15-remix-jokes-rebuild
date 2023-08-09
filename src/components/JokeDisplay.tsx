@@ -5,7 +5,7 @@ import React from 'react';
 import Button from './Button';
 import type { Joke } from '@prisma/client';
 
-interface Props {
+type Props = {
   joke: Pick<Joke, 'content' | 'name' | 'id'>;
   deleteJoke: (_id: string) => void;
 }

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface Props {
+type Props = {
   href: string;
   exact?: boolean;
   children: React.ReactNode;

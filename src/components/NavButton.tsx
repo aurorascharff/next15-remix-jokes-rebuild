@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
 
-interface Props {
+type Props = {
   href: string;
   children: React.ReactNode;
-}
+};
 
 export default function NavButton({ href, children }: Props) {
   return (
