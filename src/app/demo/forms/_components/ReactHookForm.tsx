@@ -12,7 +12,7 @@ import { JokeSchema } from '@/src/validations/jokeSchema';
 import { createJoke } from '../_actions/createJokeReactHookForm';
 import type { Joke } from '@prisma/client';
 
-export default function RealisticForm({ jokes }: { jokes: Joke[] }) {
+export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
     (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
@@ -36,6 +36,7 @@ export default function RealisticForm({ jokes }: { jokes: Joke[] }) {
     if (response?.error) {
       toast.error(response.error);
     } else {
+      toast.success("Joke added!");
       reset();
     }
   });

@@ -7,6 +7,8 @@ interface Props {
 }
 
 export default function JokesList({ jokes }: Props) {
+  console.log('JokesList');
+  
   return (
     <ul>
       {jokes.map(({ id, name }) => {
