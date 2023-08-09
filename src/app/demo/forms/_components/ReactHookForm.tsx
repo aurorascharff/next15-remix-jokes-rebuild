@@ -9,7 +9,7 @@ import Button from '@/src/components/Button';
 import JokesList from '@/src/components/JokesList';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
 import { JokeSchema } from '@/src/validations/jokeSchema';
-import { createJoke } from '../_actions/createJokeRealistic';
+import { createJoke } from '../_actions/createJokeReactHookForm';
 import type { Joke } from '@prisma/client';
 
 export default function RealisticForm({ jokes }: { jokes: Joke[] }) {
