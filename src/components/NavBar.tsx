@@ -16,7 +16,7 @@ export default function NavBar({ routes }: Props) {
       <div className="mx-10 flex max-w-xl items-center gap-4 md:mx-40">
         {routes.map(route => {
           return (
-            <NavLink exact key={route.path} href={route.path}>
+            <NavLink key={route.path} href={route.path}>
               {route.name}
             </NavLink>
           );

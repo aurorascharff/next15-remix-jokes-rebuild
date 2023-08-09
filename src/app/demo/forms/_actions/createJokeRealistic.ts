@@ -17,8 +17,16 @@ export async function createJoke(data: JokeSchemaType) {
     };
   }
 
-  await prisma.joke.create({
-    data: result.data,
-  });
-  revalidatePath('/demo/forms');
+  try {
+    await prisma.joke.create({
+      data,
+    });
+  } catch (error) {
+    revalidatePath('/demo/forms');
+    return {
+      error: 'SERVER ERROR',
+    };
+  } finally {
+    revalidatePath('/demo/forms');
+  }
 }

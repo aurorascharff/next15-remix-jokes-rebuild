@@ -1,15 +1,25 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
+
+import React, { experimental_useOptimistic as useOptimistic } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/src/components/Button';
+import JokesList from '@/src/components/JokesList';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
 import { JokeSchema } from '@/src/validations/jokeSchema';
-import { createJoke } from '../../_actions/createJoke';
+import { createJoke } from '../_actions/createJokeRealistic';
+import type { Joke } from '@prisma/client';
 
-export default function ReactHookForm() {
+export default function RealisticForm({ jokes }: { jokes: Joke[] }) {
+  const [optimisticJokes, addOptimisticJoke] = useOptimistic(
+    jokes,
+    (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
+      return [...state, newJoke];
+    },
+  );
+
   const {
     handleSubmit,
     register,
@@ -21,6 +31,7 @@ export default function ReactHookForm() {
   });
 
   const onSubmit = handleSubmit(async data => {
+    addOptimisticJoke(data);
     const response = await createJoke(data);
     if (response?.error) {
       toast.error(response.error);
@@ -30,8 +41,7 @@ export default function ReactHookForm() {
   });
 
   return (
-    <div className="flex flex-col gap-5">
-      <h4>Realistic form</h4>
+    <>
       <form onSubmit={onSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -45,10 +55,11 @@ export default function ReactHookForm() {
         </div>
         <div className="flex justify-end">
           <Button disabled={isSubmitting} type="submit">
-            Add
+            {isSubmitting ? 'Adding...' : 'Add'}
           </Button>
         </div>
       </form>
-    </div>
+      <JokesList jokes={optimisticJokes} />
+    </>
   );
 }

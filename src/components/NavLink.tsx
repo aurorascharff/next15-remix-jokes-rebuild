@@ -11,10 +11,10 @@ interface Props {
 
 export const NavLink = ({ href, exact, children, ...props }: Props) => {
   const pathname = usePathname();
-  const isActive = exact ? pathname === href : pathname.startsWith(href);
+  const isActive = exact ? pathname === href : pathname.includes(href) && href !== '/';
 
   return (
-    <Link href={href} className={isActive ? 'underline' : ''} {...props}>
+    <Link prefetch href={href} className={isActive ? 'underline' : ''} {...props}>
       {children}
     </Link>
   );

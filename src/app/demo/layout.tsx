@@ -19,10 +19,6 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             path: '/',
           },
           {
-            name: 'Home',
-            path: '/demo',
-          },
-          {
             name: 'Nesting',
             path: '/demo/nesting',
           },

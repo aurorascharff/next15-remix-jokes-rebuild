@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
-import { prisma } from '@/db';
+import type { JokeSchemaType } from '../validations/jokeSchema';
 
-function getJokes() {
-  return prisma.joke.findMany();
+interface Props {
+  jokes: JokeSchemaType[];
 }
 
-export default async function JokesList() {
-  const jokes = await getJokes();
-
+export default function JokesList({ jokes }: Props) {
   return (
     <ul>
       {jokes.map(({ id, name }) => {
