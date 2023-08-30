@@ -7,7 +7,7 @@ export default async function ServerPage() {
   const jokes = await getJokes();
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex w-1/4 flex-col gap-5">
       <h4>Server-side validation</h4>
       <ServerForm />
       <JokesList jokes={jokes} />

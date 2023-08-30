@@ -1,0 +1,60 @@
+name: Build and deploy Node.js app to Azure Web App - aurorawalberg
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - '.husky'
+      - '.github/**'
+      - '**/*.csv'
+      - .env*
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+
+      - name: npm install, build, and test
+        run: |
+          npm install --force
+          npm run build
+
+      - name: Zip all files for upload between jobs
+        run: zip next.zip ./* .next .env -qr
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI Create resource group
+        uses: Azure/cli@1.0.4
+        with:
+          inlineScript: az group create -n ${{ secrets.AZURE_RG }} -l 'West Europe'
+
+      - name: Deploy Bicep file
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: ${{ secrets.AZURE_RG }}
+          scope: resourcegroup
+          template: ./iac/main.bicep
+          parameters: 'environmentType=production appName=${{ vars.APPNAME }} databaseAdminUsername=${{ secrets.DATABASE_ADMIN_USERNAME }} databaseAdminPassword=${{ secrets.DATABASE_ADMIN_PASSWORD }}'
+          failOnStdErr: false
+
+      - name: 'Deploy to Azure Web App'
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: app-${{ vars.APPNAME }}
+          slot-name: 'Production'
+          package: .

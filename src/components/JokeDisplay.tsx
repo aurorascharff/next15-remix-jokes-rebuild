@@ -2,15 +2,15 @@
 
 import Link from 'next/link';
 import React from 'react';
+import { deleteJoke } from '../actions/deleteJoke';
 import Button from './Button';
 import type { Joke } from '@prisma/client';
 
 type Props = {
   joke: Pick<Joke, 'content' | 'name' | 'id'>;
-  deleteJoke: (_id: string) => void;
 };
 
-export default function JokeDisplay({ joke, deleteJoke }: Props) {
+export default function JokeDisplay({ joke }: Props) {
   return (
     <div className="flex flex-col gap-y-4">
       <p>Heres your hilarious joke:</p>

@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { deleteJoke } from '@/src/actions/deleteJoke';
 import { getJoke } from '@/src/actions/getJoke';
 import JokeDisplay from '@/src/components/JokeDisplay';
 import type { Metadata } from 'next';
@@ -27,5 +26,5 @@ export default async function JokePage({ params }: PageProps) {
     notFound();
   }
 
-  return <JokeDisplay joke={joke} deleteJoke={deleteJoke} />;
+  return <JokeDisplay joke={joke} />;
 }

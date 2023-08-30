@@ -1,5 +1,4 @@
 import React from 'react';
-
 import NavButton from '@/src/components/NavButton';
 
 export default async function FormsPage() {
