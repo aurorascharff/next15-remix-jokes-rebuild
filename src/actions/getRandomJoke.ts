@@ -1,3 +1,4 @@
+import { revalidateTag } from 'next/cache';
 import { prisma } from '@/db';
 
 export async function getRandomJoke() {
@@ -7,5 +8,6 @@ export async function getRandomJoke() {
     skip: randomRowNumber,
     take: 1,
   });
+  revalidateTag('');
   return randomJoke;
 }

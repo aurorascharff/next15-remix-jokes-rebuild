@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
 
@@ -21,5 +22,6 @@ export async function createJoke(data: FormData) {
       name,
     },
   });
+  revalidateTag('jokes');
   redirect('/jokes');
 }
