@@ -4,7 +4,7 @@ import type { Joke } from '@prisma/client';
 
 type Props = {
   jokes: Pick<Joke, 'id' | 'name'>[];
-}
+};
 
 export default function JokesList({ jokes }: Props) {
   return (

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { getJokes } from '../actions/getJokes';
 import JokesList from './JokesList';
@@ -9,9 +8,7 @@ export default async function Sidebar() {
 
   return (
     <div className="flex flex-col gap-y-5">
-      <Link prefetch href="/jokes">
-        Get a random joke
-      </Link>
+      <a href="/jokes">Get a random joke</a>
       <p>Here are a few more jokes to check out:</p>
       <JokesList jokes={jokes} />
       <NavButton href="/jokes/new">Add your own</NavButton>

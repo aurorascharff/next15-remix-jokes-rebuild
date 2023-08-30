@@ -8,7 +8,7 @@ import type { Joke } from '@prisma/client';
 type Props = {
   joke: Pick<Joke, 'content' | 'name' | 'id'>;
   deleteJoke: (_id: string) => void;
-}
+};
 
 export default function JokeDisplay({ joke, deleteJoke }: Props) {
   return (

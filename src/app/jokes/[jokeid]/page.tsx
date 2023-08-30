@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 
 type PageProps = {
   params: { jokeid: string };
-}
+};
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const joke = await getJoke(params.jokeid);

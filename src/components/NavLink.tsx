@@ -7,7 +7,7 @@ type Props = {
   href: string;
   exact?: boolean;
   children: React.ReactNode;
-}
+};
 
 export const NavLink = ({ href, exact, children, ...props }: Props) => {
   const pathname = usePathname();

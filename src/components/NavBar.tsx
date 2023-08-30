@@ -4,11 +4,11 @@ import { NavLink } from '@/src/components/NavLink';
 export type Route = {
   path: string;
   name: string;
-}
+};
 
 type Props = {
   routes: Route[];
-}
+};
 
 export default function NavBar({ routes }: Props) {
   return (
