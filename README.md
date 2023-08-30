@@ -26,25 +26,16 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Prisma setup
 
-Initialize prisma:
+Initialize the database schema if not already done by running the following command:
 
-```sh
-npm i @prisma/client
-npm i -D prisma
-npx prisma init --datasource-provider sqlite
-```
-
-Update prisma/schema.prisma and run gui:
-
-```sh
-npx prisma db push
-npx prisma studio
+```bash
+npm run prisma.migrate
 ```
 
 Seed prisma/seed.ts for initial data:
 
 ```sh
-npx prisma db seed
+npm run prisma.seed
 ```
 
 ## Learn More
