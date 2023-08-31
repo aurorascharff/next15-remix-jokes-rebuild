@@ -1,4 +1,4 @@
-import { revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 
 export async function getRandomJoke() {
@@ -8,6 +8,6 @@ export async function getRandomJoke() {
     skip: randomRowNumber,
     take: 1,
   });
-  revalidateTag('');
+  revalidatePath('/jokes');
   return randomJoke;
 }
