@@ -10,7 +10,7 @@ export default function SetThemeComponent() {
   return (
     <div className="flex flex-row gap-5">
       <Button
-        color="white"
+        color="black"
         disabled={theme === 'white'}
         onClick={() => {
           return setTheme('white');
