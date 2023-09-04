@@ -6,7 +6,7 @@ import UseThemeComponent from './_components/UseThemeComponent';
 export default function ProvidersPage() {
   return (
     <div className="flex flex-col gap-y-10">
-      <h4>ProvidersPage</h4>
+      <h4>Providers</h4>
       <SetThemeComponent />
       <UseThemeComponent />
       <ServerComponent />
