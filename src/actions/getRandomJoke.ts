@@ -1,4 +1,5 @@
-import { revalidatePath } from 'next/cache';
+'use server';
+
 import { prisma } from '@/db';
 
 export async function getRandomJoke() {
@@ -8,6 +9,5 @@ export async function getRandomJoke() {
     skip: randomRowNumber,
     take: 1,
   });
-  revalidatePath('/jokes');
   return randomJoke;
 }
