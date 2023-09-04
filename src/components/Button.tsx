@@ -4,17 +4,13 @@ import React from 'react';
 import { cn } from '../utils/style';
 
 type Props = {
-  children: React.ReactNode;
-  onClick?: (_e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
-  color?: string;
+  color?: 'white' | 'yellow';
 };
 
-export default function Button({ color = 'yellow', ...props }: Props) {
+export default function Button({ color, ...props }: Props & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const defaultClasses =
     'cursor-pointer rounded px-5 py-3 font-display text-lg font-bold leading-none text-purple shadow-lg hover:transform hover:enabled:-translate-y-px disabled:cursor-default disabled:opacity-80';
-  const colorClasses = `bg-${color}`;
+  const colorClasses = color === 'white' ? 'bg-white' : 'bg-yellow';
   const className = cn(defaultClasses, colorClasses);
 
   return (
