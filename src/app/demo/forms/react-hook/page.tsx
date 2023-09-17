@@ -6,9 +6,9 @@ export default async function ReactHookPage() {
   const jokes = await getJokes();
 
   return (
-    <div className="flex w-1/4 flex-col gap-5">
+    <div className="flex flex-col gap-5 xl:w-1/3">
       <h4>React Hook Form</h4>
-      Optimistic update, client and server side validation
+      Combining optimistic update, client and server side validation.
       <ReactHookForm jokes={jokes} />
     </div>
   );

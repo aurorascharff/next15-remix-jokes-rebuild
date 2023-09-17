@@ -8,7 +8,7 @@ export default function SetThemeComponent() {
   const { theme, setTheme } = useThemeContext();
 
   return (
-    <div className="flex flex-row gap-5">
+    <div className="flex flex-row gap-5 py-5">
       <Button
         color="white"
         disabled={theme === 'white'}

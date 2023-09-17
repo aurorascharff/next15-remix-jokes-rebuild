@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default function ServerComponent() {
+type Props = {
+  children?: React.ReactNode;
+};
+
+export default function ServerComponent({ children }: Props) {
   console.log('SERVER: this should only be printed on the server');
-  return <div>I can still have server content inside providers</div>;
+
+  return <div className="border border-yellow p-8 text-yellow">Server component{children}</div>;
 }

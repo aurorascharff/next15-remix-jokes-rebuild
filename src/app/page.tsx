@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function IndexPage() {
+export default function HomePage() {
   return (
     <div className="flex h-full flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center pb-12 pt-12">

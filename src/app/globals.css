@@ -34,10 +34,6 @@
     @apply list-inside list-disc;
   }
 
-  hr {
-    @apply mb-8 mt-8 block h-px text-purple-light;
-  }
-
   a {
     @apply text-yellow hover:underline;
   }
