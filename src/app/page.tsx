@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="flex h-full flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center pb-12 pt-12">
         <h1 className="text-center font-display text-6xl text-shadow">
-          Next <span className="block font-display text-9xl uppercase leading-none">Jokes!</span>
+          Next <span className="block font-display text-6xl uppercase leading-none md:text-9xl">Jokes!</span>
         </h1>
         <h3 className="pb-2 text-center font-display text-shadow">Next 13 rebuild of Remix Jokes</h3>
         <nav>
