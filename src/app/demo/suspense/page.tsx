@@ -4,6 +4,8 @@ import Jokes from './_components/Jokes';
 import JokesHeader from './_components/JokesHeader';
 import JokesSkeleton from './_components/JokesSkeleton';
 
+export const dynamic = 'force-dynamic';
+
 export default function SuspensePage() {
   return (
     <div className="flex flex-col gap-y-10 xl:w-1/3">
