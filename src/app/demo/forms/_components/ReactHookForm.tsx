@@ -8,7 +8,7 @@ import Button from '@/src/components/Button';
 import JokesList from '@/src/components/JokesList';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
 import { JokeSchema } from '@/src/validations/jokeSchema';
-import { createJoke } from '../_actions/createJokeReactHookForm';
+import { createJokeReactHookForm } from '../_actions/createJokeReactHookForm';
 import type { Joke } from '@prisma/client';
 
 export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
@@ -31,7 +31,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
 
   const onSubmit = handleSubmit(async data => {
     addOptimisticJoke(data);
-    const response = await createJoke(data);
+    const response = await createJokeReactHookForm(data);
     if (response?.error) {
       toast.error(response.error);
     } else {
