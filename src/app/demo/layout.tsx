@@ -30,6 +30,10 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             name: 'Forms',
             path: '/demo/forms',
           },
+          {
+            name: 'React Query',
+            path: '/demo/react-query',
+          },
         ]}
       />
       <div className="mx-10 flex h-full flex-col gap-10 py-3 md:mx-40 md:flex-row">{children}</div>
