@@ -6,5 +6,5 @@ export default function JokesHeader() {
       return setTimeout(resolve, 1000);
     }),
   );
-  return <h4>Jokes</h4>;
+  return <h5>Jokes</h5>;
 }
