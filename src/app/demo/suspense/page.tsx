@@ -14,7 +14,7 @@ export default function SuspensePage() {
       manually.
       <Suspense fallback={<div>Loading...</div>}>
         <JokesHeader />
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-4">
           The counter is interactive even though the jokes are not loaded yet.
           <Counter />
         </div>
