@@ -31,6 +31,7 @@ const config: Config = {
         layer: '#ffffff1a',
         purple: {
           DEFAULT: '#3a0d54',
+          dark: '#1f062e',
           light: '#740fb3',
         },
         red: '#e74651be',
