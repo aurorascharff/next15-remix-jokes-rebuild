@@ -3,8 +3,13 @@ import Counter from './_components/Counter';
 import Jokes from './_components/Jokes';
 import JokesHeader from './_components/JokesHeader';
 import JokesSkeleton from './_components/JokesSkeleton';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Demo - Suspense',
+};
 
 export default function SuspensePage() {
   return (

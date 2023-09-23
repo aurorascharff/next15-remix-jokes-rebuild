@@ -3,6 +3,11 @@ import ServerComponent from './_components/ServerComponent';
 import SetThemeComponent from './_components/SetThemeComponent';
 import { ThemeContextProvider } from './_components/ThemeContext';
 import UseThemeComponent from './_components/UseThemeComponent';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Demo - Providers',
+};
 
 export default function ProvidersPage() {
   return (

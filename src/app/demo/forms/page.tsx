@@ -1,5 +1,10 @@
 import React from 'react';
 import NavButton from '@/src/components/NavButton';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Demo - Forms',
+};
 
 export default async function FormsPage() {
   return (

@@ -1,6 +1,11 @@
 import React from 'react';
 import { createJoke } from '@/src/actions/createJoke';
 import Button from '@/src/components/Button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'New joke',
+};
 
 export default function NewJokePage() {
   return (

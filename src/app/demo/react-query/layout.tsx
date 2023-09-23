@@ -3,6 +3,11 @@ import { getJokes } from '@/src/actions/getJokes';
 import QueryProvider from './_components/QueryProvider';
 import ReactQueryHydrate from './_components/ReactQueryHydrate';
 import getQueryClient from './_utils/getQueryClient';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Demo - React Query',
+};
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const queryClient = getQueryClient();

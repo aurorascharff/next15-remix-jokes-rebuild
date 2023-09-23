@@ -1,6 +1,11 @@
 import React from 'react';
 import ClientComponent from './_components/ClientComponent';
 import ServerComponent from './_components/ServerComponent';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Demo - Nesting',
+};
 
 export default function NestingPage() {
   console.log('OUTER SERVER: this should only be printed on the server');
