@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { getJoke } from '@/src/actions/getJoke';
-import JokeDisplay from '@/src/components/JokeDisplay';
+import DeleteJokeButton from '@/src/components/DeleteJokeButton';
 import type { Metadata } from 'next';
 
 type PageProps = {
@@ -26,5 +27,14 @@ export default async function JokePage({ params }: PageProps) {
     notFound();
   }
 
-  return <JokeDisplay joke={joke} />;
+  return (
+    <div className="flex flex-col gap-y-4">
+      <p>Heres your hilarious joke:</p>
+      <p>{joke.content}</p>
+      <Link prefetch href={`/jokes/${joke.id}`}>
+        {`"${joke.name}" Permalink`}
+      </Link>
+      <DeleteJokeButton jokeid={joke.id} />
+    </div>
+  );
 }

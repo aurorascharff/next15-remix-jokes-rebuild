@@ -13,7 +13,7 @@ export default function RandomJokeButton() {
         router.refresh();
       }}
     >
-      Get Random Joke
+      Get random joke
     </button>
   );
 }
