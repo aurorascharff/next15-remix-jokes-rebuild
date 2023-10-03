@@ -9,19 +9,19 @@ export default function HomePage() {
         </h1>
         <h3 className="pb-2 text-center font-display text-shadow">Next 13 rebuild of Remix Jokes</h3>
         <nav>
-          <ul className=" flex list-none gap-4 p-0 font-display text-lg leading-none">
+          <ul className="flex list-none gap-4 p-0 font-display text-lg leading-none">
             <li>
-              <Link prefetch className=" decoration-wavy decoration-1" href="jokes">
+              <Link className="decoration-wavy decoration-1" href="jokes">
                 Read Jokes
               </Link>
             </li>
             <li>
-              <Link prefetch className=" decoration-wavy decoration-1" href="api/jokes.rss">
+              <Link className="decoration-wavy decoration-1" href="api/jokes.rss">
                 RSS
               </Link>
             </li>
             <li>
-              <Link prefetch className=" decoration-wavy decoration-1" href="demo">
+              <Link className="decoration-wavy decoration-1" href="demo">
                 Demo
               </Link>
             </li>
