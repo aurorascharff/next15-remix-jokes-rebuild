@@ -8,7 +8,7 @@ export default async function JokesPage() {
     <div className="flex flex-col gap-y-4">
       <p>Heres a random joke:</p>
       <p>{randomJoke.content}</p>
-      <Link prefetch href={`/jokes/${randomJoke.id}`}>{`"${randomJoke.name}" Permalink`}</Link>
+      <Link href={`/jokes/${randomJoke.id}`}>{`"${randomJoke.name}" Permalink`}</Link>
     </div>
   );
 }

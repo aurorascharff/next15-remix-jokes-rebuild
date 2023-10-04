@@ -3,6 +3,8 @@ import Header from '@/src/components/Header';
 import Sidebar from '@/src/components/Sidebar';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   description: 'Jokes Rebuild',
   title: 'Jokes',
