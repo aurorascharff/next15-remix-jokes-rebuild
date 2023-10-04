@@ -16,7 +16,7 @@ export default function HomePage() {
               </Link>
             </li>
             <li>
-              <Link className="decoration-wavy decoration-1" href="api/jokes.rss">
+              <Link className="decoration-wavy decoration-1" href="/api/jokes.rss">
                 RSS
               </Link>
             </li>
