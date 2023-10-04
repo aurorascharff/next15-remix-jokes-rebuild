@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
-import NavBar from '@/src/components/NavBar';
+import NavBar from '@/src/app/demo/_components/NavBar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
