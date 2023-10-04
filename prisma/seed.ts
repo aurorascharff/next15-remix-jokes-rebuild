@@ -2,7 +2,6 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// shout-out to https://icanhazdadjoke.com/
 const JOKES = [
   {
     content:
@@ -32,6 +31,18 @@ const JOKES = [
   {
     content: 'My first time using an elevator was an uplifting experience. The second time let me down.',
     name: 'Elevator',
+  },
+  {
+    content: 'Why did the functions stop calling each other? Because they had constant arguments.',
+    name: 'Functions',
+  },
+  {
+    content: 'Why was the developer unhappy with their job? They wanted arrays.',
+    name: 'Arrays',
+  },
+  {
+    content: 'Why was the function sad after a successful first call? Because he didnt get a callback.',
+    name: 'Callback',
   },
 ];
 
