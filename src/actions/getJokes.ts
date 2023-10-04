@@ -1,7 +1,8 @@
 'use server';
 
+import { cache } from 'react';
 import { prisma } from '@/db';
 
-export async function getJokes() {
+export const getJokes = cache(async () => {
   return prisma.joke.findMany();
-}
+});

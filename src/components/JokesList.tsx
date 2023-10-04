@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
-import { prisma } from '@/db';
+import { getJokes } from '../actions/getJokes';
 
 export default async function JokesList() {
-  const jokes = await prisma.joke.findMany();
+  const jokes = await getJokes();
 
   return (
     <ul>

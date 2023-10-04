@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   title: 'Jokes',
 };
 
-export const dynamic = 'force-dynamic';
-
 export default function JokesLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex h-full flex-col gap-5 bg-purple">
