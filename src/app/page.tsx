@@ -11,17 +11,17 @@ export default function HomePage() {
         <nav>
           <ul className="flex list-none gap-4 p-0 font-display text-lg leading-none">
             <li>
-              <Link className="decoration-wavy decoration-1" href="jokes">
+              <Link prefetch className="decoration-wavy decoration-1" href="jokes">
                 Read Jokes
               </Link>
             </li>
             <li>
-              <Link className="decoration-wavy decoration-1" href="api/jokes.rss">
+              <Link prefetch className="decoration-wavy decoration-1" href="api/jokes.rss">
                 RSS
               </Link>
             </li>
             <li>
-              <Link className="decoration-wavy decoration-1" href="demo">
+              <Link prefetch className="decoration-wavy decoration-1" href="demo">
                 Demo
               </Link>
             </li>

@@ -10,7 +10,9 @@ export default async function JokesList() {
       {jokes.map(({ id, name }) => {
         return (
           <li key={id}>
-            <Link href={`/jokes/${id}`}>{name}</Link>
+            <Link prefetch href={`/jokes/${id}`}>
+              {name}
+            </Link>
           </li>
         );
       })}
