@@ -9,6 +9,7 @@ type Props = {
 export default function NavButton({ href, children }: Props) {
   return (
     <Link
+      prefetch
       href={href}
       className="m-0 w-fit cursor-pointer rounded bg-yellow px-5 py-3 font-display text-lg font-bold leading-none text-purple shadow-lg hover:-translate-y-px hover:transform hover:no-underline"
     >

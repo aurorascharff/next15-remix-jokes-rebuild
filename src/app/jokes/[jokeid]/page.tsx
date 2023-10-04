@@ -31,7 +31,7 @@ export default async function JokePage({ params }: PageProps) {
     <div className="flex flex-col gap-y-4">
       <p>Heres your hilarious joke:</p>
       <p>{joke.content}</p>
-      <Link href={`/jokes/${joke.id}`}>{`"${joke.name}" Permalink`}</Link>
+      <Link prefetch href={`/jokes/${joke.id}`}>{`"${joke.name}" Permalink`}</Link>
       <DeleteJokeButton jokeid={joke.id} />
     </div>
   );
