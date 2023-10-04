@@ -5,7 +5,7 @@ type Error = {
 };
 
 import Button from '@/src/components/Button';
-import JokesList from '@/src/components/JokesList';
+import JokesList from '../_components/JokesList';
 import { createJoke } from './_actions/createJoke';
 import useGetJokes from './_hooks/useGetJokes';
 import type { Joke } from '@prisma/client';

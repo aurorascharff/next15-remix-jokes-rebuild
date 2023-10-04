@@ -2,8 +2,8 @@
 
 import React, { experimental_useOptimistic as useOptimistic } from 'react';
 import Button from '@/src/components/Button';
-import JokesList from '@/src/components/JokesList';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
+import JokesList from '../../_components/JokesList';
 import { createJokeOptimistic } from '../_actions/createJokeOptimistic';
 import type { Joke } from '@prisma/client';
 

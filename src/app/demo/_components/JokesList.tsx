@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
-import { prisma } from '@/db';
+import type { Joke } from '@prisma/client';
 
-export default async function JokesList() {
-  const jokes = await prisma.joke.findMany();
+type Props = {
+  jokes: Pick<Joke, 'id' | 'name'>[];
+};
 
+export default function JokesList({ jokes }: Props) {
   return (
     <ul>
       {jokes.map(({ id, name }) => {

@@ -4,7 +4,6 @@ import Jokes from './_components/Jokes';
 import JokesHeader from './_components/JokesHeader';
 import JokesSkeleton from './_components/JokesSkeleton';
 import type { Metadata } from 'next';
-
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
@@ -20,7 +19,8 @@ export default function SuspensePage() {
       <Suspense fallback={<div>Loading...</div>}>
         <JokesHeader />
         <div className="flex flex-row gap-4">
-          The counter is interactive even though the jokes are not loaded yet.
+          The counter is interactive even though the jokes are not loaded yet. WIthout the suspenses the user would be
+          waiting for the timeouts to finish before the page loads.
           <Counter />
         </div>
         <Suspense fallback={<JokesSkeleton />}>
