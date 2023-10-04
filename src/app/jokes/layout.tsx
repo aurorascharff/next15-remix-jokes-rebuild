@@ -1,9 +1,8 @@
 import Footer from '@/src/components/Footer';
 import Header from '@/src/components/Header';
-
 import type { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   description: 'Jokes Rebuild',
