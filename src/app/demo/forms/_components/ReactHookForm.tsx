@@ -1,15 +1,17 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
+import React, { experimental_useOptimistic as useOptimistic } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/src/components/Button';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
 import { JokeSchema } from '@/src/validations/jokeSchema';
+import JokesList from '../../_components/JokesList';
 import { createJokeReactHookForm } from '../_actions/createJokeReactHookForm';
+import type { Joke } from '@prisma/client';
 
-export default function ReactHookForm() {
+export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
   const {
     handleSubmit,
     register,
@@ -20,7 +22,15 @@ export default function ReactHookForm() {
     resolver: zodResolver(JokeSchema),
   });
 
+  const [optimisticJokes, addOptimisticJoke] = useOptimistic(
+    jokes,
+    (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
+      return [...state, newJoke];
+    },
+  );
+
   const onSubmit = handleSubmit(async data => {
+    addOptimisticJoke(data);
     const response = await createJokeReactHookForm(data);
     if (response?.error) {
       toast.error(response.error);
@@ -49,6 +59,7 @@ export default function ReactHookForm() {
           </Button>
         </div>
       </form>
+      <JokesList jokes={optimisticJokes as Joke[]} />
     </>
   );
 }

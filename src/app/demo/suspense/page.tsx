@@ -20,7 +20,7 @@ export default function SuspensePage() {
       <Suspense fallback={<div>Loading...</div>}>
         <JokesHeader />
         <div className="flex flex-row gap-4">
-          The counter is interactive even though the jokes are not loaded yet. WIthout the suspenses the user would be
+          The counter is interactive even though the jokes are not loaded yet. Without the suspenses the user would be
           waiting for the timeouts to finish before the page loads.
           <Counter />
         </div>

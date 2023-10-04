@@ -7,13 +7,17 @@ export default async function JokesList() {
 
   return (
     <ul>
-      {jokes.map(({ id, name }) => {
-        return (
-          <li key={id}>
-            <Link href={`/jokes/${id}`}>{name}</Link>
-          </li>
-        );
-      })}
+      {jokes
+        .sort((a, b) => {
+          return a.name > b.name ? 1 : -1;
+        })
+        .map(({ id, name }) => {
+          return (
+            <li key={id}>
+              <Link href={`/jokes/${id}`}>{name}</Link>
+            </li>
+          );
+        })}
     </ul>
   );
 }

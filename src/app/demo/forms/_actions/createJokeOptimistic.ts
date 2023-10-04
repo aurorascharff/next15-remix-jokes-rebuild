@@ -2,19 +2,24 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
-import type { JokeSchemaType } from '@/src/validations/jokeSchema';
+import { JokeSchema, type JokeSchemaType } from '@/src/validations/jokeSchema';
 
 export async function createJokeOptimistic(data: JokeSchemaType) {
-  try {
-    await prisma.joke.create({
-      data,
-    });
-  } catch (error) {
+  const result = JokeSchema.safeParse(data);
+
+  if (!result.success) {
+    const errorMessages = result.error.issues.reduce((prev, issue) => {
+      return (prev += issue.message);
+    }, '');
+    console.log('SERVER ERROR: ' + errorMessages);
     revalidatePath('/demo/forms');
     return {
-      error: 'SERVER ERROR',
+      error: errorMessages,
     };
-  } finally {
-    revalidatePath('/demo/forms');
   }
+
+  await prisma.joke.create({
+    data: result.data,
+  });
+  revalidatePath('/demo/forms');
 }
