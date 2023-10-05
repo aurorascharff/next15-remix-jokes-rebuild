@@ -8,7 +8,6 @@ export default function Counter() {
 
   return (
     <Button
-      type="button"
       onClick={() => {
         return setCount(count => {
           return count + 1;
