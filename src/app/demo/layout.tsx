@@ -23,6 +23,10 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             path: '/demo/nesting',
           },
           {
+            name: 'Revalidate',
+            path: '/demo/revalidate',
+          },
+          {
             name: 'Providers',
             path: '/demo/providers',
           },

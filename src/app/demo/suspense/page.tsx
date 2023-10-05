@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import Counter from './_components/Counter';
+import Counter from '../_components/Counter';
 import Jokes from './_components/Jokes';
 import JokesHeader from './_components/JokesHeader';
 import JokesSkeleton from './_components/JokesSkeleton';
