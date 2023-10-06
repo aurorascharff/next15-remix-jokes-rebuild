@@ -10,7 +10,8 @@
     "prisma.init": "npx prisma init --datasource-provider sqlite",
     "prisma.studio": "npx prisma studio",
     "prisma.seed": "npx prisma db seed",
-    "prisma.migrate": "npx prisma migrate dev"
+    "prisma.migrate": "npx prisma migrate dev",
+    "prisma.push": "npx prisma db push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.2.0",

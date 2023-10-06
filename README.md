@@ -2,34 +2,33 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 13 and Tailwind CSS.
+It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 13 and Tailwind CSS.
 
-Additional /demo route for React Server Component and Next 13 functionality examples.
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+It has additional /demo routes for React Server Component and Next 13 functionality examples.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Getting Started
+
+First, `npm install` and run the development server with `npm run dev`.
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## Prisma setup
 
-Initialize the database schema if not already done by running the following command:
+Add a `.env` file to the root of the project, refer to `.env.sample` for the required environment variables.
+You need decide between prisma local development with `sqlite` or a real database with for example `sqlserver`. Define it in the `schema.prisma` file.
+
+When using sqlserver, you need to migrate the database schema with:
 
 ```bash
 npm run prisma.migrate
+```
+
+When using sqllite, initialize with:
+
+```bash
+npm run prisma.push
 ```
 
 Seed prisma/seed.ts for initial data:
