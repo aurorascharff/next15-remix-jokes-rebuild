@@ -4,7 +4,7 @@ type Error = {
   message: string;
 };
 
-import Button from '@/src/components/Button';
+import SubmitButton from '@/src/components/SubmitButton';
 import { createJoke } from '../_actions/createJoke';
 import JokesList from '../_components/JokesList';
 import useGetJokes from './_hooks/useGetJokes';
@@ -33,7 +33,7 @@ export default function ReactQueryPage() {
             </label>
           </div>
           <div className="flex justify-end">
-            <Button type="submit">Add</Button>
+            <SubmitButton />
           </div>
         </form>
         <div>

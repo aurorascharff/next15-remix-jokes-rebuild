@@ -16,12 +16,12 @@ export async function createJoke(data: FormData) {
     throw new Error('Invalid content');
   }
 
-  await prisma.joke.create({
+  const joke = await prisma.joke.create({
     data: {
       content,
       name,
     },
   });
   revalidatePath('/jokes');
-  redirect('/jokes');
+  redirect('/jokes/' + joke.id);
 }

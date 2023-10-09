@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { getJokes } from '@/src/actions/getJokes';
-import Button from '@/src/components/Button';
+import SubmitButton from '@/src/components/SubmitButton';
 import { createJoke } from '../_actions/createJoke';
 import Counter from '../_components/Counter';
 
@@ -47,7 +47,7 @@ export default async function RevalidatePage() {
             </label>
           </div>
           <div className="flex justify-end">
-            <Button type="submit">Add</Button>
+            <SubmitButton />
           </div>
         </form>
       </div>
