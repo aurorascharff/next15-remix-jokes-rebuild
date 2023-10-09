@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function DemoLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-grow flex-col gap-5 bg-purple py-4">
+    <div className="flex min-h-[100svh] flex-col gap-5 bg-purple py-4">
       <Toaster position="top-right" />
       <NavBar
         routes={[
