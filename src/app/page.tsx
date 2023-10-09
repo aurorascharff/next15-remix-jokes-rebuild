@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div className="flex h-full flex-col items-center justify-center">
+    <div className="flex flex-grow flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center pb-12 pt-12">
         <h1 className="text-center font-display text-6xl text-shadow">
           Next <span className="block font-display text-6xl uppercase leading-none md:text-9xl">Jokes!</span>
