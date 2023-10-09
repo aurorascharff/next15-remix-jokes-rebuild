@@ -11,7 +11,7 @@
 
 @layer base {
   html {
-    @apply min-h-screen bg-purple text-white;
+    @apply bg-purple text-white;
   }
 
   fieldset {
