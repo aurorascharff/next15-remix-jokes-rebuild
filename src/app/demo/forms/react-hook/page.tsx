@@ -1,5 +1,5 @@
 import React from 'react';
-import { getJokes } from '../../suspense/_actions/getJokes';
+import { getJokes } from '@/src/actions/getJokes';
 import ReactHookForm from '../_components/ReactHookForm';
 
 export default async function ReactHookPage() {

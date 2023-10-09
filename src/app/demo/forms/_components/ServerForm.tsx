@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@/src/components/Button';
+import SubmitButton from '@/src/components/SubmitButton';
 import { createJokeServerValidation } from '../_actions/createJokeServerValidation';
 
 export default function ServerForm() {
@@ -18,7 +18,7 @@ export default function ServerForm() {
         </label>
       </div>
       <div className="flex justify-end">
-        <Button type="submit">Add</Button>
+        <SubmitButton />
       </div>
     </form>
   );

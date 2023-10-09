@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Button from '@/src/components/Button';
+import SubmitButton from '@/src/components/SubmitButton';
 import { JokeSchema } from '@/src/validations/jokeSchema';
 import { createJokeClientValidation } from '../_actions/createJokeClientValidation';
 
@@ -34,7 +34,7 @@ export default function ClientForm() {
         </label>
       </div>
       <div className="flex justify-end">
-        <Button type="submit">Add</Button>
+        <SubmitButton />
       </div>
     </form>
   );

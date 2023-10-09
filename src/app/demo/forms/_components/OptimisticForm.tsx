@@ -1,7 +1,7 @@
 'use client';
 
 import React, { experimental_useOptimistic as useOptimistic } from 'react';
-import Button from '@/src/components/Button';
+import SubmitButton from '@/src/components/SubmitButton';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
 import JokesList from '../../_components/JokesList';
 import { createJokeOptimistic } from '../_actions/createJokeOptimistic';
@@ -40,7 +40,7 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
           </label>
         </div>
         <div className="flex justify-end">
-          <Button type="submit">Add</Button>
+          <SubmitButton />
         </div>
       </form>
       <JokesList jokes={optimisticJokes as Joke[]} />

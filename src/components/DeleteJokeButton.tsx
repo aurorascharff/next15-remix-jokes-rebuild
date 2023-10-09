@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useTransition } from 'react';
 import { deleteJoke } from '../actions/deleteJoke';
 import Button from './Button';
 
@@ -9,13 +9,18 @@ type Props = {
 };
 
 export default function DeleteJokeButton({ jokeid }: Props) {
+  const [isPending, startTransition] = useTransition();
+
   return (
     <Button
+      disabled={isPending}
       onClick={() => {
-        deleteJoke(jokeid);
+        startTransition(() => {
+          deleteJoke(jokeid);
+        });
       }}
     >
-      Delete
+      {isPending ? 'Deleting...' : 'Delete'}
     </Button>
   );
 }

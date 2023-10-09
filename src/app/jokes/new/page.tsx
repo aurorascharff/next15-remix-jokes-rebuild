@@ -1,6 +1,6 @@
 import React from 'react';
 import { createJoke } from '@/src/actions/createJoke';
-import Button from '@/src/components/Button';
+import SubmitButton from '@/src/components/SubmitButton';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function NewJokePage() {
           </label>
         </div>
         <div className="flex justify-end">
-          <Button type="submit">Add</Button>
+          <SubmitButton />
         </div>
       </form>
     </div>
