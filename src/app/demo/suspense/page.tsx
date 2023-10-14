@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   title: 'Demo - Suspense',
 };
 
-export default function SuspensePage() {
+export default async function SuspensePage() {
+  await new Promise(resolve => {
+    return setTimeout(resolve, 1000);
+  });
+
   return (
     <div className="flex flex-col gap-y-10 xl:w-1/3">
       <h4>Suspense</h4>
