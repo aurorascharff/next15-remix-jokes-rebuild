@@ -14,9 +14,9 @@ export default function JokesLayout({ children }: { children: React.ReactNode })
   return (
     <main className="flex min-h-[100svh] w-full flex-col gap-5 bg-purple">
       <Header />
-      <div className="mx-10 flex flex-grow flex-col gap-10 py-3 md:mx-40 md:flex-row">
+      <div className="mx-10 flex flex-grow flex-col gap-10 py-3 md:flex-row lg:mx-40">
         <Sidebar />
-        <div className="flex-grow">{children}</div>
+        <div className="w-fit flex-grow">{children}</div>
       </div>
       <Footer />
     </main>
