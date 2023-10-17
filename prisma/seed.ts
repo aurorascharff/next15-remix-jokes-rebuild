@@ -4,35 +4,6 @@ const prisma = new PrismaClient();
 
 const JOKES = [
   {
-    content:
-      'I never wanted to believe that my Dad was stealing from his job as a road worker. But when I got home, all the signs were there.',
-    name: 'Road worker',
-  },
-  {
-    content: 'I was wondering why the frisbee was getting bigger, then it hit me.',
-    name: 'Frisbee',
-  },
-  {
-    content: 'Why do trees seem suspicious on sunny days? Dunno, theyre just a bit shady.',
-    name: 'Trees',
-  },
-  {
-    content: 'Why dont skeletons ride roller coasters? They dont have the stomach for it.',
-    name: 'Skeletons',
-  },
-  {
-    content: 'Why dont you find hippopotamuses hiding in trees? Theyre really good at it.',
-    name: 'Hippos',
-  },
-  {
-    content: 'What did one plate say to the other plate? Dinner is on me!',
-    name: 'Dinner',
-  },
-  {
-    content: 'My first time using an elevator was an uplifting experience. The second time let me down.',
-    name: 'Elevator',
-  },
-  {
     content: 'Why did the functions stop calling each other? Because they had constant arguments.',
     name: 'Functions',
   },
@@ -43,6 +14,39 @@ const JOKES = [
   {
     content: 'Why was the function sad after a successful first call? Because he didnt get a callback.',
     name: 'Callback',
+  },
+  {
+    content: 'Why did the developer go broke? He used up all his cache.',
+    name: 'Cache',
+  },
+  {
+    content: 'Why did the angry function exceed the callstack size? It had beef with another function.',
+    name: 'Callstack',
+  },
+  {
+    content:
+      'Why did the developer get stuck in the shower? The directions on the shampoo said: Lather, Rinse, Repeat.',
+    name: 'Shampoo',
+  },
+  {
+    content: 'Why do most Java programmers wear glasses? Because they dont see sharp.',
+    name: 'Java',
+  },
+  {
+    content: 'What do you call a developer who doesnt comment code? A developer.',
+    name: 'Comments',
+  },
+  {
+    content: 'Why did the child component have such great self-esteem? Because its parent kept giving it props!',
+    name: 'JavaScript',
+  },
+  {
+    content: 'Why did the web developer leave the restaurant? Because of the table layout.',
+    name: 'Layout',
+  },
+  {
+    content: 'What did the router say to the doctor? Its hurts when IP.',
+    name: 'Router',
   },
 ];
 
