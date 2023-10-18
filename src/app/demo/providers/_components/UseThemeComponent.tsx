@@ -5,6 +5,7 @@ import { useThemeContext } from './ThemeContext';
 
 export default function UseThemeComponent() {
   const { theme } = useThemeContext();
+  const bgColor = theme === 'yellow' ? 'bg-yellow' : 'bg-white';
 
-  return <div className={`bg-${theme} m-4 w-fit px-4 py-2 text-purple`}>{`Client component: ${theme}`}</div>;
+  return <div className={`${bgColor} m-4 w-fit px-4 py-2 text-purple`}>{`Client component: ${theme}`}</div>;
 }
