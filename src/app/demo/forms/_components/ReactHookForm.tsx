@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+// @ts-expect-error There is no type def for this yet
 import React, { experimental_useOptimistic as useOptimistic } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';

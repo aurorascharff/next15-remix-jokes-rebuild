@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-expect-error There is no type def for this yet
 import React, { experimental_useOptimistic as useOptimistic } from 'react';
 import SubmitButton from '@/src/components/SubmitButton';
 import type { JokeSchemaType } from '@/src/validations/jokeSchema';
