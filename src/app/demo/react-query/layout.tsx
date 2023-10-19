@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery(['jokes'], getJokes);
+  await queryClient.prefetchQuery({ queryFn: getJokes, queryKey: ['jokes'] });
   const dehydratedState = dehydrate(queryClient);
 
   return (

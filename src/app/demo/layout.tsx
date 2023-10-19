@@ -3,6 +3,8 @@ import { Toaster } from 'react-hot-toast';
 import NavBar from '@/src/app/demo/_components/NavBar';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   description: 'React Server Components Demo',
   title: 'Demo',
