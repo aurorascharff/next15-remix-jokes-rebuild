@@ -7,9 +7,6 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   description: 'Next 13 rebuild of Remix Jokes',
-  openGraph: {
-    images: '/og-image.png',
-  },
   title: 'Next Jokes',
 };
 
