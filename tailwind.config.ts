@@ -41,7 +41,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['baloo', 'sans-serif'],
+        display: ['var(--font-baloo)'],
       },
       textShadow: {
         DEFAULT: '0 2px 0 #000000, 0 2px 40px #000000',

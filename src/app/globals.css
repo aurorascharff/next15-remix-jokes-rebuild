@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'baloo';
-  src: url('/fonts/baloo/baloo.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @layer base {
   html {
     @apply bg-purple text-white;
@@ -39,7 +32,7 @@
   }
 
   h1 {
-    @apply text-4xl;
+    @apply font-display text-4xl;
   }
 
   h2 {

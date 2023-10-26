@@ -1,9 +1,18 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Baloo_2, Inter } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';
 import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
+const baloo2 = Baloo_2({
+  preload: true,
+  subsets: ['latin'],
+  variable: '--font-baloo',
+  weight: '800',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   description: 'Next 13 rebuild of Remix Jokes',
@@ -15,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <body className={twMerge(inter.className, className)}>{children}</body>
+      <body className={twMerge(inter.className, baloo2.variable, className)}>{children}</body>
     </html>
   );
 }
