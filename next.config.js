@@ -3,9 +3,6 @@ const nextConfig = {
   eslint: {
     dirs: ['pages', 'components', 'app'],
   },
-  experimental: {
-    serverActions: true,
-  },
   async redirects() {
     return [
       {
