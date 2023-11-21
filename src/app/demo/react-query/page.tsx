@@ -11,7 +11,7 @@ import useGetJokes from './_hooks/useGetJokes';
 import type { Joke } from '@prisma/client';
 
 export default function ReactQueryPage() {
-  const { data, isLoading, error } = useGetJokes();
+  const { data, error, isLoading } = useGetJokes();
 
   return (
     <div className="flex flex-col gap-y-10 xl:w-1/3">

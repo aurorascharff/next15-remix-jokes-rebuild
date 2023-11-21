@@ -1,4 +1,4 @@
-'use server';
+'server only';
 
 import { prisma } from '@/db';
 

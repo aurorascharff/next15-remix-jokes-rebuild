@@ -5,6 +5,8 @@ import JokesHeader from './_components/JokesHeader';
 import JokesSkeleton from './_components/JokesSkeleton';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Demo - Suspense',
 };
