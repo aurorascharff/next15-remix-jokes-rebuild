@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Demo - React Query',
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function ReactQueryLayout({ children }: { children: React.ReactNode }) {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({ queryFn: getJokes, queryKey: ['jokes'] });
 
