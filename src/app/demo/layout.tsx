@@ -44,6 +44,10 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             name: 'Suspense',
             path: '/demo/suspense',
           },
+          {
+            name: 'Server Actions & Transitions',
+            path: '/demo/actions-transitions',
+          },
         ]}
       />
       <div className="mx-10 flex flex-col gap-10 py-3 md:mx-40 md:flex-row">{children}</div>
