@@ -19,8 +19,8 @@ export default async function SuspensePage() {
   return (
     <div className="flex flex-col gap-y-10 xl:w-1/3">
       <h4>Suspense</h4>
-      Next.js 13 integrates Suspense by default for pages with loading.tsx. For additional suspense, you can add them
-      manually.
+      Next.js App Router integrates Suspense by default for pages with loading.tsx. For additional suspenses, you can
+      add them manually.
       <Suspense fallback={<div>Loading...</div>}>
         <JokesHeader />
         <div className="flex flex-row gap-4">
