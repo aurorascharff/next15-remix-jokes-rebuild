@@ -1,8 +1,8 @@
-# Next 13 "Remix Jokes" Rebuild
+# Next 14 "Remix Jokes" Rebuild
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 13 and Tailwind CSS.
+It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 14 with Server Actions and Tailwind CSS.
 
 It has additional /demo routes for React Server Component and Next 13 functionality examples.
 
