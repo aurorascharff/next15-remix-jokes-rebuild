@@ -1,26 +1,15 @@
 'use client';
 
-import React, { useTransition } from 'react';
-import { deleteJoke } from '../actions/deleteJoke';
+import React from 'react';
+import { useFormStatus } from 'react-dom';
 import Button from './Button';
 
-type Props = {
-  jokeid: string;
-};
-
-export default function DeleteJokeButton({ jokeid }: Props) {
-  const [isPending, startTransition] = useTransition();
+export default function DeleteJokeButton() {
+  const { pending } = useFormStatus();
 
   return (
-    <Button
-      disabled={isPending}
-      onClick={() => {
-        startTransition(() => {
-          deleteJoke(jokeid);
-        });
-      }}
-    >
-      {isPending ? 'Deleting...' : 'Delete'}
+    <Button type="submit" disabled={pending}>
+      {pending ? 'Deleting...' : 'Delete'}
     </Button>
   );
 }
