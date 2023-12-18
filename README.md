@@ -2,7 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 14 with Server Actions and Tailwind CSS.
+It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next 14 with Server Actions, Tailwind CSS, and Prisma.
 
 It has additional /demo routes for React Server Component and Next 14 functionality examples.
 
