@@ -21,8 +21,10 @@ export default function UpdateJokeForm({ joke }: Props) {
           <textarea
             onChange={e => {
               setContent(e.target.value);
+            }}
+            onBlur={() => {
               startTransition(() => {
-                updateJoke(joke.id, e.target.value);
+                updateJoke(joke.id, content);
               });
             }}
             value={content}
