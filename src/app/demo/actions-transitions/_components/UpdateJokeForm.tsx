@@ -23,6 +23,9 @@ export default function UpdateJokeForm({ joke }: Props) {
               setContent(e.target.value);
             }}
             onBlur={() => {
+              if (content === joke.content) {
+                return;
+              }
               startTransition(() => {
                 updateJoke(joke.id, content);
               });
