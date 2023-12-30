@@ -4,6 +4,10 @@ import { getRandomJoke } from '@/src/actions/getRandomJoke';
 export default async function JokesPage() {
   const randomJoke = await getRandomJoke();
 
+  if (!randomJoke) {
+    return <div>No jokes found</div>;
+  }
+
   return (
     <div className="flex flex-col gap-y-4">
       <p>Heres a random joke:</p>
