@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-
-import { useTheme } from './useTheme';
+import { useThemeStore } from '../_store/themeStore';
 
 export default function UseThemeComponent() {
-  const { theme } = useTheme(state => {
+  const { theme } = useThemeStore(state => {
     return state;
   });
   const bgColor = theme === 'yellow' ? 'bg-yellow' : 'bg-white';

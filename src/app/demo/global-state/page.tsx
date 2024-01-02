@@ -1,7 +1,6 @@
 import React from 'react';
 import ServerComponent from './_components/ServerComponent';
 import SetThemeComponent from './_components/SetThemeComponent';
-
 import UseThemeComponent from './_components/UseThemeComponent';
 import type { Metadata } from 'next';
 

@@ -8,7 +8,7 @@ interface ThemeStore {
   setTheme: (_theme: Theme) => void;
 }
 
-export const useTheme = create<ThemeStore>()(
+export const useThemeStore = create<ThemeStore>()(
   devtools(set => {
     return {
       setTheme: theme => {

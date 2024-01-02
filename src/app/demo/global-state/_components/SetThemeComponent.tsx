@@ -2,11 +2,10 @@
 
 import React from 'react';
 import Button from '@/src/components/Button';
-
-import { useTheme } from './useTheme';
+import { useThemeStore } from '../_store/themeStore';
 
 export default function SetThemeComponent() {
-  const { theme, setTheme } = useTheme(state => {
+  const { theme, setTheme } = useThemeStore(state => {
     return state;
   });
 
