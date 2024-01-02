@@ -3,10 +3,10 @@ import { devtools } from 'zustand/middleware';
 
 type Theme = 'yellow' | 'white';
 
-interface ThemeStore {
+type ThemeStore = {
   theme: Theme;
   setTheme: (_theme: Theme) => void;
-}
+};
 
 export const useThemeStore = create<ThemeStore>()(
   devtools(set => {
