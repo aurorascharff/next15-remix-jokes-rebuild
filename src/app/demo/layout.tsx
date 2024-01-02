@@ -29,8 +29,8 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             path: '/demo/revalidate',
           },
           {
-            name: 'Providers',
-            path: '/demo/providers',
+            name: 'Global State',
+            path: '/demo/global-state',
           },
           {
             name: 'Forms',
