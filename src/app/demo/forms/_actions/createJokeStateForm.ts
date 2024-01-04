@@ -4,7 +4,12 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import { JokeSchema } from '@/src/validations/jokeSchema';
 
-export async function createJokeStateForm(_prevState: unknown, data: FormData) {
+type State = {
+  success?: boolean;
+  error?: string;
+};
+
+export async function createJokeStateForm(_prevState: State, data: FormData) {
   const newJoke = {
     content: data.get('content')?.valueOf(),
     name: data.get('name')?.valueOf(),

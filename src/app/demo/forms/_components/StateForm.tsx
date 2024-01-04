@@ -6,7 +6,10 @@ import SubmitButton from '@/src/components/SubmitButton';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 
 export default function StateForm() {
-  const [state, formAction] = useFormState(createJokeStateForm, null);
+  const [state, formAction] = useFormState(createJokeStateForm, {
+    error: undefined,
+    success: false,
+  });
 
   return (
     <form action={formAction}>
