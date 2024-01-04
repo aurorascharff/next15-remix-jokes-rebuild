@@ -4,7 +4,7 @@ import React from 'react';
 import { useFormStatus } from 'react-dom';
 import Button from './Button';
 
-export default function DeleteJokeButton() {
+export default function DeleteButton() {
   const { pending } = useFormStatus();
 
   return (

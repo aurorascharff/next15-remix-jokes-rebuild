@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 import { deleteJoke } from '@/src/actions/deleteJoke';
 import { getJoke } from '@/src/actions/getJoke';
-import DeleteJokeButton from '@/src/components/DeleteJokeButton';
+import DeleteButton from '@/src/components/DeleteButton';
 import type { Metadata } from 'next';
 
 type PageProps = {
@@ -35,7 +35,7 @@ export default async function JokePage({ params }: PageProps) {
       <p>{joke.content}</p>
       <Link prefetch href={`/jokes/${joke.id}`}>{`"${joke.name}" Permalink`}</Link>
       <form action={deleteJokeById}>
-        <DeleteJokeButton />
+        <DeleteButton />
       </form>
     </div>
   );
