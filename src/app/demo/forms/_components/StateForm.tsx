@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormState } from 'react-dom';
+import toast from 'react-hot-toast';
 import SubmitButton from '@/src/components/SubmitButton';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 
@@ -10,6 +11,12 @@ export default function StateForm() {
     error: undefined,
     success: false,
   });
+
+  useEffect(() => {
+    if (state?.success) {
+      toast.success('Joke added!');
+    }
+  }, [state.success]);
 
   return (
     <form action={formAction}>
