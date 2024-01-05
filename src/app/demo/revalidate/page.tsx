@@ -4,6 +4,11 @@ import { getJokes } from '@/src/actions/getJokes';
 import SubmitButton from '@/src/components/SubmitButton';
 import { createJoke } from '../_actions/createJoke';
 import Counter from '../_components/Counter';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Demo - Revalidate',
+};
 
 export default async function RevalidatePage() {
   const jokes = await getJokes();
@@ -34,18 +39,14 @@ export default async function RevalidatePage() {
             })}
         </ul>
         <form action={createJoke}>
-          <div>
-            <label>
-              Name:
-              <input name="name" type="text" />
-            </label>
-          </div>
-          <div>
-            <label>
-              Content:
-              <textarea name="content" />
-            </label>
-          </div>
+          <label>
+            Name:
+            <input name="name" type="text" />
+          </label>
+          <label>
+            Content:
+            <textarea name="content" />
+          </label>
           <div className="flex justify-end">
             <SubmitButton />
           </div>

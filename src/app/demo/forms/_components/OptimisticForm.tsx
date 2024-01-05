@@ -27,18 +27,14 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   return (
     <>
       <form action={action}>
-        <div>
-          <label>
-            Name:
-            <input name="name" type="text" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Content:
-            <textarea name="content" />
-          </label>
-        </div>
+        <label>
+          Name:
+          <input name="name" type="text" />
+        </label>
+        <label>
+          Content:
+          <textarea name="content" />
+        </label>
         <div className="flex justify-end">
           <SubmitButton />
         </div>

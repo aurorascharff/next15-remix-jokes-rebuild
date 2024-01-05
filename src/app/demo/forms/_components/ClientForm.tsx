@@ -21,18 +21,14 @@ export default function ClientForm() {
 
   return (
     <form action={clientAction}>
-      <div>
-        <label>
-          Name:
-          <input name="name" type="text" />
-        </label>
-      </div>
-      <div>
-        <label>
-          Content:
-          <textarea name="content" />
-        </label>
-      </div>
+      <label>
+        Name:
+        <input name="name" type="text" />
+      </label>
+      <label>
+        Content:
+        <textarea name="content" />
+      </label>
       <div className="flex justify-end">
         <SubmitButton />
       </div>
