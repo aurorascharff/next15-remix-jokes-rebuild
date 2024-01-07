@@ -13,9 +13,7 @@ export async function createJokeOptimistic(data: JokeSchemaType) {
     }, '');
     console.log('SERVER ERROR: ' + errorMessages);
     revalidatePath('/demo/forms');
-    return {
-      error: errorMessages,
-    };
+    return;
   }
 
   await prisma.joke.create({

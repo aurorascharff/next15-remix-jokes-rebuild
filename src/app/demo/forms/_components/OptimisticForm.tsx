@@ -16,7 +16,7 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   );
 
   const action = async (formData: FormData) => {
-    const newJoke = {
+    const newJoke: JokeSchemaType = {
       content: formData.get('content')?.valueOf() as string,
       name: formData.get('name')?.valueOf() as string,
     };

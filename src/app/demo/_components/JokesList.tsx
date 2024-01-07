@@ -13,11 +13,11 @@ export default function JokesList({ jokes }: Props) {
         .sort((a, b) => {
           return a.name > b.name ? 1 : -1;
         })
-        .map(({ id, name }) => {
+        .map((joke, key) => {
           return (
-            <li key={id}>
-              <Link prefetch href={`/jokes/${id}`}>
-                {name}
+            <li key={key}>
+              <Link prefetch href={`/jokes/${joke.id}`}>
+                {joke.name}
               </Link>
             </li>
           );
