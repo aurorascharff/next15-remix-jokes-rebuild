@@ -14,7 +14,7 @@ First, `npm install` and run the development server with `npm run dev`.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Prisma setup
+## Prisma Setup
 
 Add a `.env` file to the root of the project, refer to `.env.sample` for the required environment variables.
 You need decide between prisma local development with `sqlite` or a real database with for example `sqlserver`. Define it in the `schema.prisma` file.

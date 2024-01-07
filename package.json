@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma.init": "npx prisma init --datasource-provider sqlite",
     "prisma.studio": "npx prisma studio",
     "prisma.seed": "npx prisma db seed",
     "prisma.migrate": "npx prisma migrate dev",

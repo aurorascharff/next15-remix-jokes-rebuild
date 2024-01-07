@@ -7,8 +7,8 @@ generator client {
 
 datasource db {
   provider          = "sqlserver"
-  url               = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  url               = env("DATABASE_URL") // Change to "file:./dev.db" with sqlite
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // Remove with sqlite
 }
 
 model Joke {
