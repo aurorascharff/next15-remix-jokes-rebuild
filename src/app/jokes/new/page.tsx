@@ -1,6 +1,6 @@
 import React from 'react';
-import { createJoke } from '@/src/actions/createJoke';
 import SubmitButton from '@/src/components/SubmitButton';
+import { createJoke } from '@/src/lib/actions/createJoke';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

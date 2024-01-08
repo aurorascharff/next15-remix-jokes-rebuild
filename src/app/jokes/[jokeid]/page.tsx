@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { deleteJoke } from '@/src/actions/deleteJoke';
-import { getJoke } from '@/src/actions/getJoke';
 import DeleteButton from '@/src/components/DeleteButton';
+import { deleteJoke } from '@/src/lib/actions/deleteJoke';
+import { getJoke } from '@/src/lib/services/getJoke';
 import type { Metadata } from 'next';
 
 type PageProps = {

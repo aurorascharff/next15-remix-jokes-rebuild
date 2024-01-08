@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { getJoke } from '@/src/actions/getJoke';
+import { getJoke } from '@/src/lib/services/getJoke';
 import DeleteJokeButton from '../_components/DeleteJokeButton';
 import UpdateJokeForm from '../_components/UpdateJokeForm';
 import type { Metadata } from 'next';

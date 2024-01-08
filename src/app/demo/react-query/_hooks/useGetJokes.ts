@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getJokes } from '@/src/actions/getJokes';
+import { getJokes } from '../_services/getJokes';
 
 export default function useGetJokes() {
   return useQuery({

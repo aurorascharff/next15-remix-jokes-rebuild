@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { getJokes } from '@/src/actions/getJokes';
+import { getJokes } from '@/src/lib/services/getJokes';
 import SubmitButton from '@/src/components/SubmitButton';
 import { createJoke } from '../_actions/createJoke';
 import Counter from '../_components/Counter';
