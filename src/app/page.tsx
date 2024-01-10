@@ -20,11 +20,6 @@ export default function HomePage() {
                 RSS
               </Link>
             </li>
-            <li>
-              <Link prefetch className="decoration-wavy decoration-1" href="demo">
-                Demo
-              </Link>
-            </li>
           </ul>
         </nav>
       </div>
