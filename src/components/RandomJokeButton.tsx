@@ -9,7 +9,6 @@ export default function RandomJokeButton() {
     <button
       className="padding-0 text-left text-yellow hover:underline"
       onClick={() => {
-        router.push('/jokes');
         router.refresh();
       }}
     >
