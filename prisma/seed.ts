@@ -33,6 +33,10 @@ const JOKES = [
     name: 'Java',
   },
   {
+    content: 'Why are Assembly programmers always soaking wet? They work below C-level.',
+    name: 'Programmers',
+  },
+  {
     content: 'What do you call a developer who doesnt comment code? A developer.',
     name: 'Comments',
   },
