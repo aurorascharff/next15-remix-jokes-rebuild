@@ -7,5 +7,6 @@ export default function useGetJokes() {
       return getJokes();
     },
     queryKey: ['jokes'],
+    refetchInterval: 5000,
   });
 }

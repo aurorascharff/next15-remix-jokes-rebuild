@@ -20,6 +20,10 @@ const JOKES = [
     name: 'Cache',
   },
   {
+    content: 'Why couldnt the React component understand the joke It didnt get the context.',
+    name: 'React',
+  },
+  {
     content: 'Why did the angry function exceed the callstack size? It had beef with another function.',
     name: 'Callstack',
   },
