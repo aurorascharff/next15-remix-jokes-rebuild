@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import React from 'react';
 import { getJoke } from '@/src/lib/services/getJoke';
-import DeleteJokeButton from '../../demo/actions-transitions/_components/DeleteJokeButton';
+import DeleteJokeButton from '../../../components/DeleteJokeButton';
 import type { Metadata } from 'next';
 
 type PageProps = {
@@ -22,10 +21,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function JokePage({ params }: PageProps) {
   const joke = await getJoke(params.jokeid);
-
-  if (!joke) {
-    notFound();
-  }
 
   return (
     <div className="flex flex-col gap-y-4">

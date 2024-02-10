@@ -2,7 +2,7 @@
 
 import React, { useTransition } from 'react';
 import Button from '@/src/components/Button';
-import { deleteJoke } from '../_actions/deleteJoke';
+import { deleteJoke } from '../lib/actions/deleteJoke';
 
 type Props = {
   jokeid: string;
