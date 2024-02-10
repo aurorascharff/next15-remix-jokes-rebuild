@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
-import DeleteButton from '@/src/components/DeleteButton';
-import { deleteJoke } from '@/src/lib/actions/deleteJoke';
 import { getJoke } from '@/src/lib/services/getJoke';
+import DeleteJokeButton from '../../demo/actions-transitions/_components/DeleteJokeButton';
 import type { Metadata } from 'next';
 
 type PageProps = {
@@ -23,7 +22,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function JokePage({ params }: PageProps) {
   const joke = await getJoke(params.jokeid);
-  const deleteJokeById = deleteJoke.bind(null, params.jokeid);
 
   if (!joke) {
     notFound();
@@ -34,9 +32,7 @@ export default async function JokePage({ params }: PageProps) {
       <p>Heres your hilarious joke:</p>
       <p>{joke.content}</p>
       <Link prefetch href={`/jokes/${joke.id}`}>{`"${joke.name}" Permalink`}</Link>
-      <form action={deleteJokeById}>
-        <DeleteButton />
-      </form>
+      <DeleteJokeButton jokeid={joke.id} />
     </div>
   );
 }

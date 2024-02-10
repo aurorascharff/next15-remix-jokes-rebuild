@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useOptimistic, useTransition } from 'react';
+import React, { useOptimistic } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/src/components/Button';
@@ -28,19 +28,16 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
       return [...state, newJoke];
     },
   );
-  const [, startTransition] = useTransition();
 
   const onSubmit = handleSubmit(async data => {
-    startTransition(async () => {
-      addOptimisticJoke(data);
-      const response = await createJokeReactHookForm(data);
-      if (response?.error) {
-        toast.error(response.error);
-      } else {
-        toast.success('Joke added!');
-        reset();
-      }
-    });
+    addOptimisticJoke(data);
+    const response = await createJokeReactHookForm(data);
+    if (response?.error) {
+      toast.error(response.error);
+    } else {
+      toast.success('Joke added!');
+      reset();
+    }
   });
 
   return (
