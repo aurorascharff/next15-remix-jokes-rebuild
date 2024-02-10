@@ -20,6 +20,10 @@ const JOKES = [
     name: 'Cache',
   },
   {
+    content: 'Why couldnt the React component understand the joke It didnt get the context.',
+    name: 'React',
+  },
+  {
     content: 'Why did the angry function exceed the callstack size? It had beef with another function.',
     name: 'Callstack',
   },
@@ -31,6 +35,10 @@ const JOKES = [
   {
     content: 'Why do most Java programmers wear glasses? Because they dont see sharp.',
     name: 'Java',
+  },
+  {
+    content: 'Why are Assembly programmers always soaking wet? They work below C-level.',
+    name: 'Programmers',
   },
   {
     content: 'What do you call a developer who doesnt comment code? A developer.',
