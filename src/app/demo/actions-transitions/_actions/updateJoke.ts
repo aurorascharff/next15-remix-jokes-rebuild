@@ -3,13 +3,18 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
+import type { JokeSchemaType } from '@/src/validations/jokeSchema';
+import { JokeSchema } from '@/src/validations/jokeSchema';
 
-export async function updateJoke(jokeId: string, content: string) {
-  if (typeof content !== 'string' || content.length === 0) {
-    throw new Error('Invalid content');
+export async function updateJoke(jokeId: string, joke: JokeSchemaType) {
+  const result = JokeSchema.safeParse(joke);
+
+  if (!result.success) {
+    console.log('SERVER ERROR' + result.error.message);
+    return;
   }
 
-  await prisma.joke.update({ data: { content }, where: { id: jokeId } });
+  await prisma.joke.update({ data: joke, where: { id: jokeId } });
   revalidatePath('/jokes');
   redirect('/demo/actions-transitions/' + jokeId);
 }

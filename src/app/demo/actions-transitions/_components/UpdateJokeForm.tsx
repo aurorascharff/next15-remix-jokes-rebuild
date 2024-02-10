@@ -3,6 +3,7 @@
 import { Joke } from '@prisma/client';
 import React, { useState, useTransition } from 'react';
 import { updateJoke } from '../_actions/updateJoke';
+import { JokeSchemaType } from '@/src/validations/jokeSchema';
 
 type Props = {
   joke: Joke;
@@ -10,27 +11,43 @@ type Props = {
 
 export default function UpdateJokeForm({ joke }: Props) {
   const [isPending, startTransition] = useTransition();
-  const [content, setContent] = useState(joke.content);
+  const [activeJoke, setActiveJoke] = useState<JokeSchemaType>({
+    content: joke.content,
+    name: joke.name,
+  });
+
+  const onBlur = (value: string, field: keyof JokeSchemaType) => {
+    if (joke[field] === value || value === '') {
+      return;
+    }
+    startTransition(() => {
+      updateJoke(joke.id, activeJoke);
+    });
+  };
+
+  const onChange = (value: string, field: keyof JokeSchemaType) => {
+    setActiveJoke({ ...activeJoke, [field]: value });
+  };
 
   return (
     <div className="flex flex-col gap-2">
-      Joke name: {joke.name}
       <form>
+        <label>
+          Name
+          <input
+            onBlur={e => onBlur(e.target.value, 'name')}
+            onChange={e => onChange(e.target.value, 'name')}
+            value={activeJoke.name}
+            name="name"
+            type="text"
+          />
+        </label>
         <label>
           Content:
           <textarea
-            onChange={e => {
-              setContent(e.target.value);
-            }}
-            onBlur={() => {
-              if (content === joke.content) {
-                return;
-              }
-              startTransition(() => {
-                updateJoke(joke.id, content);
-              });
-            }}
-            value={content}
+            onChange={e => onChange(e.target.value, 'content')}
+            onBlur={e => onBlur(e.target.value, 'content')}
+            value={activeJoke.content}
             name="content"
           />
         </label>
