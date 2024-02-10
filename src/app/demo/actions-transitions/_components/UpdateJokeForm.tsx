@@ -35,6 +35,7 @@ export default function UpdateJokeForm({ joke }: Props) {
         <label>
           Name
           <input
+            disabled={isPending}
             onBlur={e => onBlur(e.target.value, 'name')}
             onChange={e => onChange(e.target.value, 'name')}
             value={activeJoke.name}
@@ -45,6 +46,7 @@ export default function UpdateJokeForm({ joke }: Props) {
         <label>
           Content:
           <textarea
+            disabled={isPending}
             onChange={e => onChange(e.target.value, 'content')}
             onBlur={e => onBlur(e.target.value, 'content')}
             value={activeJoke.content}
