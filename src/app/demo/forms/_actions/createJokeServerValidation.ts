@@ -13,7 +13,7 @@ export async function createJokeServerValidation(data: FormData) {
   const result = JokeSchema.safeParse(newJoke);
 
   if (!result.success) {
-    console.log('SERVER ERROR' + result.error.message);
+    console.log('SERVER ERROR');
     return;
   }
 

@@ -4,7 +4,7 @@ import { createJokeServerValidation } from '../_actions/createJokeServerValidati
 
 export default function ServerForm() {
   return (
-    <form action={createJokeServerValidation}>
+    <form autoComplete="off" action={createJokeServerValidation}>
       <label>
         Name:
         <input name="name" type="text" />

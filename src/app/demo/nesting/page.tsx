@@ -13,7 +13,8 @@ export default function NestingPage() {
   return (
     <div className=" flex flex-col gap-y-10 xl:w-1/3">
       <h4>Server components in client components</h4>
-      Server components can be rendered inside client components if they are slotted as a prop.
+      Server components can be rendered inside client components if they are slotted as a prop, known as the donut
+      pattern.
       <div className=" bg-yellow p-5 text-purple">
         Server component
         <ClientComponent>

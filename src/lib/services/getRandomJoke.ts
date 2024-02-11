@@ -1,6 +1,5 @@
 import 'server-only';
 
-import { notFound } from 'next/navigation';
 import { prisma } from '@/db';
 
 export async function getRandomJoke() {
@@ -10,8 +9,5 @@ export async function getRandomJoke() {
     skip: randomRowNumber,
     take: 1,
   });
-  if (!randomJoke) {
-    notFound();
-  }
   return randomJoke;
 }

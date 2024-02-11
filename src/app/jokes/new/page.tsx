@@ -11,7 +11,7 @@ export default function NewJokePage() {
   return (
     <div className="flex flex-col gap-5">
       <p>Add your own hilarious joke</p>
-      <form action={createJoke}>
+      <form autoComplete="off" action={createJoke}>
         <label>
           Name:
           <input name="name" type="text" required minLength={2} />

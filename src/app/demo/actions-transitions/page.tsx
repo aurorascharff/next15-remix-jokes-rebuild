@@ -11,6 +11,10 @@ export const metadata: Metadata = {
 export default async function ActionsTransitionsPage() {
   const joke = await getRandomJoke();
 
+  if (!joke) {
+    return <div>No jokes found</div>;
+  }
+
   return (
     <>
       <UpdateJokeForm joke={joke} />

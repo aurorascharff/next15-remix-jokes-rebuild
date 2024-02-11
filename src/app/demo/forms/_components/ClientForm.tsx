@@ -13,14 +13,14 @@ export default function ClientForm() {
     };
     const result = JokeSchema.safeParse(newJoke);
     if (!result.success) {
-      console.log('CLIENT ERROR: ' + result.error.message);
+      console.log('CLIENT ERROR');
       return;
     }
     await createJokeClientValidation(result.data);
   };
 
   return (
-    <form action={clientAction}>
+    <form autoComplete="off" action={clientAction}>
       <label>
         Name:
         <input name="name" type="text" />

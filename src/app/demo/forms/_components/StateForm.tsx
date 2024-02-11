@@ -24,7 +24,7 @@ export default function StateForm() {
   }, [state.success]);
 
   return (
-    <form action={formAction} ref={formRef}>
+    <form autoComplete="off" action={formAction} ref={formRef}>
       <label>
         Name:
         <input name="name" type="text" />

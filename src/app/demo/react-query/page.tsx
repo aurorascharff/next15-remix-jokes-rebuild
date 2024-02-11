@@ -19,7 +19,7 @@ export default function ReactQueryPage() {
       You can use react query on the client to fetch data from the server. By creating an initial state on the server,
       you can avoid a flash of loading content.
       <div>
-        <form action={createJoke}>
+        <form autoComplete="off" action={createJoke}>
           <div>
             <label>
               Name:

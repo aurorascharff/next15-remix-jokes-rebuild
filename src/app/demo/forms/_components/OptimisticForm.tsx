@@ -26,7 +26,7 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
 
   return (
     <>
-      <form action={action}>
+      <form autoComplete="off" action={action}>
         <label>
           Name:
           <input name="name" type="text" />

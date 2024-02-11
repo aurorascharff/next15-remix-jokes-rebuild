@@ -37,12 +37,12 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             path: '/demo/forms',
           },
           {
-            name: 'React Query',
-            path: '/demo/react-query',
-          },
-          {
             name: 'Suspense',
             path: '/demo/suspense',
+          },
+          {
+            name: 'React Query',
+            path: '/demo/react-query',
           },
           {
             name: 'Server Actions & Transitions',

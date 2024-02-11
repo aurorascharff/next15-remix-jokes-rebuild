@@ -42,7 +42,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form autoComplete="off" onSubmit={onSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
           <input {...register('name')} id="name" name="name" type="text" />

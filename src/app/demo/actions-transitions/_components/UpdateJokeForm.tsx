@@ -31,7 +31,7 @@ export default function UpdateJokeForm({ joke }: Props) {
 
   return (
     <div className="flex flex-col gap-2">
-      <form>
+      <form autoComplete="off">
         <label>
           Name
           <input

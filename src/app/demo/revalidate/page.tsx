@@ -38,7 +38,7 @@ export default async function RevalidatePage() {
               );
             })}
         </ul>
-        <form action={createJoke}>
+        <form autoComplete="off" action={createJoke}>
           <label>
             Name:
             <input name="name" type="text" />
