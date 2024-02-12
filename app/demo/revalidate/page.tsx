@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
-import { getJokes } from '@/lib/services/getJokes';
 import SubmitButton from '@/components/SubmitButton';
+import { getJokes } from '@/lib/services/getJokes';
 import { createJoke } from '../_actions/createJoke';
 import Counter from '../_components/Counter';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Demo - Revalidate',

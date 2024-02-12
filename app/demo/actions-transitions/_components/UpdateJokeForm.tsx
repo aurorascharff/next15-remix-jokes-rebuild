@@ -1,10 +1,10 @@
 'use client';
 
-import { Joke } from '@prisma/client';
 import React, { useState, useTransition } from 'react';
-import { updateJoke } from '../_actions/updateJoke';
-import { JokeSchemaType } from '@/validations/jokeSchema';
 import DeleteJokeButton from '@/components/DeleteJokeButton';
+import type { JokeSchemaType } from '@/validations/jokeSchema';
+import { updateJoke } from '../_actions/updateJoke';
+import type { Joke } from '@prisma/client';
 
 type Props = {
   joke: Joke;
@@ -38,8 +38,12 @@ export default function UpdateJokeForm({ joke }: Props) {
             Name
             <input
               disabled={isPending}
-              onBlur={e => onBlur(e.target.value, 'name')}
-              onChange={e => onChange(e.target.value, 'name')}
+              onBlur={e => {
+                return onBlur(e.target.value, 'name');
+              }}
+              onChange={e => {
+                return onChange(e.target.value, 'name');
+              }}
               value={activeJoke.name}
               name="name"
               type="text"
@@ -49,8 +53,12 @@ export default function UpdateJokeForm({ joke }: Props) {
             Content:
             <textarea
               disabled={isPending}
-              onChange={e => onChange(e.target.value, 'content')}
-              onBlur={e => onBlur(e.target.value, 'content')}
+              onChange={e => {
+                return onChange(e.target.value, 'content');
+              }}
+              onBlur={e => {
+                return onBlur(e.target.value, 'content');
+              }}
               value={activeJoke.content}
               name="content"
             />
