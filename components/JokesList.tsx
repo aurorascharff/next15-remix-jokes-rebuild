@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { getJokes } from '../lib/services/getJokes';
+import { getJokes } from '@/lib/services/getJokes';
 
 export default async function JokesList() {
   const jokes = await getJokes();

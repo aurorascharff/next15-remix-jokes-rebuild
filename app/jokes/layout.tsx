@@ -1,6 +1,6 @@
-import Footer from '@/src/components/Footer';
-import Header from '@/src/components/Header';
-import Sidebar from '@/src/components/Sidebar';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Sidebar from '@/components/Sidebar';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
