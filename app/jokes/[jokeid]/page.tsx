@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import React from 'react';
 import DeleteButton from '@/components/DeleteButton';
 import { deleteJoke } from '@/lib/actions/deleteJoke';
@@ -24,10 +23,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function JokePage({ params }: PageProps) {
   const joke = await getJoke(params.jokeid);
   const deleteJokeById = deleteJoke.bind(null, params.jokeid);
-
-  if (!joke) {
-    notFound();
-  }
 
   return (
     <div className="flex flex-col gap-y-4">
