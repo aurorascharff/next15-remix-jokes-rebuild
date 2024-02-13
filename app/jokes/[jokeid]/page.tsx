@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import DeleteJokeButton from '@/components/DeleteJokeButton';
 import { getJoke } from '@/lib/services/getJoke';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 type PageProps = {
   params: { jokeid: string };
