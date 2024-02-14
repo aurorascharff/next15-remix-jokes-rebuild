@@ -11,13 +11,3 @@ export const jokeSchema = z.object({
 });
 
 export type JokeSchemaType = z.infer<typeof jokeSchema>;
-
-export const jokeSchemaStricter = z.object({
-  content: z.string().min(6, {
-    message: 'Content must be at least 6 characters long',
-  }),
-  id: z.string().optional(),
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters long',
-  }),
-});
