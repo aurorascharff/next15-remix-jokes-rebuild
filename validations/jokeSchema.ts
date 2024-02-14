@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const JokeSchema = z.object({
+export const jokeSchema = z.object({
   content: z.string().min(5, {
     message: 'Content must be at least 5 characters long',
   }),
@@ -10,9 +10,9 @@ export const JokeSchema = z.object({
   }),
 });
 
-export type JokeSchemaType = z.infer<typeof JokeSchema>;
+export type JokeSchemaType = z.infer<typeof jokeSchema>;
 
-export const JokeSchemaStricter = z.object({
+export const jokeSchemaStricter = z.object({
   content: z.string().min(6, {
     message: 'Content must be at least 6 characters long',
   }),
