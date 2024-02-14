@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
-import { JokeSchema } from '@/validations/jokeSchema';
+import { jokeSchema } from '@/validations/jokeSchema';
 
 type State = {
   success?: boolean;
@@ -15,7 +15,7 @@ export async function createJokeStateForm(_prevState: State, data: FormData) {
     name: data.get('name')?.valueOf(),
   };
 
-  const result = JokeSchema.safeParse(newJoke);
+  const result = jokeSchema.safeParse(newJoke);
 
   if (!result.success) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import SubmitButton from '@/components/SubmitButton';
-import { JokeSchema } from '@/validations/jokeSchema';
+import { jokeSchema } from '@/validations/jokeSchema';
 import { createJokeClientValidation } from '../_actions/createJokeClientValidation';
 
 export default function ClientForm() {
@@ -11,7 +11,7 @@ export default function ClientForm() {
       content: formData.get('content') as string,
       name: formData.get('name') as string,
     };
-    const result = JokeSchema.safeParse(newJoke);
+    const result = jokeSchema.safeParse(newJoke);
     if (!result.success) {
       console.log('CLIENT ERROR');
       return;

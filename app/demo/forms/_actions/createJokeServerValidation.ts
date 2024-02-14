@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
-import { JokeSchema } from '@/validations/jokeSchema';
+import { jokeSchema } from '@/validations/jokeSchema';
 
 export async function createJokeServerValidation(data: FormData) {
   const newJoke = {
@@ -10,7 +10,7 @@ export async function createJokeServerValidation(data: FormData) {
     name: data.get('name')?.valueOf(),
   };
 
-  const result = JokeSchema.safeParse(newJoke);
+  const result = jokeSchema.safeParse(newJoke);
 
   if (!result.success) {
     console.log('SERVER ERROR');

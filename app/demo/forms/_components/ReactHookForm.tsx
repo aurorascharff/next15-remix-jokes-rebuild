@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/components/Button';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
-import { JokeSchema } from '@/validations/jokeSchema';
+import { jokeSchema } from '@/validations/jokeSchema';
 import JokesList from '../../_components/JokesList';
 import { createJokeReactHookForm } from '../_actions/createJokeReactHookForm';
 import type { Joke } from '@prisma/client';
@@ -19,7 +19,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
     formState: { errors, isSubmitting, isValid },
   } = useForm<JokeSchemaType>({
     mode: 'onChange',
-    resolver: zodResolver(JokeSchema),
+    resolver: zodResolver(jokeSchema),
   });
 
   const [, startTransition] = useTransition();

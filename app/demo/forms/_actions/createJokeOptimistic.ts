@@ -2,10 +2,10 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
-import { JokeSchema, type JokeSchemaType } from '@/validations/jokeSchema';
+import { jokeSchema, type JokeSchemaType } from '@/validations/jokeSchema';
 
 export async function createJokeOptimistic(data: JokeSchemaType) {
-  const result = JokeSchema.safeParse(data);
+  const result = jokeSchema.safeParse(data);
 
   if (!result.success) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {
