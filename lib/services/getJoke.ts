@@ -1,9 +1,10 @@
 import 'server-only';
 
 import { notFound } from 'next/navigation';
+import { cache } from 'react';
 import { prisma } from '@/db';
 
-export async function getJoke(jokeId: string) {
+export const getJoke = cache(async (jokeId: string) => {
   const joke = await prisma.joke.findUnique({
     where: { id: jokeId },
   });
@@ -11,4 +12,4 @@ export async function getJoke(jokeId: string) {
     notFound();
   }
   return joke;
-}
+});
