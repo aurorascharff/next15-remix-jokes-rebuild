@@ -21,7 +21,6 @@ export async function createJokeStateForm(_prevState: State, data: FormData) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {
       return (prev += issue.message);
     }, '');
-    console.log('SERVER ERROR: ' + errorMessages);
     return {
       error: errorMessages,
     };
