@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './_components/Form2';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function NewJokePage() {
-  return <div className="flex flex-col gap-5">New joke page</div>;
+  return <Form />;
 }

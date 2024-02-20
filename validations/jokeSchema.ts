@@ -11,3 +11,5 @@ export const jokeSchema = z.object({
 });
 
 export type JokeSchemaType = z.infer<typeof jokeSchema>;
+
+export type JokeSchemaErrorType = z.inferFlattenedErrors<typeof jokeSchema>;
