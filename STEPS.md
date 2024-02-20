@@ -20,13 +20,27 @@
 - Add submit button
 - Add action prop + code action
 
+Notes: progressively enhanced, calling server from client, action-prop
+
 ## createJoke2 Server side validation
 
 - Show validations/schema
 - Add zod validation and error feedback
+
+Notes: what is zod, runtime validation server-side
 
 ## Form2 + createJoke3 (formStatus + formState)
 
 - Add SubmitButton
 - Use useFormState
 - Add useFormStatus and modify server action
+
+Notes: progressively enhanced but client-side feedback when possible
+
+## Form3 (more client-side stuff)
+
+- Add effect to listen for formStatus changes
+- Reset form after submit
+- Add toast notifications
+
+Notes: client-side feedback but still prog.enhanched
