@@ -17,8 +17,8 @@ export default function UpdateJokeForm({ joke }: Props) {
     name: joke.name,
   });
 
-  const onBlur = (event: React.FocusEvent<HTMLFormElement, Element>) => {
-    if (joke[event.target.name as keyof JokeSchemaType] === event.target.value || event.target.value === '') {
+  const onBlur = (value: string, field: keyof JokeSchemaType) => {
+    if (joke[field] === value || value === '') {
       return;
     }
     startTransition(() => {
@@ -26,21 +26,42 @@ export default function UpdateJokeForm({ joke }: Props) {
     });
   };
 
-  const onChange = (event: React.FocusEvent<HTMLFormElement, Element>) => {
-    setActiveJoke({ ...activeJoke, [event.target.name]: event.target.value });
+  const onChange = (value: string, field: keyof JokeSchemaType) => {
+    setActiveJoke({ ...activeJoke, [field]: value });
   };
 
   return (
     <>
       <div className="flex flex-col gap-2">
-        <form onBlur={onBlur} onChange={onChange} autoComplete="off">
+        <form autoComplete="off">
           <label>
             Name
-            <input disabled={isPending} value={activeJoke.name} name="name" type="text" />
+            <input
+              disabled={isPending}
+              onBlur={e => {
+                return onBlur(e.target.value, 'name');
+              }}
+              onChange={e => {
+                return onChange(e.target.value, 'name');
+              }}
+              value={activeJoke.name}
+              name="name"
+              type="text"
+            />
           </label>
           <label>
             Content:
-            <textarea disabled={isPending} value={activeJoke.content} name="content" />
+            <textarea
+              disabled={isPending}
+              onChange={e => {
+                return onChange(e.target.value, 'content');
+              }}
+              onBlur={e => {
+                return onBlur(e.target.value, 'content');
+              }}
+              value={activeJoke.content}
+              name="content"
+            />
           </label>
         </form>
         <span> {isPending ? 'Saving joke...' : ''}</span>
