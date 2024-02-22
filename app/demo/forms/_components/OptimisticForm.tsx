@@ -39,7 +39,7 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
           <SubmitButton />
         </div>
       </form>
-      <JokesList jokes={optimisticJokes as Joke[]} />
+      <JokesList jokes={optimisticJokes} />
     </>
   );
 }

@@ -63,7 +63,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
           </Button>
         </div>
       </form>
-      <JokesList jokes={optimisticJokes as Joke[]} />
+      <JokesList jokes={optimisticJokes} />
     </>
   );
 }

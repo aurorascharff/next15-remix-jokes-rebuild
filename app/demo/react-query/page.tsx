@@ -5,6 +5,7 @@ import { createJoke } from '../_actions/createJoke';
 import JokesList from '../_components/JokesList';
 import useGetJokes from './_hooks/useGetJokes';
 import type { Joke } from '@prisma/client';
+import { JokeSchemaType } from '@/validations/jokeSchema';
 
 type Error = {
   message: string;
@@ -42,7 +43,7 @@ export default function ReactQueryPage() {
           ) : error ? (
             <span>Error: {(error as Error).message}</span>
           ) : (
-            <JokesList jokes={data as Joke[]} />
+            <JokesList jokes={data as JokeSchemaType[]} />
           )}
         </div>
       </div>
