@@ -31,7 +31,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
     },
   );
 
-  const onSubmit = handleSubmit(async data => {
+  const onSubmit = handleSubmit(data => {
     startTransition(async () => {
       addOptimisticJoke(data);
       const response = await createJokeReactHookForm(data);
