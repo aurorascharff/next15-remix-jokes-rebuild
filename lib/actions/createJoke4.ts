@@ -6,7 +6,10 @@ import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
 
 export async function createJoke(data: JokeSchemaType) {
-  const result = jokeSchema.safeParse(data);
+  const result = jokeSchema.safeParse({
+    content: data.content,
+    name: data.name,
+  });
 
   if (!result.success) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {

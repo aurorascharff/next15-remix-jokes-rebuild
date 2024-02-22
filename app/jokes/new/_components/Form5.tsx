@@ -11,17 +11,17 @@ import { saveJokeDraft } from '@/lib/actions/saveJokeDraft';
 import { jokeSchema, type JokeSchemaType } from '@/validations/jokeSchema';
 
 type Props = {
-  joke: JokeSchemaType;
+  initialJoke: JokeSchemaType;
 };
 
-export default function Form({ joke }: Props) {
+export default function Form({ initialJoke }: Props) {
   const {
     handleSubmit,
     register,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<JokeSchemaType>({
-    defaultValues: joke,
+    defaultValues: initialJoke,
     mode: 'onChange',
     resolver: zodResolver(jokeSchema),
   });
