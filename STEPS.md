@@ -44,3 +44,15 @@ Notes: progressively enhanced but client-side feedback when possible
 - Add toast notifications
 
 Notes: client-side feedback but still prog.enhanched
+
+## Form4 (save draft)
+
+- Add useTransition
+- Add onChange activeJoke
+- Show existing fake server actions
+- Pass draft from server
+- Add onBlur saveDraft
+- Add saveDraft function with transition
+- Update useEffect to clear draft on submit
+
+Notes: client-side only functionality

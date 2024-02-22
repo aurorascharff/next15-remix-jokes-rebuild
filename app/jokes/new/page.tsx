@@ -1,11 +1,14 @@
 import React from 'react';
-import Form from './_components/Form3';
+import { getJokeDraft } from '@/lib/services/getJokeDraft';
+import Form from './_components/Form4';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'New joke',
 };
 
-export default function NewJokePage() {
-  return <Form />;
+export default async function NewJokePage() {
+  const jokeDraft = await getJokeDraft();
+
+  return <Form joke={jokeDraft} />;
 }

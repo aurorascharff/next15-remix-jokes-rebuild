@@ -27,12 +27,12 @@ export default function Form() {
       <label>
         Name:
         <input name="name" type="text" />
-        {state.error?.fieldErrors?.name}
+        <span className="font-sm text-red">{state.error?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
         <textarea name="content" />
-        {state.error?.fieldErrors?.content}
+        <span className="font-sm text-red">{state.error?.fieldErrors?.content}</span>
       </label>
       <SubmitButton />
     </form>

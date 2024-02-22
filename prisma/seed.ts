@@ -4,6 +4,11 @@ const prisma = new PrismaClient();
 
 const JOKES = [
   {
+    content: '',
+    id: 'DRAFT',
+    name: '',
+  },
+  {
     content: 'Why did the functions stop calling each other? Because they had constant arguments.',
     name: 'Functions',
   },
