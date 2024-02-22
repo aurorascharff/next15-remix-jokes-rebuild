@@ -12,6 +12,8 @@ export const jokeSchema = z.object({
 
 export type JokeSchemaType = z.infer<typeof jokeSchema>;
 
+export type JokeSchemaErrorType = z.inferFlattenedErrors<typeof jokeSchema>;
+
 export const jokeSchemaStricter = z.object({
   content: z.string().min(6, {
     message: 'Content must be at least 6 characters long',

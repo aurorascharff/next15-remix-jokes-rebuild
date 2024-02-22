@@ -5,12 +5,13 @@ import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
 import SubmitButton from '@/components/SubmitButton';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
+import { JokeSchemaErrorType } from '@/validations/jokeSchema';
 
 export default function StateForm() {
   const formRef = useRef<HTMLFormElement | null>(null);
 
   const [state, formAction] = useFormState(createJokeStateForm, {
-    error: undefined,
+    error: {} as JokeSchemaErrorType,
     success: false,
   });
 
@@ -28,15 +29,16 @@ export default function StateForm() {
       <label>
         Name:
         <input name="name" type="text" />
+        <span className="font-sm text-red">{state.error?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
         <textarea name="content" />
+        <span className="font-sm text-red">{state.error?.fieldErrors?.content}</span>
       </label>
       <div className="flex justify-end">
         <SubmitButton />
       </div>
-      <span className="text-red">{state?.error}</span>
     </form>
   );
 }
