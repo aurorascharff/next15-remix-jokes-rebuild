@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
 import SubmitButton from '@/components/SubmitButton';
+import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
-import { JokeSchemaErrorType } from '@/validations/jokeSchema';
 
 export default function StateForm() {
   const formRef = useRef<HTMLFormElement | null>(null);

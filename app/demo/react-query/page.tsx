@@ -1,11 +1,10 @@
 'use client';
 
 import SubmitButton from '@/components/SubmitButton';
+import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { createJoke } from '../_actions/createJoke';
 import JokesList from '../_components/JokesList';
 import useGetJokes from './_hooks/useGetJokes';
-import type { Joke } from '@prisma/client';
-import { JokeSchemaType } from '@/validations/jokeSchema';
 
 type Error = {
   message: string;
