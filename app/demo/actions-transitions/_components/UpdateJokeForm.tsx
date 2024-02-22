@@ -17,8 +17,8 @@ export default function UpdateJokeForm({ joke }: Props) {
     name: joke.name,
   });
 
-  const onBlur = (value: string, field: keyof JokeSchemaType) => {
-    if (joke[field] === value || value === '') {
+  const onBlur = (e: React.FocusEvent<HTMLFormElement>) => {
+    if (!e.target.value) {
       return;
     }
     startTransition(() => {
@@ -26,23 +26,16 @@ export default function UpdateJokeForm({ joke }: Props) {
     });
   };
 
-  const onChange = (value: string, field: keyof JokeSchemaType) => {
-    setActiveJoke({ ...activeJoke, [field]: value });
-  };
-
   return (
     <>
       <div className="flex flex-col gap-2">
-        <form autoComplete="off">
+        <form onBlur={onBlur} autoComplete="off">
           <label>
             Name
             <input
               disabled={isPending}
-              onBlur={e => {
-                return onBlur(e.target.value, 'name');
-              }}
               onChange={e => {
-                return onChange(e.target.value, 'name');
+                return setActiveJoke({ ...activeJoke, name: e.target.value });
               }}
               value={activeJoke.name}
               name="name"
@@ -54,10 +47,7 @@ export default function UpdateJokeForm({ joke }: Props) {
             <textarea
               disabled={isPending}
               onChange={e => {
-                return onChange(e.target.value, 'content');
-              }}
-              onBlur={e => {
-                return onBlur(e.target.value, 'content');
+                return setActiveJoke({ ...activeJoke, content: e.target.value });
               }}
               value={activeJoke.content}
               name="content"
