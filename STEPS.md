@@ -4,7 +4,7 @@
 
 - Main page
 - Joke page
-- (Delete joke)
+- Delete joke
 
 ## Setup
 
@@ -34,8 +34,9 @@ Notes: what is zod, runtime validation server-side
 - Add SubmitButton
 - Use useFormState
 - Add useFormStatus and modify server action
+- Show delete joke
 
-Notes: progressively enhanced but client-side feedback when possible
+Notes: progressively enhanced but client-side feedback when possible, actually the delete is also a form and prog-enh
 
 ## Form3 (more client-side stuff)
 
@@ -50,9 +51,22 @@ Notes: client-side feedback but still prog.enhanched
 - Add useTransition
 - Add onChange activeJoke
 - Show existing fake server actions
-- Pass draft from server
-- Add onBlur saveDraft
+- Pass draft from server (name, content only)
+- Add onBlur saveDraft to form
 - Add saveDraft function with transition
 - Update useEffect to clear draft on submit
 
-Notes: client-side only functionality
+Notes: client-side only functionality, not sure the punchline, prog.enh
+
+## Form5 + createJoke4 (react hook form)
+
+- Replace useFormState with react-hook-form
+- Add registers and onSubmit
+- Modify error messages
+- Modify server action to return message
+- Use normal button and add react hook form state
+- Write onSubmit
+
+Notes: lets say you dont care about prog.enh, really quick coding here
+
+## Form6 (useOptimistic)

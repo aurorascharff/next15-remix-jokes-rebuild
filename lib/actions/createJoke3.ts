@@ -1,7 +1,6 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-
 import { prisma } from '@/db';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';

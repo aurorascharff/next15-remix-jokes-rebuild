@@ -25,15 +25,14 @@ export default function Form({ joke }: Props) {
 
   useEffect(() => {
     if (state.success) {
-      startTransition(() => {
-        clearJokeDraft();
+      clearJokeDraft().then(() => {
+        formRef.current?.reset();
       });
-      formRef.current?.reset();
       toast.success('Joke created!');
     }
   }, [state.success]);
 
-  const saveDraft = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
     if (!e.target.value) {
       return;
     }
@@ -43,7 +42,7 @@ export default function Form({ joke }: Props) {
   };
 
   return (
-    <form ref={formRef} action={formAction}>
+    <form onBlur={saveDraft} ref={formRef} action={formAction}>
       <label>
         Name:
         <input
@@ -51,7 +50,6 @@ export default function Form({ joke }: Props) {
           onChange={e => {
             return setActiveJoke({ ...activeJoke, name: e.target.value });
           }}
-          onBlur={saveDraft}
           name="name"
           type="text"
         />
@@ -64,7 +62,6 @@ export default function Form({ joke }: Props) {
             return setActiveJoke({ ...activeJoke, content: e.target.value });
           }}
           value={activeJoke.content}
-          onBlur={saveDraft}
           name="content"
         />
         <span className="font-sm text-red">{state.error?.fieldErrors?.content}</span>
