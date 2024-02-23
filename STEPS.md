@@ -67,7 +67,7 @@ Notes: client-side only functionality, not sure the punchline, prog.enh
 - Use normal button and add react hook form state
 - Write onSubmit
 
-Notes: lets say you dont care about prog.enh, really quick coding here
+Notes: lets say you dont care about prog.enh, really quick coding here or only show code
 
 ## Form6 (useOptimistic)
 
@@ -79,4 +79,4 @@ Notes: lets say you dont care about prog.enh, really quick coding here
 - Remove "Adding..."
 - Add revalidate to server action and show only error toast
 
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code, provider in forms-demo-starter
