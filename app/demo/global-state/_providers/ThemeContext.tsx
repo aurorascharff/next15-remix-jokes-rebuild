@@ -12,11 +12,11 @@ type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
+export default function ThemeContextProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('yellow');
 
   return <ThemeContext.Provider value={{ setTheme, theme }}>{children}</ThemeContext.Provider>;
-};
+}
 
 export function useThemeContext() {
   const context = React.useContext(ThemeContext);

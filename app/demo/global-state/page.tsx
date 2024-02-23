@@ -2,7 +2,7 @@ import React from 'react';
 import ServerComponent from './_components/ServerComponent';
 import SetThemeComponent from './_components/SetThemeComponent';
 import UseThemeComponent from './_components/UseThemeComponent';
-import { ThemeContextProvider } from './_providers/ThemeContext';
+import ThemeContextProvider from './_providers/ThemeContext';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
