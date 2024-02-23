@@ -55,23 +55,21 @@ export default function Form({ initialJoke }: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <form onBlur={saveDraft} onSubmit={onSubmit}>
-        <label>
-          Name:
-          <input {...register('name')} name="name" type="text" />
-          <span className="font-sm text-red">{errors?.name?.message}</span>
-        </label>
-        <label>
-          Content:
-          <textarea {...register('content')} name="content" />
-          <span className="font-sm text-red">{errors?.content?.message}</span>
-        </label>
-        <Button disabled={isSubmitting} type="submit">
-          Add joke
-        </Button>
-        {isPending ? 'Saving...' : null}
-      </form>
-    </div>
+    <form onBlur={saveDraft} onSubmit={onSubmit}>
+      <label>
+        Name:
+        <input {...register('name')} name="name" type="text" />
+        <span className="font-sm text-red">{errors?.name?.message}</span>
+      </label>
+      <label>
+        Content:
+        <textarea {...register('content')} name="content" />
+        <span className="font-sm text-red">{errors?.content?.message}</span>
+      </label>
+      <Button disabled={isSubmitting} type="submit">
+        Add joke
+      </Button>
+      {isPending ? 'Saving...' : null}
+    </form>
   );
 }

@@ -70,3 +70,13 @@ Notes: client-side only functionality, not sure the punchline, prog.enh
 Notes: lets say you dont care about prog.enh, really quick coding here
 
 ## Form6 (useOptimistic)
+
+- Add useOptimistic hook inside a provider
+- Wrap layout with provider
+- Modify createJoke to use setOptimistic
+- Modify jokeslist to useOptimistic
+- Modify onSubmit to instantly clear etc.
+- Remove "Adding..."
+- Add revalidate to server action and show only error toast
+
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page
