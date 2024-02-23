@@ -79,4 +79,4 @@ Notes: lets say you dont care about prog.enh, really quick coding here or only s
 - Remove "Adding..."
 - Add revalidate to server action and show only error toast
 
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code, provider in forms-demo-starter.
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code.
