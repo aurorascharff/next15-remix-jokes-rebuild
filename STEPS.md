@@ -20,14 +20,14 @@
 - Add submit button
 - Add action prop + code action
 
-Notes: progressively enhanced, calling server from client, action-prop
+Notes: progressively enhanced, calling server from client, action-prop.
 
 ## createJoke2 Server side validation
 
 - Show validations/schema
 - Add zod validation and error feedback
 
-Notes: what is zod, runtime validation server-side
+Notes: what is zod, runtime validation server-side.
 
 ## Form2 + createJoke3 (formStatus + formState)
 
@@ -36,7 +36,7 @@ Notes: what is zod, runtime validation server-side
 - Add useFormStatus and modify server action
 - Show delete joke
 
-Notes: progressively enhanced but client-side feedback when possible, actually the delete is also a form and prog-enh
+Notes: progressively enhanced but client-side feedback when possible, actually the delete is also a form and prog-enh.
 
 ## Form3 (more client-side stuff)
 
@@ -44,7 +44,7 @@ Notes: progressively enhanced but client-side feedback when possible, actually t
 - Reset form after submit
 - Add toast notifications
 
-Notes: client-side feedback but still prog.enhanched
+Notes: client-side feedback but still prog.enhanched.
 
 ## Form4 (save draft)
 
@@ -56,7 +56,7 @@ Notes: client-side feedback but still prog.enhanched
 - Add saveDraft function with transition
 - Update useEffect to clear draft on submit
 
-Notes: client-side only functionality, not sure the punchline, prog.enh
+Notes: client-side only functionality, not sure the punchline, prog.enh.
 
 ## Form5 + createJoke4 (react hook form)
 
@@ -67,7 +67,7 @@ Notes: client-side only functionality, not sure the punchline, prog.enh
 - Use normal button and add react hook form state
 - Write onSubmit
 
-Notes: lets say you dont care about prog.enh, really quick coding here or only show code
+Notes: lets say you dont care about prog.enh, really quick coding here or only show code.
 
 ## Form6 (useOptimistic)
 
@@ -79,4 +79,4 @@ Notes: lets say you dont care about prog.enh, really quick coding here or only s
 - Remove "Adding..."
 - Add revalidate to server action and show only error toast
 
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code, provider in forms-demo-starter
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code, provider in forms-demo-starter.
