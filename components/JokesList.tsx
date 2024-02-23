@@ -1,13 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import React from 'react';
-import { getJokes } from '@/lib/services/getJokes';
+import { useJokesContext } from '@/providers/JokesContext';
 
-export default async function JokesList() {
-  const jokes = await getJokes();
+export default function JokesList() {
+  const { optimisticJokes } = useJokesContext();
 
   return (
     <ul>
-      {jokes
+      {optimisticJokes
         .sort((a, b) => {
           return a.name > b.name ? 1 : -1;
         })
