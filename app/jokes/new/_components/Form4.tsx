@@ -4,45 +4,43 @@ import React, { useEffect, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
 import SubmitButton from '@/components/SubmitButton';
-import { clearJokeDraft } from '@/lib/actions/clearJokeDraft';
 import { createJoke } from '@/lib/actions/createJoke3';
 import { saveJokeDraft } from '@/lib/actions/saveJokeDraft';
 import type { JokeSchemaErrorType, JokeSchemaType } from '@/validations/jokeSchema';
 
 type Props = {
-  joke: JokeSchemaType;
+  initialJoke: JokeSchemaType;
 };
 
-export default function Form({ joke }: Props) {
+export default function Form({ initialJoke }: Props) {
   const [state, formAction] = useFormState(createJoke, {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
-  const [activeJoke, setActiveJoke] = useState(joke);
-
-  const formRef = React.useRef<HTMLFormElement>(null);
+  const [activeJoke, setActiveJoke] = useState(initialJoke);
   const [isPending, startTransition] = useTransition();
 
-  useEffect(() => {
-    if (state.success) {
-      clearJokeDraft().then(() => {
-        formRef.current?.reset();
-      });
-      toast.success('Joke created!');
-    }
-  }, [state.success]);
-
-  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
+  function saveDraft(e: React.FocusEvent<HTMLFormElement>) {
     if (!e.target.value) {
       return;
     }
     startTransition(() => {
       saveJokeDraft(e.target.name, e.target.value);
     });
-  };
+  }
+
+  useEffect(() => {
+    if (state.success) {
+      setActiveJoke({
+        content: '',
+        name: '',
+      });
+      toast.success('Joke created!');
+    }
+  }, [state.success]);
 
   return (
-    <form onBlur={saveDraft} ref={formRef} action={formAction}>
+    <form onBlur={saveDraft} action={formAction}>
       <label>
         Name:
         <input

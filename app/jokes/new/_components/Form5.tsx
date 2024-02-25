@@ -5,7 +5,6 @@ import React, { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/components/Button';
-import { clearJokeDraft } from '@/lib/actions/clearJokeDraft';
 import { createJoke } from '@/lib/actions/createJoke4';
 import { saveJokeDraft } from '@/lib/actions/saveJokeDraft';
 import { jokeSchema, type JokeSchemaType } from '@/validations/jokeSchema';
@@ -34,19 +33,18 @@ export default function Form({ initialJoke }: Props) {
       toast.error(response.error);
     } else {
       toast.success('Joke added!');
-      await clearJokeDraft();
       reset();
     }
   });
 
-  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
+  function saveDraft(e: React.FocusEvent<HTMLFormElement>) {
     if (!e.target.value) {
       return;
     }
     startTransition(() => {
       saveJokeDraft(e.target.name, e.target.value);
     });
-  };
+  }
 
   return (
     <form onBlur={saveDraft} onSubmit={onSubmit}>

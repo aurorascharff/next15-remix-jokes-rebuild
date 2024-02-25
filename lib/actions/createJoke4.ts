@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
+import { clearJokeDraft } from './clearJokeDraft';
 
 export async function createJoke(data: JokeSchemaType) {
   const result = jokeSchema.safeParse({
@@ -25,6 +26,7 @@ export async function createJoke(data: JokeSchemaType) {
     data: result.data,
   });
 
+  clearJokeDraft();
   revalidatePath('/jokes');
   return {
     error: undefined,

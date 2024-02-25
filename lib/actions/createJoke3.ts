@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
+import { clearJokeDraft } from './clearJokeDraft';
 
 type State = {
   success?: boolean;
@@ -27,6 +28,7 @@ export async function createJoke(_prevState: State, data: FormData) {
     data: result.data,
   });
 
+  clearJokeDraft();
   revalidatePath('/jokes');
   return {
     error: undefined,

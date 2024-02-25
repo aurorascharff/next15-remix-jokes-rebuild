@@ -4,9 +4,10 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
+import { clearJokeDraft } from './clearJokeDraft';
 
 export async function createJoke(data: JokeSchemaType) {
-  // revalidatePath('/jokes/new');
+  // revalidatePath('/jokes');
   // return {
   //   error: 'SERVER ERROR',
   //   success: false,
@@ -21,7 +22,7 @@ export async function createJoke(data: JokeSchemaType) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {
       return (prev += issue.message);
     }, '');
-    revalidatePath('/jokes/new');
+    revalidatePath('/jokes');
     return {
       error: errorMessages,
       success: false,
@@ -32,7 +33,8 @@ export async function createJoke(data: JokeSchemaType) {
     data: result.data,
   });
 
-  revalidatePath('/jokes/new');
+  clearJokeDraft();
+  revalidatePath('/jokes');
   return {
     error: undefined,
     success: true,

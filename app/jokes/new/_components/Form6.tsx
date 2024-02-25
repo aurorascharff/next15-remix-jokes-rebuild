@@ -1,11 +1,11 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import React, { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/components/Button';
-import { clearJokeDraft } from '@/lib/actions/clearJokeDraft';
 import { createJoke } from '@/lib/actions/createJoke5';
 import { saveJokeDraft } from '@/lib/actions/saveJokeDraft';
 import { useJokesContext } from '@/providers/JokesContext';
@@ -29,6 +29,7 @@ export default function Form({ initialJoke }: Props) {
 
   const [isPending, startTransition] = useTransition();
   const [, startOptimisticTransition] = useTransition();
+  const router = useRouter();
 
   const { addOptimisticJoke } = useJokesContext();
 
@@ -38,21 +39,22 @@ export default function Form({ initialJoke }: Props) {
       reset();
       const response = await createJoke(data);
       if (response.error) {
+        router.refresh();
         toast.error(response.error);
       } else {
-        await clearJokeDraft();
+        toast.success('Joke added!');
       }
     });
   });
 
-  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
+  function saveDraft(e: React.FocusEvent<HTMLFormElement>) {
     if (!e.target.value) {
       return;
     }
     startTransition(() => {
       saveJokeDraft(e.target.name, e.target.value);
     });
-  };
+  }
 
   return (
     <form onBlur={saveDraft} onSubmit={onSubmit}>

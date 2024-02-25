@@ -49,34 +49,35 @@ Notes: client-side feedback but still prog.enhanched.
 ## Form4 (save draft)
 
 - Add useTransition
-- Add onChange activeJoke
-- Show existing fake server actions
-- Pass draft from server (name, content only)
 - Add onBlur saveDraft to form
+- Add onChange activeJoke
+- Show existing server actions
+- Pass draft from server
 - Add saveDraft function with transition
-- Update useEffect to clear draft on submit
+- Update useEffect to clear activeJoke
+- Clear draft in server action
 
 Notes: client-side only functionality, not sure the punchline, prog.enh.
 
 ## Form5 + createJoke4 (react hook form)
 
 - Replace useFormState with react-hook-form
+- Write onSubmit from useEffect
 - Add registers and onSubmit
 - Modify error messages
 - Modify server action to return message
 - Use normal button and add react hook form state
-- Write onSubmit
 
 Notes: lets say you dont care about prog.enh, really quick coding here or only show code.
 
 ## Form6 (useOptimistic)
 
-- Add useOptimistic hook inside a provider
+- Show useOptimistic hook inside a provider
 - Wrap layout with provider
-- Modify createJoke to use setOptimistic
+- Modify ontSubmit to use setOptimistic
 - Modify jokeslist to useOptimistic
-- Modify onSubmit to instantly clear etc.
+- Modify onSubmit to instantly clear and refresh on error
 - Remove "Adding..."
-- Add revalidate to server action and show only error toast
+- Add revalidate to server action
 
 Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code.

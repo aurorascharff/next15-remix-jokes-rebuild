@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
 import SubmitButton from '@/components/SubmitButton';
@@ -12,8 +12,7 @@ export default function Form() {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
-
-  const formRef = React.useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (state.success) {

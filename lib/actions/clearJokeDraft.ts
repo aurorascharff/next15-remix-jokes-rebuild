@@ -11,5 +11,5 @@ export async function clearJokeDraft() {
     },
     where: { id: 'DRAFT' },
   });
-  revalidatePath('/jokes/new');
+  revalidatePath('/jokes');
 }
