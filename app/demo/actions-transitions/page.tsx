@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { getRandomJoke } from '@/lib/services/getRandomJoke';
 import UpdateJokeForm from './_components/UpdateJokeForm';
 import type { Metadata } from 'next';
