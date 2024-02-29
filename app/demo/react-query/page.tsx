@@ -14,7 +14,7 @@ export default function ReactQueryPage() {
   const { data, error, isLoading } = useGetJokes();
 
   return (
-    <div className="flex flex-col gap-y-10 xl:w-1/3">
+    <>
       <h4>React Query</h4>
       You can use react query on the client to fetch data from the server. By creating an initial state on the server,
       you can avoid a flash of loading content.
@@ -46,6 +46,6 @@ export default function ReactQueryPage() {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

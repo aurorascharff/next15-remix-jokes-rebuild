@@ -14,7 +14,7 @@ export default async function RevalidatePage() {
   const jokes = await getJokes();
 
   return (
-    <div className="flex flex-col gap-10 xl:w-1/3">
+    <>
       <div className="flex flex-col gap-y-10 ">
         <h4>Revalidate</h4>
         Updating data on the server does not destroy the client state. The RSC payload is used to seamlessly merge the
@@ -52,6 +52,6 @@ export default async function RevalidatePage() {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 }

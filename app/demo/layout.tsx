@@ -50,7 +50,7 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
           },
         ]}
       />
-      <div className="mx-10 flex flex-col gap-10 py-3 md:mx-40 md:flex-row">{children}</div>
+      <div className="mx-10 flex flex-col gap-8 py-3 md:mx-40 xl:w-1/3">{children}</div>
     </div>
   );
 }
