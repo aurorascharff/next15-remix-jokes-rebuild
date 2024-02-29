@@ -20,14 +20,14 @@ export default function Form({ initialJoke }: Props) {
   const [activeJoke, setActiveJoke] = useState(initialJoke);
   const [isPending, startTransition] = useTransition();
 
-  function saveDraft(e: React.FocusEvent<HTMLFormElement>) {
+  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
     if (!e.target.value) {
       return;
     }
     startTransition(() => {
       saveJokeDraft(e.target.name, e.target.value);
     });
-  }
+  };
 
   useEffect(() => {
     if (state.success) {

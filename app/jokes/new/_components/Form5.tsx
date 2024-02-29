@@ -37,14 +37,14 @@ export default function Form({ initialJoke }: Props) {
     }
   });
 
-  function saveDraft(e: React.FocusEvent<HTMLFormElement>) {
+  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
     if (!e.target.value) {
       return;
     }
     startTransition(() => {
       saveJokeDraft(e.target.name, e.target.value);
     });
-  }
+  };
 
   return (
     <form onBlur={saveDraft} onSubmit={onSubmit}>
