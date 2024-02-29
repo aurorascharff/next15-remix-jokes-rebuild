@@ -23,7 +23,7 @@ export default async function JokesLayout({ children }: { children: React.ReactN
       <div className="mx-10 flex flex-grow flex-col gap-10 py-3 md:flex-row lg:mx-40">
         <JokesContextProvider jokes={jokes}>
           <Sidebar />
-          <div className="w-fit flex-grow">{children}</div>
+          <div className="flex-grow">{children}</div>
         </JokesContextProvider>
       </div>
       <Footer />
