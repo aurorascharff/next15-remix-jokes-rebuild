@@ -1,7 +1,7 @@
 import 'server-only';
 
 import { prisma } from '@/db';
-import { Joke } from '@prisma/client';
+import type { Joke } from '@prisma/client';
 
 export async function getJokeDraft() {
   return (await prisma.joke.findUnique({
