@@ -3,13 +3,5 @@ import 'server-only';
 import { prisma } from '@/db';
 
 export async function getJokes() {
-  return prisma.joke.findMany({
-    where: {
-      id: {
-        not: {
-          equals: 'DRAFT',
-        },
-      },
-    },
-  });
+  return prisma.joke.findMany();
 }
