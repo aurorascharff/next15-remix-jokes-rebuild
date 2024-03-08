@@ -11,13 +11,18 @@ export async function createJoke(data: FormData) {
   });
 
   if (!result.success) {
-    console.error('SERVER ERROR');
+    console.error('FORM VALIDATION ERROR');
     return;
   }
 
-  await prisma.joke.create({
-    data: result.data,
-  });
+  try {
+    await prisma.joke.create({
+      data: result.data,
+    });
+  } catch (e) {
+    console.error('SERVER ERROR');
+    return;
+  }
 
   revalidatePath('/jokes');
 }

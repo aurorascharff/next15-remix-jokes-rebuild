@@ -9,19 +9,15 @@ export default function JokesList() {
 
   return (
     <ul>
-      {optimisticJokes
-        .sort((a, b) => {
-          return a.name > b.name ? 1 : -1;
-        })
-        .map(({ id, name }) => {
-          return (
-            <li key={id}>
-              <Link prefetch href={`/jokes/${id}`}>
-                {name}
-              </Link>
-            </li>
-          );
-        })}
+      {optimisticJokes.map(({ id, name }) => {
+        return (
+          <li key={id}>
+            <Link prefetch href={`/jokes/${id}`}>
+              {name}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

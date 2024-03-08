@@ -9,7 +9,8 @@ import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 
 export default function Form() {
   const [state, formAction] = useFormState(createJoke, {
-    error: {} as JokeSchemaErrorType,
+    errors: {} as JokeSchemaErrorType,
+    message: '',
     success: false,
   });
   const formRef = useRef<HTMLFormElement>(null);
@@ -17,7 +18,7 @@ export default function Form() {
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
-      toast.success('Joke created');
+      toast.success('Joke created!');
     }
   }, [state.success]);
 
@@ -26,12 +27,12 @@ export default function Form() {
       <label>
         Name:
         <input name="name" type="text" />
-        <span className="font-sm text-red">{state.error?.fieldErrors?.name}</span>
+        <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
         <textarea name="content" />
-        <span className="font-sm text-red">{state.error?.fieldErrors?.content}</span>
+        <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <SubmitButton />
     </form>

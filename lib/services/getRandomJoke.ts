@@ -8,13 +8,6 @@ export async function getRandomJoke() {
   const [randomJoke] = await prisma.joke.findMany({
     skip: randomRowNumber,
     take: 1,
-    where: {
-      id: {
-        not: {
-          equals: 'DRAFT',
-        },
-      },
-    },
   });
   return randomJoke;
 }

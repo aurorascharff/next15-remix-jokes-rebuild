@@ -5,49 +5,39 @@ import React, { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '@/components/Button';
-import { createJoke } from '@/lib/actions/createJoke4';
-import { saveJokeDraft } from '@/lib/actions/saveJokeDraft';
+import { createJoke } from '@/lib/actions/createJoke5';
+import { useJokesContext } from '@/providers/JokesContext';
 import { jokeSchema, type JokeSchemaType } from '@/validations/jokeSchema';
 
-type Props = {
-  initialJoke: JokeSchemaType;
-};
-
-export default function Form({ initialJoke }: Props) {
+export default function Form() {
   const {
     handleSubmit,
     register,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<JokeSchemaType>({
-    defaultValues: initialJoke,
     mode: 'onChange',
     resolver: zodResolver(jokeSchema),
   });
 
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
+  const { addOptimisticJoke } = useJokesContext();
 
-  const onSubmit = handleSubmit(async data => {
-    const response = await createJoke(data);
-    if (response.error) {
-      toast.error(response.error);
-    } else {
-      toast.success('Joke added!');
+  const onSubmit = handleSubmit(data => {
+    startTransition(async () => {
+      addOptimisticJoke(data);
       reset();
-    }
+      const response = await createJoke(data);
+      if (response.message) {
+        toast.error(response.message);
+      } else {
+        toast.success('Joke added!');
+      }
+    });
   });
 
-  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
-    if (!e.target.value) {
-      return;
-    }
-    startTransition(() => {
-      saveJokeDraft(e.target.name, e.target.value);
-    });
-  };
-
   return (
-    <form onBlur={saveDraft} onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <label>
         Name:
         <input {...register('name')} name="name" type="text" />
@@ -59,9 +49,8 @@ export default function Form({ initialJoke }: Props) {
         <span className="font-sm text-red">{errors?.content?.message}</span>
       </label>
       <Button disabled={isSubmitting} type="submit">
-        {isSubmitting ? 'Adding...' : 'Add joke'}
+        Add joke
       </Button>
-      {isPending ? 'Saving...' : null}
     </form>
   );
 }

@@ -1,71 +1,52 @@
 'use client';
 
-import React, { useEffect, useState, useTransition } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
-import SubmitButton from '@/components/SubmitButton';
-import { createJoke } from '@/lib/actions/createJoke3';
-import { saveJokeDraft } from '@/lib/actions/saveJokeDraft';
-import type { JokeSchemaErrorType, JokeSchemaType } from '@/validations/jokeSchema';
 
-type Props = {
-  initialJoke: JokeSchemaType;
-};
+import Button from '@/components/Button';
+import { createJoke } from '@/lib/actions/createJoke4';
+import { useJokesContext } from '@/providers/JokesContext';
+import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 
-export default function Form({ initialJoke }: Props) {
+export default function Form() {
   const [state, formAction] = useFormState(createJoke, {
-    error: {} as JokeSchemaErrorType,
+    errors: {} as JokeSchemaErrorType,
+    message: '',
     success: false,
   });
-  const [activeJoke, setActiveJoke] = useState(initialJoke);
-  const [isPending, startTransition] = useTransition();
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const saveDraft = (e: React.FocusEvent<HTMLFormElement>) => {
-    if (!e.target.value) {
-      return;
-    }
-    startTransition(() => {
-      saveJokeDraft(e.target.name, e.target.value);
+  const { addOptimisticJoke } = useJokesContext();
+
+  const action = (data: FormData) => {
+    addOptimisticJoke({
+      content: data.get('content')?.valueOf() as string,
+      id: '',
+      name: data.get('name')?.valueOf() as string,
     });
+    formAction(data);
   };
 
   useEffect(() => {
-    if (state.success) {
-      setActiveJoke({
-        content: '',
-        name: '',
-      });
-      toast.success('Joke created!');
+    if (!state.success) {
+      toast.error('Failed to create joke: ' + state.message);
     }
-  }, [state.success]);
+  }, [state.message, state.success]);
 
   return (
-    <form onBlur={saveDraft} action={formAction}>
+    <form ref={formRef} action={action}>
       <label>
         Name:
-        <input
-          value={activeJoke.name}
-          onChange={e => {
-            return setActiveJoke({ ...activeJoke, name: e.target.value });
-          }}
-          name="name"
-          type="text"
-        />
-        <span className="font-sm text-red">{state.error?.fieldErrors?.name}</span>
+        <input minLength={2} name="name" type="text" />
+        <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
-        <textarea
-          onChange={e => {
-            return setActiveJoke({ ...activeJoke, content: e.target.value });
-          }}
-          value={activeJoke.content}
-          name="content"
-        />
-        <span className="font-sm text-red">{state.error?.fieldErrors?.content}</span>
+        <textarea minLength={5} name="content" />
+        <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
-      <SubmitButton />
-      {isPending ? 'Saving...' : null}
+      <Button type="submit">Add joke</Button>
     </form>
   );
 }

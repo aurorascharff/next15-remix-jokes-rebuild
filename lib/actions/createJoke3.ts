@@ -4,11 +4,11 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
-import { clearJokeDraft } from './clearJokeDraft';
 
 type State = {
-  success?: boolean;
-  error?: JokeSchemaErrorType;
+  success: boolean;
+  errors?: JokeSchemaErrorType;
+  message?: string;
 };
 
 export async function createJoke(_prevState: State, data: FormData) {
@@ -19,19 +19,26 @@ export async function createJoke(_prevState: State, data: FormData) {
 
   if (!result.success) {
     return {
-      error: result.error.formErrors,
+      errors: result.error.formErrors,
+      message: 'VALIDATION ERROR',
       success: false,
     };
   }
 
-  await prisma.joke.create({
-    data: result.data,
-  });
+  try {
+    await prisma.joke.create({
+      data: result.data,
+    });
+  } catch (e) {
+    return {
+      message: 'SERVER ERROR',
+      success: false,
+    };
+  }
 
-  clearJokeDraft();
   revalidatePath('/jokes');
   return {
-    error: undefined,
+    errors: undefined,
     success: true,
   };
 }

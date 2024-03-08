@@ -2,34 +2,45 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
-import type { JokeSchemaType } from '@/validations/jokeSchema';
+import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
-import { clearJokeDraft } from './clearJokeDraft';
 
-export async function createJoke(data: JokeSchemaType) {
+type State = {
+  success: boolean;
+  errors?: JokeSchemaErrorType;
+  message?: string;
+};
+
+export async function createJoke(_prevState: State, data: FormData) {
   const result = jokeSchema.safeParse({
-    content: data.content,
-    name: data.name,
+    content: data.get('content')?.valueOf(),
+    name: data.get('name')?.valueOf(),
   });
 
   if (!result.success) {
-    const errorMessages = result.error.issues.reduce((prev, issue) => {
-      return (prev += issue.message);
-    }, '');
+    revalidatePath('/jokes');
     return {
-      error: errorMessages,
+      errors: result.error.formErrors,
+      message: 'VALIDATION ERROR',
       success: false,
     };
   }
 
-  await prisma.joke.create({
-    data: result.data,
-  });
+  try {
+    await prisma.joke.create({
+      data: result.data,
+    });
+  } catch (e) {
+    revalidatePath('/jokes');
+    return {
+      message: 'SERVER ERROR',
+      success: false,
+    };
+  }
 
-  clearJokeDraft();
   revalidatePath('/jokes');
   return {
-    error: undefined,
+    errors: undefined,
     success: true,
   };
 }
