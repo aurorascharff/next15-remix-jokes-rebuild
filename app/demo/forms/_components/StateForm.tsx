@@ -8,18 +8,16 @@ import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 
 export default function StateForm() {
-  const formRef = useRef<HTMLFormElement | null>(null);
-
   const [state, formAction] = useFormState(createJokeStateForm, {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
 
+  const formRef = useRef<HTMLFormElement | null>(null);
+
   useEffect(() => {
-    if (state?.success) {
-      if (formRef.current) {
-        formRef.current.reset();
-      }
+    if (state.success) {
+      formRef.current?.reset();
       toast.success('Joke added!');
     }
   }, [state.success]);
