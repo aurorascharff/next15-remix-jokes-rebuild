@@ -33,10 +33,15 @@ Notes: what is zod, runtime validation server-side.
 - Add SubmitButton
 - Use useFormState
 - Add useFormStatus and modify server action
-- Code deletejokebutton with transition
-- Code delete action using bind and existing deleteButton
 
 Notes: progressively enhanced but client-side feedback when possible All fields uncontrolled.
+
+## DeleteJokeButton + deleteJoke
+
+- Code deletejokebutton with transition, show server action
+- Code delete action using bind and existing deleteButton
+
+Notes: server action, bind, transition, client-side feedback.
 
 ## Form3 (more client-side stuff)
 
