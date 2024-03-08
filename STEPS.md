@@ -54,15 +54,14 @@ Notes: client-side feedback but still prog.enhanched.
 ## Form4 + createJoke4 (useOptimistic)
 
 - Show useOptimistic hook inside a provider, show wrapped layout
-- Client side val is still good, minLength because the server is really more a security
 - Modify jokeslist to useOptimistic
 - Create action using useOptimistic and resetting form
 - Remove button and "Adding..."
-- Only toast on error
+- Only toast on error, reset on success
 - Add revalidate to server action
 
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code. No loner prog enh but thats not what we're after anymore.
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code. No loner prog enh but thats not what we're after anymore. You can also move the visual validation to the client side.
 
 ## Form5 + createJoke5 (react hook form)
 
-Notes: show how to use react-hook-form, fully client side interacting by using server actions. If you want lots of client side stuff.
+Notes: show how to use react-hook-form, fully client side interacting by using server actions. If you want lots of client side stuff. Also good.

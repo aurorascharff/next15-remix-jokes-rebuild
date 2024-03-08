@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
-
 import Button from '@/components/Button';
 import { createJoke } from '@/lib/actions/createJoke4';
 import { useJokesContext } from '@/providers/JokesContext';
@@ -29,21 +28,23 @@ export default function Form() {
   };
 
   useEffect(() => {
-    if (!state.success) {
-      toast.error('Failed to create joke: ' + state.message);
+    if (state.success) {
+      formRef.current?.reset();
+    } else if (!state.success && state.message === 'SERVER ERROR') {
+      toast.error('Failed to create joke...');
     }
-  }, [state.message, state.success]);
+  }, [state]);
 
   return (
     <form ref={formRef} action={action}>
       <label>
         Name:
-        <input minLength={2} name="name" type="text" />
+        <input name="name" type="text" />
         <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
-        <textarea minLength={5} name="content" />
+        <textarea name="content" />
         <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <Button type="submit">Add joke</Button>

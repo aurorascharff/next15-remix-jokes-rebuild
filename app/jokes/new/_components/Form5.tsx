@@ -29,7 +29,7 @@ export default function Form() {
       reset();
       const response = await createJoke(data);
       if (response.message) {
-        toast.error(response.message);
+        toast.error('Failed to create joke: ' + response.message);
       } else {
         toast.success('Joke added!');
       }
