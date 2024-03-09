@@ -40,7 +40,6 @@ export async function createJoke(_prevState: State, data: FormData) {
 
   revalidatePath('/jokes');
   return {
-    errors: undefined,
     success: true,
   };
 }
