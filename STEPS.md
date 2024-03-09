@@ -51,7 +51,7 @@ Notes: server action, bind, transition, client-side feedback.
 
 Notes: client-side feedback but still prog.enhanched.
 
-## StarButton + starJoke
+## StarButton + starJoke '★' : '☆'
 
 - Replace star icon with new component StarButton with useTransition
 - Add server action to star a joke

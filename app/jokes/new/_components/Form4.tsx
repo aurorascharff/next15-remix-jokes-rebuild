@@ -22,6 +22,7 @@ export default function Form() {
     addOptimisticJoke({
       content: data.get('content')?.valueOf() as string,
       name: data.get('name')?.valueOf() as string,
+      starred: false,
     });
     formAction(data);
   };

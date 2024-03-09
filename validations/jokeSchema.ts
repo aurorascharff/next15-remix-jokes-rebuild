@@ -8,7 +8,7 @@ export const jokeSchema = z.object({
   name: z.string().min(2, {
     message: 'Name must be at least 2 characters long',
   }),
-  starred: z.boolean().optional(),
+  starred: z.boolean().optional().default(false),
 });
 
 export type JokeSchemaType = z.infer<typeof jokeSchema>;
