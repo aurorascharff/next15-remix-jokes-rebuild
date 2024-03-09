@@ -21,9 +21,7 @@ export default function Form() {
   const action = (data: FormData) => {
     addOptimisticJoke({
       content: data.get('content')?.valueOf() as string,
-      id: Math.random().toString(),
       name: data.get('name')?.valueOf() as string,
-      starred: false,
     });
     formAction(data);
   };

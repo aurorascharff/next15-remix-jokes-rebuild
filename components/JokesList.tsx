@@ -17,7 +17,7 @@ export default function JokesList() {
         .map(({ id, name, starred }) => {
           return (
             <li key={id} className="flex flex-row gap-2">
-              <StarButton jokeId={id} starred={starred} />
+              {id && starred && <StarButton jokeId={id} starred={starred} />}
               <Link prefetch href={`/jokes/${id}`}>
                 {name}
               </Link>
