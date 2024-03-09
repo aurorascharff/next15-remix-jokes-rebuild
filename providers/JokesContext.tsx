@@ -1,11 +1,11 @@
 'use client';
 
-import { JokeSchemaType } from '@/validations/jokeSchema';
-import React, { createContext, useOptimistic, useState } from 'react';
+import React, { createContext, useOptimistic } from 'react';
+import type { JokeSchemaType } from '@/validations/jokeSchema';
 
 type JokesContextType = {
   optimisticJokes: JokeSchemaType[];
-  addOptimisticJoke: (joke: JokeSchemaType) => void;
+  addOptimisticJoke: (_joke: JokeSchemaType) => void;
 };
 
 export const JokesContext = createContext<JokesContextType | undefined>(undefined);
@@ -24,7 +24,7 @@ export default function JokesContextProvider({
     },
   );
 
-  return <JokesContext.Provider value={{ optimisticJokes, addOptimisticJoke }}>{children}</JokesContext.Provider>;
+  return <JokesContext.Provider value={{ addOptimisticJoke, optimisticJokes }}>{children}</JokesContext.Provider>;
 }
 
 export function useJokesContext() {

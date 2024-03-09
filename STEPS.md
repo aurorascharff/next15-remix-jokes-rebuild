@@ -34,7 +34,7 @@ Notes: what is zod, runtime validation server-side.
 - Use useFormState
 - Add useFormStatus and modify server action
 
-Notes: progressively enhanced but client-side feedback when possible All fields uncontrolled.
+Notes: progressively enhanced but client-side feedback when possible All fields uncontrolled. Of course not only for validation. Could be anything like checking if an item is in stock and returning a message.
 
 ## DeleteJokeButton + deleteJoke
 
@@ -50,6 +50,12 @@ Notes: server action, bind, transition, client-side feedback.
 - Add toast notifications
 
 Notes: client-side feedback but still prog.enhanched.
+
+## StarButton + starJoke
+
+- Replace star icon with new component StarButton with useTransition
+- Add server action to star a joke
+- Update jokesList
 
 ## Form4 + createJoke4 (useOptimistic)
 

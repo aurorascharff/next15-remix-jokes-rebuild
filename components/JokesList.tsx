@@ -3,21 +3,27 @@
 import Link from 'next/link';
 import React from 'react';
 import { useJokesContext } from '@/providers/JokesContext';
+import StarButton from './StarButton';
 
 export default function JokesList() {
   const { optimisticJokes } = useJokesContext();
 
   return (
     <ul>
-      {optimisticJokes.map(({ id, name }) => {
-        return (
-          <li key={id}>
-            <Link prefetch href={`/jokes/${id}`}>
-              {name}
-            </Link>
-          </li>
-        );
-      })}
+      {optimisticJokes
+        .sort((a, b) => {
+          return a.starred === b.starred ? 0 : a.starred ? -1 : 1;
+        })
+        .map(({ id, name, starred }) => {
+          return (
+            <li key={id} className="flex flex-row gap-2">
+              <StarButton jokeId={id} starred={starred} />
+              <Link prefetch href={`/jokes/${id}`}>
+                {name}
+              </Link>
+            </li>
+          );
+        })}
     </ul>
   );
 }
