@@ -13,7 +13,8 @@ export default async function JokesList() {
         })
         .map(({ id, name }) => {
           return (
-            <li key={id}>
+            <li key={id} className="flex flex-row gap-2">
+              ★
               <Link prefetch href={`/jokes/${id}`}>
                 {name}
               </Link>
