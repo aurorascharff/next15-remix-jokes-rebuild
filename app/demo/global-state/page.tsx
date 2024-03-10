@@ -16,7 +16,7 @@ export default function GlobalStatePage() {
       To share a state between client components in different parts of the component tree, you can use a provider like
       React Context and wrap your components with the provider, or Zustand for a simpler implementation.
       <ThemeContextProvider>
-        <div className=" flex flex-col gap-8 border-2 border-white p-4">
+        <div className="flex flex-col gap-8 border-2 border-white p-4">
           ThemeProvider
           <ServerComponent>
             <SetThemeComponent />
