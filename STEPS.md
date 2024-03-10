@@ -36,13 +36,6 @@ Notes: what is zod, runtime validation server-side.
 
 Notes: progressively enhanced but client-side feedback when possible All fields uncontrolled. Of course not only for validation. Could be anything like checking if an item is in stock and returning a message.
 
-## DeleteJokeButton + deleteJoke
-
-- Code delete action using bind
-- Code server action
-
-Notes: server action, bind, transition, client-side feedback.
-
 ## Form3 (more client-side stuff)
 
 - Add effect to listen for formStatus changes
@@ -62,3 +55,10 @@ Notes: client-side feedback but still prog.enhanched.
 - Input field className
 
 Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page. Prog enhc. Visual rollback, maybe there will be support for this in the future. Can add noscript just for fun.
+
+## DeleteJokeButton + deleteJoke
+
+- Code delete action using bind
+- Code server action
+
+Notes: server action, bind, transition, client-side feedback.
