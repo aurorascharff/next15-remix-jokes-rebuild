@@ -5,13 +5,13 @@ import { prisma } from '@/db';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
 
-type State = {
+type CreateJokeState = {
   success: boolean;
   errors?: JokeSchemaErrorType;
   message?: string;
 };
 
-export async function createJoke(_prevState: State, data: FormData) {
+export async function createJoke(_prevState: CreateJokeState, data: FormData): Promise<CreateJokeState> {
   const result = jokeSchema.safeParse({
     content: data.get('content')?.valueOf(),
     name: data.get('name')?.valueOf(),
