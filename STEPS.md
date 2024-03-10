@@ -38,8 +38,8 @@ Notes: progressively enhanced but client-side feedback when possible All fields 
 
 ## DeleteJokeButton + deleteJoke
 
-- Code deletejokebutton with transition, show server action
-- Code delete action using bind and existing deleteButton
+- Code delete action using bind
+- Code server action
 
 Notes: server action, bind, transition, client-side feedback.
 
@@ -55,11 +55,10 @@ Notes: client-side feedback but still prog.enhanched.
 
 - Show useOptimistic hook inside a provider, show wrapped layout
 - Modify jokeslist to useOptimistic
-- Add onSubmit using useOptimistic, hideFormValues
-- Remove button and "Adding..."
-- Show form values on success, toast on server error
-- Modify input fields
 - Add revalidate to server action
+- Add onSubmit using useOptimistic, transition
+- Remove button and "Adding..."
+- Use isPending to hide input
+- Input field className
 
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code. Prog enhc.
-Visual rollback, maybe there will be support for this in the future.
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page. Prog enhc. Visual rollback, maybe there will be support for this in the future. Can add noscript just for fun.
