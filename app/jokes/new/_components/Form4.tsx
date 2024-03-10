@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { startTransition, useEffect, useRef, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
 import Button from '@/components/Button';
@@ -15,36 +15,45 @@ export default function Form() {
     success: false,
   });
   const formRef = useRef<HTMLFormElement>(null);
+  const [hideFormValues, setHideFormValues] = useState(false);
+  const [,] = useTransition();
 
   const { addOptimisticJoke } = useJokesContext();
 
-  const action = (data: FormData) => {
-    addOptimisticJoke({
-      content: data.get('content')?.valueOf() as string,
-      name: data.get('name')?.valueOf() as string,
-      starred: false,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onSubmit = (e: any) => {
+    setHideFormValues(true);
+    const form = e.currentTarget;
+    startTransition(() => {
+      addOptimisticJoke({
+        content: form.content.value,
+        name: form.name.value,
+      });
     });
-    formAction(data);
   };
 
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
-    } else if (!state.success && state.message === 'SERVER ERROR') {
-      toast.error('Failed to create joke...');
+      setHideFormValues(false);
+    } else if (state.message) {
+      setHideFormValues(false);
+      if (state.message === 'SERVER ERROR') {
+        toast.error('Failed to create joke...');
+      }
     }
-  }, [state]);
+  }, [setHideFormValues, state]);
 
   return (
-    <form ref={formRef} action={action}>
+    <form ref={formRef} action={formAction} onSubmit={onSubmit}>
       <label>
         Name:
-        <input name="name" type="text" />
+        <input className={hideFormValues ? 'text-transparent' : 'text-white'} name="name" type="text" />
         <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
-        <textarea name="content" />
+        <textarea className={hideFormValues ? 'text-transparent' : 'text-white'} name="content" />
         <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <Button type="submit">Add joke</Button>

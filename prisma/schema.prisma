@@ -16,5 +16,4 @@ model Joke {
   updatedAt DateTime @updatedAt
   name      String
   content   String
-  starred   Boolean  @default(false)
 }

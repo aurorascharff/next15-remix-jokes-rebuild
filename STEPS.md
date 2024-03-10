@@ -51,25 +51,15 @@ Notes: server action, bind, transition, client-side feedback.
 
 Notes: client-side feedback but still prog.enhanched.
 
-## StarButton + starJoke '★' : '☆'
-
-- Replace star icon with new component StarButton with useTransition
-- Add server action to star a joke
-- Update jokesList
-
 ## Form4 + createJoke4 (useOptimistic)
 
 - Show useOptimistic hook inside a provider, show wrapped layout
 - Modify jokeslist to useOptimistic
-- Create action using useOptimistic
+- Add onSubmit using useOptimistic, hideFormValues
 - Remove button and "Adding..."
-- Only toast on error, reset on success
+- Show form values on success, toast on server error
+- Modify input fields
 - Add revalidate to server action
-- Mention onSubmit
 
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code. Can also be progressive enhanced by using an onSubmit as well.
-
-## Form5 + createJoke5 (react hook form)
-
-Notes: show how to use react-hook-form, fully client side interacting by using server actions. If you want lots of client side stuff. Also good. Controlled inputs.
-Depending on w3hat your goal is it's up to you what priority you give to prog-enh versus just using the simplicity of server actions with forms.
+Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page, really quick coding here or only show code. Prog enhc.
+Visual rollback, maybe there will be support for this in the future.
