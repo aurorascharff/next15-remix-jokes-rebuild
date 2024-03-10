@@ -1,6 +1,6 @@
 'use client';
 
-import React, { startTransition, useEffect, useRef, useState, useTransition } from 'react';
+import React, { useEffect, useRef, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import toast from 'react-hot-toast';
 import Button from '@/components/Button';
@@ -16,7 +16,7 @@ export default function Form() {
   });
   const formRef = useRef<HTMLFormElement>(null);
   const [hideFormValues, setHideFormValues] = useState(false);
-  const [,] = useTransition();
+  const [, startTransition] = useTransition();
 
   const { addOptimisticJoke } = useJokesContext();
 
@@ -57,6 +57,7 @@ export default function Form() {
         <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <Button type="submit">Add joke</Button>
+      <noscript>{state.message === 'SERVER ERROR' && <p>Failed to create joke...</p>}</noscript>
     </form>
   );
 }
