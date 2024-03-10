@@ -14,19 +14,22 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
       return [...state, newJoke];
     },
   );
+  const formRef = React.useRef<HTMLFormElement>(null);
 
   const action = async (formData: FormData) => {
     const newJoke: JokeSchemaType = {
       content: formData.get('content')?.valueOf() as string,
+      createdAt: new Date(),
       name: formData.get('name')?.valueOf() as string,
     };
     addOptimisticJoke(newJoke);
+    formRef.current?.reset();
     await createJokeOptimistic(newJoke);
   };
 
   return (
     <>
-      <form autoComplete="off" action={action}>
+      <form ref={formRef} autoComplete="off" action={action}>
         <label>
           Name:
           <input name="name" type="text" />

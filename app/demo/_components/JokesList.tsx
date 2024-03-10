@@ -11,7 +11,10 @@ export default function JokesList({ jokes }: Props) {
     <ul>
       {jokes
         .sort((a, b) => {
-          return a.name > b.name ? 1 : -1;
+          if (!a.createdAt || !b.createdAt) {
+            return 0;
+          }
+          return b.createdAt.getTime() - a.createdAt.getTime();
         })
         .map((joke, key) => {
           return (

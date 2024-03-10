@@ -24,7 +24,10 @@ export default async function RevalidatePage() {
         <ul>
           {jokes
             .sort((a, b) => {
-              return a.name > b.name ? 1 : -1;
+              if (!a.createdAt || !b.createdAt) {
+                return 0;
+              }
+              return b.createdAt.getTime() - a.createdAt.getTime();
             })
             .slice(0, 4)
             .map(({ id, name }) => {

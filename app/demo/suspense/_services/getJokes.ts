@@ -6,5 +6,7 @@ export async function getJokes() {
   await new Promise(resolve => {
     return setTimeout(resolve, 4000);
   });
-  return prisma.joke.findMany();
+  return prisma.joke.findMany({
+    orderBy: { createdAt: 'desc' },
+  });
 }
