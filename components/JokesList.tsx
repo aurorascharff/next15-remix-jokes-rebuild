@@ -11,7 +11,7 @@ export default function JokesList() {
     <ul>
       {optimisticJokes.map(({ id, name }) => {
         return (
-          <li key={id} className="group">
+          <li key={id}>
             <Link prefetch href={`/jokes/${id}`}>
               {name}
             </Link>
