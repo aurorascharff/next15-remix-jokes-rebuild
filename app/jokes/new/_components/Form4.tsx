@@ -25,6 +25,7 @@ export default function Form() {
       const form = e.currentTarget;
       addOptimisticJoke({
         content: form.content.value,
+        createdAt: new Date(),
         name: form.name.value,
       });
     });
