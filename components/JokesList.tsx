@@ -7,20 +7,15 @@ export default async function JokesList() {
 
   return (
     <ul>
-      {jokes
-        .sort((a, b) => {
-          return a.name > b.name ? 1 : -1;
-        })
-        .map(({ id, name }) => {
-          return (
-            <li key={id} className="flex flex-row gap-2">
-              ★
-              <Link prefetch href={`/jokes/${id}`}>
-                {name}
-              </Link>
-            </li>
-          );
-        })}
+      {jokes.map(({ id, name }) => {
+        return (
+          <li key={id}>
+            <Link prefetch href={`/jokes/${id}`}>
+              {name}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }
