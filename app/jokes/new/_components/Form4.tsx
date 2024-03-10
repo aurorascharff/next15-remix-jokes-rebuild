@@ -48,12 +48,12 @@ export default function Form() {
     <form ref={formRef} action={formAction} onSubmit={onSubmit}>
       <label>
         Name:
-        <input className={hideFormValues ? 'text-transparent' : 'text-white'} name="name" type="text" />
+        <input className={hideFormValues ? 'text-transparent' : ''} name="name" type="text" />
         <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
-        <textarea className={hideFormValues ? 'text-transparent' : 'text-white'} name="content" />
+        <textarea className={hideFormValues ? 'text-transparent' : ''} name="content" />
         <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <Button type="submit">Add joke</Button>
