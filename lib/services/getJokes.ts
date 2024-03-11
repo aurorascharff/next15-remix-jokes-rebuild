@@ -1,7 +1,10 @@
 import 'server-only';
 
+import { cache } from 'react';
 import { prisma } from '@/db';
 
-export async function getJokes() {
-  return prisma.joke.findMany();
-}
+export const getJokes = cache(async () => {
+  return prisma.joke.findMany({
+    orderBy: { createdAt: 'desc' },
+  });
+});
