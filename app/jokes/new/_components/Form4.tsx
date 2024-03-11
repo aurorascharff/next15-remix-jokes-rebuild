@@ -44,12 +44,12 @@ export default function Form() {
       <label>
         Name:
         <input className={isPending ? 'text-transparent' : ''} name="name" type="text" />
-        <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
+        <span className="text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
         <textarea className={isPending ? 'text-transparent' : ''} name="content" />
-        <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
+        <span className="text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <Button type="submit">Add joke</Button>
       <noscript>{state.message === 'SERVER ERROR' && <p>Failed to create joke...</p>}</noscript>

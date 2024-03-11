@@ -2,6 +2,7 @@
 
 import React, { createContext, useOptimistic } from 'react';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
+import { Joke } from '@prisma/client';
 
 type JokesContextType = {
   optimisticJokes: JokeSchemaType[];
@@ -10,13 +11,7 @@ type JokesContextType = {
 
 export const JokesContext = createContext<JokesContextType | undefined>(undefined);
 
-export default function JokesContextProvider({
-  children,
-  jokes,
-}: {
-  children: React.ReactNode;
-  jokes: JokeSchemaType[];
-}) {
+export default function JokesContextProvider({ children, jokes }: { children: React.ReactNode; jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
     (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
