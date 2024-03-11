@@ -14,11 +14,11 @@ export default async function JokesList() {
           }
           return b.createdAt.getTime() - a.createdAt.getTime();
         })
-        .map(({ id, name }) => {
+        .map((joke, key) => {
           return (
-            <li key={id}>
-              <Link prefetch href={`/jokes/${id}`}>
-                {name}
+            <li key={key}>
+              <Link prefetch href={`/jokes/${joke.id}`}>
+                {joke.name}
               </Link>
             </li>
           );
