@@ -11,7 +11,13 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
     (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
-      return [...state, newJoke];
+      return [
+        ...state,
+        {
+          ...newJoke,
+          createdAt: new Date(),
+        },
+      ];
     },
   );
   const formRef = React.useRef<HTMLFormElement>(null);
@@ -19,7 +25,6 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   const action = async (formData: FormData) => {
     const newJoke: JokeSchemaType = {
       content: formData.get('content')?.valueOf() as string,
-      createdAt: new Date(),
       name: formData.get('name')?.valueOf() as string,
     };
     addOptimisticJoke(newJoke);

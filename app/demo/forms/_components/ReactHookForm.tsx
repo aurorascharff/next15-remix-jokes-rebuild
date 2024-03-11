@@ -27,16 +27,19 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
     (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
-      return [...state, newJoke];
+      return [
+        ...state,
+        {
+          ...newJoke,
+          createdAt: new Date(),
+        },
+      ];
     },
   );
 
   const onSubmit = handleSubmit(data => {
     startTransition(async () => {
-      addOptimisticJoke({
-        ...data,
-        createdAt: new Date(),
-      });
+      addOptimisticJoke(data);
       const response = await createJokeReactHookForm(data);
       if (response?.error) {
         toast.error(response.error);
