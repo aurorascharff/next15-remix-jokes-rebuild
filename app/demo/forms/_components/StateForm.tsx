@@ -27,12 +27,12 @@ export default function StateForm() {
       <label>
         Name:
         <input name="name" type="text" />
-        <span className="font-sm text-red">{state.error?.fieldErrors?.name}</span>
+        <span className="text-red">{state.error?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
         <textarea name="content" />
-        <span className="font-sm text-red">{state.error?.fieldErrors?.content}</span>
+        <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
       <div className="flex justify-end">
         <SubmitButton />

@@ -33,7 +33,10 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
 
   const onSubmit = handleSubmit(data => {
     startTransition(async () => {
-      addOptimisticJoke(data);
+      addOptimisticJoke({
+        ...data,
+        createdAt: new Date(),
+      });
       const response = await createJokeReactHookForm(data);
       if (response?.error) {
         toast.error(response.error);
@@ -50,12 +53,12 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
         <div>
           <label htmlFor="name">Name:</label>
           <input {...register('name')} id="name" name="name" type="text" />
-          {errors?.name && <p className="text-sm text-red">{errors?.name?.message}</p>}
+          {errors?.name && <p className="text-red">{errors?.name?.message}</p>}
         </div>
         <div>
           <label htmlFor="content">Content:</label>
           <textarea {...register('content')} id="content" name="content" />
-          {errors?.content && <p className="text-sm text-red">{errors?.content?.message}</p>}
+          {errors?.content && <p className="text-red">{errors?.content?.message}</p>}
         </div>
         <div className="flex justify-end">
           <Button disabled={!isValid} type="submit">
