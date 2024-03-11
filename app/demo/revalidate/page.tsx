@@ -24,9 +24,6 @@ export default async function RevalidatePage() {
         <ul>
           {jokes
             .sort((a, b) => {
-              if (!a.createdAt || !b.createdAt) {
-                return 0;
-              }
               return b.createdAt.getTime() - a.createdAt.getTime();
             })
             .slice(0, 4)
