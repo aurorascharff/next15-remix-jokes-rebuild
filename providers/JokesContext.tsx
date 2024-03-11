@@ -6,18 +6,22 @@ import { Joke } from '@prisma/client';
 
 type JokesContextType = {
   optimisticJokes: JokeSchemaType[];
-  addOptimisticJoke: (_joke: JokeSchemaType) => void;
+  addOptimisticJoke: (_joke: FormData) => void;
 };
 
 export const JokesContext = createContext<JokesContextType | undefined>(undefined);
 
 export default function JokesContextProvider({ children, jokes }: { children: React.ReactNode; jokes: Joke[] }) {
-  const [optimisticJokes, addOptimisticJoke] = useOptimistic(
-    jokes,
-    (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
-      return [...state, newJoke];
-    },
-  );
+  const [optimisticJokes, addOptimisticJoke] = useOptimistic(jokes, (state: JokeSchemaType[], newJoke: FormData) => {
+    return [
+      ...state,
+      {
+        content: newJoke.get('content')?.valueOf() as string,
+        createdAt: new Date(),
+        name: newJoke.get('name')?.valueOf() as string,
+      },
+    ];
+  });
 
   return <JokesContext.Provider value={{ addOptimisticJoke, optimisticJokes }}>{children}</JokesContext.Provider>;
 }

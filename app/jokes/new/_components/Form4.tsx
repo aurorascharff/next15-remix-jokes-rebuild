@@ -19,15 +19,12 @@ export default function Form() {
 
   const { addOptimisticJoke } = useJokesContext();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (e: any) => {
-    startTransition(() => {
-      const form = e.currentTarget;
-      addOptimisticJoke({
-        content: form.content.value,
-        createdAt: new Date(),
-        name: form.name.value,
-      });
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    startTransition(async () => {
+      addOptimisticJoke(formData);
+      await formAction(formData);
     });
   };
 
