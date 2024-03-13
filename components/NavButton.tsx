@@ -11,7 +11,7 @@ export default function NavButton({ href, children }: Props) {
     <Link
       prefetch
       href={href}
-      className="m-0 w-fit cursor-pointer rounded bg-yellow px-5 py-3 font-display text-lg font-bold leading-none text-purple shadow-lg hover:-translate-y-px hover:transform hover:no-underline"
+      className="m-0 w-fit cursor-pointer rounded bg-yellow px-5 py-3 font-display text-lg font-bold leading-none text-purple shadow-lg hover:-translate-y-px hover:no-underline active:translate-y-px"
     >
       {children}
     </Link>
