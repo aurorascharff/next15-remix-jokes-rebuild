@@ -52,9 +52,9 @@ Notes: progressively enhanced but client-side feedback when possible All fields 
 
 Notes: client-side feedback but still prog.enhanched. Can add noscript just for fun.
 
-## Favorite joke
+## Delete joke
 
-(Favorite + favoriteJoke)
+(DeleteJokeButton + deleteJoke)
 
 - Code component (maybe make a starter)
 - Code delete action using bind
@@ -62,3 +62,18 @@ Notes: client-side feedback but still prog.enhanched. Can add noscript just for 
 - Optimistic update onSubmit
 
 Notes: server action, bind, transition, client-side feedback.
+
+## Favorite joke
+
+(Favorite + favoriteJoke)
+
+- Add component and pass joke
+- Show component
+- Show server action
+- Optimistic update onSubmit
+
+Notes: server action, bind, transition, client-side feedback.
+
+## Demo form again with and without JavaScript
+
+Notes: full screen.

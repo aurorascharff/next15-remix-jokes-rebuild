@@ -4,9 +4,7 @@ export const jokeSchema = z.object({
   content: z.string().min(5, {
     message: 'Content must be at least 5 characters long',
   }),
-  createdAt: z.date().optional(),
   favorite: z.boolean().optional().default(false),
-  id: z.string().optional(),
   name: z.string().min(2, {
     message: 'Name must be at least 2 characters long',
   }),
