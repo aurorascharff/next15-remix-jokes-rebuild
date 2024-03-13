@@ -11,7 +11,6 @@ export async function createJokeReactHookForm(data: JokeSchemaType) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {
       return (prev += issue.message);
     }, '');
-    revalidatePath('/demo/forms');
     return {
       error: errorMessages,
     };
@@ -22,7 +21,6 @@ export async function createJokeReactHookForm(data: JokeSchemaType) {
       data,
     });
   } catch (error) {
-    revalidatePath('/demo/forms');
     return {
       error: 'SERVER ERROR',
     };

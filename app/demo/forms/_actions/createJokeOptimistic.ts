@@ -12,7 +12,6 @@ export async function createJokeOptimistic(data: JokeSchemaType) {
       return (prev += issue.message);
     }, '');
     console.log('SERVER ERROR: ' + errorMessages);
-    revalidatePath('/demo/forms');
     return;
   }
 
