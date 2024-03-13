@@ -1,6 +1,6 @@
 # DEMO STEPS
 
-## App demo
+## App demo (fullscreen)
 
 - Main page
 - Joke page
@@ -52,9 +52,9 @@ Notes: progressively enhanced but client-side feedback when possible All fields 
 
 Notes: client-side feedback but still prog.enhanched. Can add noscript just for fun.
 
-## Favorite joke
+## Delete joke
 
-(Favorite + favoriteJoke)
+(DeleteJokeButton + deleteJoke)
 
 - Code component
 - Code server action
@@ -62,4 +62,17 @@ Notes: client-side feedback but still prog.enhanched. Can add noscript just for 
 - Add optimistic update onSubmit
 - Use isPending for demo purposes
 
-Notes: server action, bind, transition, client-side feedback. Progressive enhancement.
+Notes: server action, bind, transition, client-side feedback.
+
+## Favorite joke
+
+(Favorite + favoriteJoke)
+
+- Add component and pass joke
+- Show component
+- Show server action
+- Optimistic update onSubmit
+
+Notes: server action, bind, transition, client-side feedback.
+
+## Demo form again with and without JavaScript (fullscreen)

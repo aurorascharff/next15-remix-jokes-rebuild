@@ -1,15 +1,14 @@
 'use client';
 
 import React, { useOptimistic, useTransition } from 'react';
-import { favoriteJoke } from '@/lib/actions/favouriteJoke';
-import { cn } from '@/utils/style';
+import { favoriteJoke } from '@/lib/actions/favoriteJoke';
 import type { Joke } from '@prisma/client';
 
 export default function Favorite({ joke }: { joke: Joke }) {
   const favoriteJokeById = favoriteJoke.bind(null, joke.id);
   const favorite = joke.favorite;
   const [optimisticFavorite, addOptimisticFavorite] = useOptimistic(favorite);
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -23,7 +22,7 @@ export default function Favorite({ joke }: { joke: Joke }) {
     <form className="w-fit" action={favoriteJokeById} onSubmit={onSubmit}>
       <button
         type="submit"
-        className={cn('w-fit', isPending ? 'text-yellow-600' : 'text-yellow-400')}
+        className="w-fit text-yellow-400"
         aria-label={optimisticFavorite ? 'Remove from favorites' : 'Add to favorites'}
       >
         {optimisticFavorite ? '★' : '☆'}

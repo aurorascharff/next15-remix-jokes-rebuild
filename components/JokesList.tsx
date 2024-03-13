@@ -9,7 +9,7 @@ export default async function JokesList() {
     <ul>
       {jokes
         .sort((a, b) => {
-          return b.createdAt.getTime() - a.createdAt.getTime();
+          return a.createdAt.getTime() - b.createdAt.getTime();
         })
         .map(joke => {
           return (
