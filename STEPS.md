@@ -1,6 +1,6 @@
 # DEMO STEPS
 
-## App demo
+## App demo (fullscreen)
 
 - Main page
 - Joke page
@@ -74,6 +74,4 @@ Notes: server action, bind, transition, client-side feedback.
 
 Notes: server action, bind, transition, client-side feedback.
 
-## Demo form again with and without JavaScript
-
-Notes: full screen.
+## Demo form again with and without JavaScript (fullscreen)
