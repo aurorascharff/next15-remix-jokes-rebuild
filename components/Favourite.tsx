@@ -1,8 +1,8 @@
 'use client';
 
-import { favoriteJoke } from '@/lib/actions/favouriteJoke';
-import { Joke } from '@prisma/client';
 import React, { useOptimistic, useTransition } from 'react';
+import { favoriteJoke } from '@/lib/actions/favouriteJoke';
+import type { Joke } from '@prisma/client';
 
 export default function Favorite({ joke }: { joke: Joke }) {
   const favoriteJokeById = favoriteJoke.bind(null, joke.id);
