@@ -1,27 +1,23 @@
-'use client';
-
 import Link from 'next/link';
 import React from 'react';
-import { useJokesContext } from '@/providers/JokesContext';
+import { getJokes } from '@/lib/services/getJokes';
 
-export default function JokesList() {
-  const { optimisticJokes } = useJokesContext();
+export default async function JokesList() {
+  const jokes = await getJokes();
 
   return (
     <ul>
-      {optimisticJokes
+      {jokes
         .sort((a, b) => {
-          if (!a.createdAt || !b.createdAt) {
-            return 0;
-          }
           return b.createdAt.getTime() - a.createdAt.getTime();
         })
-        .map((joke, key) => {
+        .map(joke => {
           return (
-            <li key={key}>
+            <li key={joke.id}>
               <Link prefetch href={`/jokes/${joke.id}`}>
                 {joke.name}
               </Link>
+              {joke.favorite ? <span className="text-yellow-400"> ★</span> : null}
             </li>
           );
         })}

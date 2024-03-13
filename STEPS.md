@@ -50,26 +50,15 @@ Notes: progressively enhanced but client-side feedback when possible All fields 
 - Reset form after submit
 - Add toast notifications
 
-Notes: client-side feedback but still prog.enhanched.
+Notes: client-side feedback but still prog.enhanched. Can add noscript just for fun.
 
-## useOptimisti
+## Favorite joke
 
-(Form4 + createJoke4)
+(Favorite + favoriteJoke)
 
-- Show useOptimistic hook inside a provider, show wrapped layout
-- Modify jokeslist to useOptimistic
-- Add revalidate to server action
-- Add onSubmit using useOptimistic, transition, preventDefault
-- Remove button and "Adding..."
-- Use isPending to hide input with className
-
-Notes: optimistic update, feels like server isnt slow, limited because it needs to pass across layout page. Prog enhc. Visual rollback, maybe there will be support for this in the future. Can add noscript just for fun.
-
-## Delete joke
-
-(DeleteJokeButton + deleteJoke)
-
+- Code component (maybe make a starter)
 - Code delete action using bind
 - Code server action
+- Optimistic update onSubmit
 
 Notes: server action, bind, transition, client-side feedback.

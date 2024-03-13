@@ -20,21 +20,25 @@ export default function Form() {
       formRef.current?.reset();
       toast.success('Joke created!');
     }
-  }, [state.success]);
+    if (state.message === 'SERVER ERROR') {
+      toast.error('Failed to create joke...');
+    }
+  }, [state.message, state.success]);
 
   return (
     <form ref={formRef} action={formAction}>
       <label>
         Name:
         <input name="name" type="text" />
-        <span className="font-sm text-red">{state.errors?.fieldErrors?.name}</span>
+        <span className="text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
         <textarea name="content" />
-        <span className="font-sm text-red">{state.errors?.fieldErrors?.content}</span>
+        <span className="text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
       <SubmitButton />
+      <noscript>{state.message === 'SERVER ERROR' && <p className="text-red">Failed to create joke...</p>}</noscript>
     </form>
   );
 }
