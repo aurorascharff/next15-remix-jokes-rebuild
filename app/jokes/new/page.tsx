@@ -1,11 +1,10 @@
 import React from 'react';
-import Form from './_components/Form3';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'New joke',
 };
 
-export default async function NewJokePage() {
-  return <Form />;
+export default function NewJokePage() {
+  return <div className="flex flex-col gap-5">New joke page</div>;
 }
