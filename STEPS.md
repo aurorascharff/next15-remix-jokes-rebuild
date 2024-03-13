@@ -56,9 +56,10 @@ Notes: client-side feedback but still prog.enhanched. Can add noscript just for 
 
 (Favorite + favoriteJoke)
 
-- Code component (maybe make a starter)
-- Code delete action using bind
+- Code component
 - Code server action
-- Optimistic update onSubmit
+- Call action using bind
+- Add optimistic update onSubmit
+- Use isPending for demo purposes
 
-Notes: server action, bind, transition, client-side feedback.
+Notes: server action, bind, transition, client-side feedback. Progressive enhancement.
