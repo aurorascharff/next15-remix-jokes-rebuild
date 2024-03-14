@@ -20,7 +20,7 @@ const JOKES = [
     name: 'Cache',
   },
   {
-    content: 'Why couldnt the React component understand the joke It didnt get the context.',
+    content: 'Why couldnt the React component understand the joke? It didnt get the context.',
     name: 'React',
   },
   {
