@@ -49,6 +49,7 @@ Notes: progressively enhanced but client-side feedback when possible All fields 
 - Add effect to listen for formStatus changes
 - Reset form after submit
 - Add toast notifications
+- Noscript if time
 
 Notes: client-side feedback but still prog.enhanched. Can add noscript just for fun.
 
@@ -74,4 +75,4 @@ Notes: server action, client-side feedback.
 
 Notes: server action, bind, transition, client-side feedback.
 
-## Demo form again with and without JavaScript (fullscreen)
+## Demo form again without then with JavaScript (fullscreen)
