@@ -56,12 +56,12 @@ Notes: client-side feedback but still prog.enhanched. Can add noscript just for 
 
 (DeleteJokeButton + deleteJoke)
 
-- Code component (maybe make a starter)
-- Code delete action using bind
+- Code form with button
 - Code server action
-- Optimistic update onSubmit
+- Code delete action using bind
+- Replace with DeleteButton
 
-Notes: server action, bind, transition, client-side feedback.
+Notes: server action, client-side feedback.
 
 ## Favorite joke
 
