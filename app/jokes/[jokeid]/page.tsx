@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-
 import { getJoke } from '@/lib/services/getJoke';
 import type { Metadata } from 'next';
 

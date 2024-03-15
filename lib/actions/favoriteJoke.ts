@@ -3,9 +3,9 @@
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 
-export async function favoriteJoke(jokeId: string, isFavorite: boolean) {
+export async function favoriteJoke(jokeId: string) {
   await prisma.joke.update({
-    data: { favorite: !isFavorite },
+    data: { favorite: true },
     where: { id: jokeId },
   });
   revalidatePath('/jokes');

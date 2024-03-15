@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
-    "@prisma/client": "^5.9.1",
+    "@prisma/client": "^5.11.0",
     "@tanstack/react-query": "^5.20.1",
     "@tanstack/react-query-devtools": "^5.20.1",
     "@types/node": "20.11.17",
@@ -48,7 +48,7 @@
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "prisma": "^5.9.1",
+    "prisma": "^5.11.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0"
   },
