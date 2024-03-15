@@ -8,7 +8,7 @@ export default function DeleteButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" disabled={pending}>
+    <Button disabled={pending} type="submit">
       {pending ? 'Deleting...' : 'Delete'}
     </Button>
   );

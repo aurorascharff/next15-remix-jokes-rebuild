@@ -6,6 +6,6 @@ export const metadata: Metadata = {
   title: 'New joke',
 };
 
-export default async function NewJokePage() {
+export default function NewJokePage() {
   return <Form />;
 }
