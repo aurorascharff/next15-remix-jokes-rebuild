@@ -16,6 +16,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
     handleSubmit,
     register,
     reset,
+    setValue,
     formState: { errors, isValid },
   } = useForm<JokeSchemaType>({
     mode: 'onChange',
@@ -40,12 +41,14 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
   const onSubmit = handleSubmit(data => {
     startTransition(async () => {
       addOptimisticJoke(data);
+      reset();
       const response = await createJokeReactHookForm(data);
       if (response?.error) {
         toast.error(response.error);
+        setValue('name', data.name);
+        setValue('content', data.content);
       } else {
         toast.success('Joke added!');
-        reset();
       }
     });
   });
