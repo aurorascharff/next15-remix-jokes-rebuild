@@ -47,8 +47,6 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
         toast.error(response.error);
         setValue('name', data.name);
         setValue('content', data.content);
-      } else {
-        toast.success('Joke added!');
       }
     });
   });
