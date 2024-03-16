@@ -45,8 +45,8 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
       const response = await createJokeReactHookForm(data);
       if (response?.error) {
         toast.error(response.error);
-        setValue('name', data.name);
-        setValue('content', data.content);
+        setValue('name', data.name, { shouldValidate: true });
+        setValue('content', data.content, { shouldValidate: true });
       }
     });
   });
