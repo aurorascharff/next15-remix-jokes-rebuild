@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './_components/Form3';
+import JokeForm from './_components/Form4';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function NewJokePage() {
-  return <Form />;
+  return <JokeForm />;
 }
