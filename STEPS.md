@@ -23,6 +23,14 @@
 
 Notes: progressively enhanced, calling server from client, action-prop.
 
+## useFormStatus
+
+(Form2 + createJoke3)
+
+- Add SubmitButton
+
+Notes: Would be nice with loading feedback.
+
 ## Server side validation
 
 (createJoke2)
@@ -30,13 +38,12 @@ Notes: progressively enhanced, calling server from client, action-prop.
 - Show validations/schema
 - Add zod validation and error feedback
 
-Notes: what is zod, runtime validation server-side.
+Notes: unsafe submit, what is zod, runtime validation server-side.
 
-## FormStatus + formState
+## useFormState
 
-(Form2 + createJoke3)
+(Form3 + createJoke3)
 
-- Add SubmitButton
 - Use useFormState
 - Add useFormStatus and modify server action
 
@@ -44,7 +51,7 @@ Notes: progressively enhanced but client-side feedback when possible. All fields
 
 ## UseEffect and reset
 
-(Form3)
+(Form4)
 
 - Add effect to listen for formStatus changes
 - Reset form after submit
