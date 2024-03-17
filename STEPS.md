@@ -40,7 +40,7 @@ Notes: what is zod, runtime validation server-side.
 - Use useFormState
 - Add useFormStatus and modify server action
 
-Notes: progressively enhanced but client-side feedback when possible All fields uncontrolled. Of course not only for validation. Could be anything like checking if an item is in stock and returning a message.
+Notes: progressively enhanced but client-side feedback when possible. All fields uncontrolled. Of course not only for validation. Could be anything like checking if an item is in stock and returning a message.
 
 ## UseEffect and reset
 
@@ -57,10 +57,9 @@ Notes: client-side feedback but still prog.enhanched. Can add noscript just for 
 
 (DeleteJokeButton + deleteJoke)
 
-- Code form with button
-- Code server action
+- Code form with DeleteButton
+- Show server action
 - Code delete action using bind
-- Replace with DeleteButton
 
 Notes: server action, client-side feedback.
 
