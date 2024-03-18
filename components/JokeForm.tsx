@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { createJoke } from '@/lib/actions/createJoke';
-import Button from './Button';
+import AddButton from './AddButton';
 
 export default function JokeForm() {
   return (
@@ -14,7 +14,7 @@ export default function JokeForm() {
         Content:
         <textarea name="content" />
       </label>
-      <Button type="submit">Add</Button>
+      <AddButton />
     </form>
   );
 }
