@@ -37,7 +37,7 @@ e906e55d43dab04f11c66afd32302824f3a7fda6
 
 Notes: Would be nice with loading feedback.
 
-## Server side validation 
+## Server side validation
 
 (createJoke2)
 
