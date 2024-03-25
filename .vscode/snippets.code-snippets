@@ -1,0 +1,26 @@
+{
+	"initialJokeState": {
+		"scope": "typescriptreact",
+		"prefix": "initialJokeState",
+		"body": [
+			"\terrors: {} as JokeSchemaErrorType,",
+			"\tmessage: '',",
+			"\tsuccess: false",
+			"$0"
+		],
+		"description": "Define a TypeScript state type"
+	},
+		"jokeState": {
+			"scope": "typescript",
+			"prefix": "jokeState",
+			"body": [
+				"type State = {",
+				"\terrors?: JokeSchemaErrorType;",
+				"\tmessage?: string;",
+				"\tsuccess: boolean;",
+				"}",
+				"$0"
+			],
+			"description": "Define a TypeScript initial state type"
+		}
+}
