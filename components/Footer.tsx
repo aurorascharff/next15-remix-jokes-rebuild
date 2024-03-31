@@ -12,6 +12,9 @@ export default function Footer() {
         <Link prefetch href="/demo">
           Demo
         </Link>
+        <Link href="https://github.com/aurorascharff/next14-remix-jokes-rebuild/blob/main/app/demo/forms/_components/StateForm.tsx">
+          GitHub
+        </Link>
       </div>
     </footer>
   );
