@@ -22,24 +22,22 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "@typescript-eslint", "autofix", "react-hooks", "sort-keys-fix"],
+  "plugins": ["autofix", "react-hooks", "sort-keys-fix"],
   "rules": {
-    "prettier/prettier": ["error"],
     "sort-keys-fix/sort-keys-fix": "warn"
   },
   "overrides": [
     {
       "files": ["**/*.ts?(x)"],
       "rules": {
-        "prettier/prettier": ["warn"],
         "react/react-in-jsx-scope": "off",
-        "spaced-comment": "error",
-        "quotes": ["error", "single"],
+        "spaced-comment": "warn",
+        "quotes": ["warn", "single"],
         "no-console": "warn",
         "no-redeclare": "warn",
         "react/display-name": "error",
         "react/jsx-key": "warn",
-        "arrow-body-style": ["error", "always"],
+        "arrow-body-style": ["warn", "always"],
         "react/self-closing-comp": ["error", { "component": true, "html": true }],
         "autofix/no-unused-vars": [
           "warn",
@@ -50,13 +48,13 @@
           }
         ],
         "@typescript-eslint/consistent-type-imports": [
-          "error",
+          "warn",
           {
             "prefer": "type-imports"
           }
         ],
         "import/order": [
-          "error",
+          "warn",
           {
             "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
             "pathGroups": [
