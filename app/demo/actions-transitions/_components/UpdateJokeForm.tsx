@@ -6,11 +6,7 @@ import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { updateJoke } from '../_actions/updateJoke';
 import type { Joke } from '@prisma/client';
 
-type Props = {
-  joke: Joke;
-};
-
-export default function UpdateJokeForm({ joke }: Props) {
+export default function UpdateJokeForm({ joke }: { joke: Joke }) {
   const [isPending, startTransition] = useTransition();
   const [activeJoke, setActiveJoke] = useState<JokeSchemaType>({
     content: joke.content,

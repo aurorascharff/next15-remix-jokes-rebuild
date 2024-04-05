@@ -4,11 +4,7 @@ import React, { useTransition } from 'react';
 import Button from '@/components/Button';
 import { deleteJoke } from '@/lib/actions/deleteJoke';
 
-type Props = {
-  jokeid: string;
-};
-
-export default function DeleteJokeButton({ jokeid }: Props) {
+export default function DeleteJokeButton({ jokeid }: { jokeid: string }) {
   const [isPending, startTransition] = useTransition();
 
   return (

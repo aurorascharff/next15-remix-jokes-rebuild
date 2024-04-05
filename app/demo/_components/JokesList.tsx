@@ -2,11 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 
-type Props = {
-  jokes: JokeSchemaType[];
-};
-
-export default function JokesList({ jokes }: Props) {
+export default function JokesList({ jokes }: { jokes: JokeSchemaType[] }) {
   return (
     <ul>
       {jokes
