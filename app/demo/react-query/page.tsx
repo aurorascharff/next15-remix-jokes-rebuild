@@ -16,8 +16,8 @@ export default function ReactQueryPage() {
   return (
     <>
       <h4>React Query</h4>
-      You can use react query on the client to fetch data from the server. By creating an initial state on the server,
-      you can avoid a flash of loading content.
+      You can use react query on the client to fetch data from the server - useful for polling data. By creating an
+      initial state on the server, you can avoid a flash of loading content.
       <div>
         <form autoComplete="off" action={createJoke}>
           <div>
