@@ -4,8 +4,8 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 
 export async function createJoke(data: FormData) {
-  const name = data.get('name')?.valueOf();
-  const content = data.get('content')?.valueOf();
+  const name = data.get('name');
+  const content = data.get('content');
 
   if (typeof name !== 'string' || name.length === 0) {
     throw new Error('Invalid name');

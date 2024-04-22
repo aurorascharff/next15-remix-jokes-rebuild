@@ -12,8 +12,8 @@ type State = {
 
 export async function createJokeStateForm(_prevState: State, data: FormData) {
   const result = jokeSchema.safeParse({
-    content: data.get('content')?.valueOf(),
-    name: data.get('name')?.valueOf(),
+    content: data.get('content'),
+    name: data.get('name'),
   });
 
   if (!result.success) {
