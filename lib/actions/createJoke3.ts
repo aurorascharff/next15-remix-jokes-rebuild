@@ -16,8 +16,8 @@ export async function createJoke(_prevState: State, data: FormData) {
   await slow();
 
   const result = jokeSchema.safeParse({
-    content: data.get('content')?.valueOf(),
-    name: data.get('name')?.valueOf(),
+    content: data.get('content'),
+    name: data.get('name'),
   });
 
   if (!result.success) {
