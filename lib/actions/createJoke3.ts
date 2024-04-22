@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
+import { slow } from '@/utils/slow';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
 
@@ -12,6 +13,8 @@ type State = {
 };
 
 export async function createJoke(_prevState: State, data: FormData) {
+  await slow();
+
   const result = jokeSchema.safeParse({
     content: data.get('content')?.valueOf(),
     name: data.get('name')?.valueOf(),

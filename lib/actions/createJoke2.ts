@@ -2,12 +2,15 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
+import { slow } from '@/utils/slow';
 import { jokeSchema } from '@/validations/jokeSchema';
 
 export async function createJoke(data: FormData) {
+  await slow();
+
   const result = jokeSchema.safeParse({
-    content: data.get('content')?.valueOf(),
-    name: data.get('name')?.valueOf(),
+    content: data.get('content'),
+    name: data.get('name'),
   });
 
   if (!result.success) {
@@ -15,14 +18,9 @@ export async function createJoke(data: FormData) {
     return;
   }
 
-  try {
-    await prisma.joke.create({
-      data: result.data,
-    });
-  } catch (e) {
-    console.error('SERVER ERROR');
-    return;
-  }
+  await prisma.joke.create({
+    data: result.data,
+  });
 
   revalidatePath('/jokes');
 }
