@@ -6,6 +6,7 @@ import { slow } from '@/utils/slow';
 
 export async function favoriteJoke(jokeId: string, isFavorite: boolean) {
   await slow();
+
   await prisma.joke.update({
     data: { favorite: !isFavorite },
     where: { id: jokeId },

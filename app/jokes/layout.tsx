@@ -16,9 +16,9 @@ export default async function JokesLayout({ children }: { children: React.ReactN
     <main className="flex min-h-[100svh] w-full flex-col gap-5 bg-purple">
       <Toaster position="top-right" />
       <Header />
-      <div className="mx-10 flex flex-grow flex-col gap-10 py-3 md:flex-row lg:mx-40">
+      <div className="mx-10 flex grow flex-col gap-10 py-3 md:flex-row lg:mx-40">
         <Sidebar />
-        <div className="flex-grow">{children}</div>
+        <div className="grow">{children}</div>
       </div>
       <Footer />
     </main>
