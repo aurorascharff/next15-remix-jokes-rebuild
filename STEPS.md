@@ -9,7 +9,7 @@
 
 f8bfad14c3c9da662044dd5d5f83d9a4cabd8ea5
 
-- Remix rebuild
+- Remix rebuild cause Remmix has a lot of good stuff
 - Tailwind, prisma
 - Next.js boilerplate
 - Routes, layouts, pages
