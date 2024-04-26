@@ -32,9 +32,7 @@ export default function ReactQueryPage() {
               <textarea name="content" />
             </label>
           </div>
-          <div className="flex justify-end">
-            <SubmitButton />
-          </div>
+          <SubmitButton />
         </form>
         <div>
           {isLoading ? (

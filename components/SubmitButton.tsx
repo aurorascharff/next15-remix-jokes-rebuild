@@ -8,8 +8,10 @@ export default function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button disabled={pending} type="submit">
-      {pending ? 'Adding...' : 'Add'}
-    </Button>
+    <div className="flex justify-end">
+      <Button disabled={pending} type="submit">
+        {pending ? 'Adding...' : 'Add'}
+      </Button>
+    </div>
   );
 }

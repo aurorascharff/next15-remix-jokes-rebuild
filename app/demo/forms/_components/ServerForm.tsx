@@ -13,9 +13,7 @@ export default function ServerForm() {
         Content:
         <textarea name="content" />
       </label>
-      <div className="flex justify-end">
-        <SubmitButton />
-      </div>
+      <SubmitButton />
     </form>
   );
 }

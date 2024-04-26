@@ -34,9 +34,7 @@ export default function StateForm() {
         <textarea name="content" />
         <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
-      <div className="flex justify-end">
-        <SubmitButton />
-      </div>
+      <SubmitButton />
     </form>
   );
 }

@@ -29,9 +29,7 @@ export default function ClientForm() {
         Content:
         <textarea name="content" />
       </label>
-      <div className="flex justify-end">
-        <SubmitButton />
-      </div>
+      <SubmitButton />
     </form>
   );
 }

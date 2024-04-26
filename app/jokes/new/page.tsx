@@ -20,9 +20,7 @@ export default function NewJokePage() {
           Content:
           <textarea name="content" required minLength={5} />
         </label>
-        <div className="flex justify-end">
-          <SubmitButton />
-        </div>
+        <SubmitButton />
       </form>
     </div>
   );

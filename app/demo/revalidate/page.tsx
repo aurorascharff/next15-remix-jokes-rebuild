@@ -47,9 +47,7 @@ export default async function RevalidatePage() {
             Content:
             <textarea name="content" />
           </label>
-          <div className="flex justify-end">
-            <SubmitButton />
-          </div>
+          <SubmitButton />
         </form>
       </div>
     </>
