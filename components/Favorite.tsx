@@ -1,22 +1,21 @@
 'use client';
 
-import React, { useOptimistic } from 'react';
+import React, { useOptimistic, useTransition } from 'react';
 import { favoriteJoke } from '@/lib/actions/favoriteJoke';
 import type { Joke } from '@prisma/client';
 
 export default function Favorite({ joke }: { joke: Joke }) {
   const favoriteJokeById = favoriteJoke.bind(null, joke.id, joke.favorite);
   const [optimisticFavorite, setOptimsticFavorite] = useOptimistic(joke.favorite);
-  const [isPending, startTransition] = React.useTransition();
+  const [, startTransition] = useTransition();
 
   return (
     <form
       action={favoriteJokeById}
       onSubmit={e => {
+        e.preventDefault();
         startTransition(async () => {
-          e.preventDefault();
           setOptimsticFavorite(!optimisticFavorite);
-          if (isPending) return;
           await favoriteJokeById();
         });
       }}

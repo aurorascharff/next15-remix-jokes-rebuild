@@ -14,6 +14,7 @@ type State = {
 
 export async function createJoke(_prevState: State, formData: FormData) {
   await slow();
+
   const result = jokeSchema.safeParse({
     content: formData.get('content') as string,
     name: formData.get('name') as string,
@@ -38,6 +39,7 @@ export async function createJoke(_prevState: State, formData: FormData) {
     };
   }
   revalidatePath('/jokes');
+
   return {
     success: true,
   };
