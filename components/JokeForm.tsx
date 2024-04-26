@@ -1,14 +1,13 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { useFormState } from 'react-dom';
+import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { createJoke } from '@/lib/actions/createJoke';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
-import AddButton from './AddButton';
+import Button from './Button';
 
 export default function JokeForm() {
-  const [state, formAction] = useFormState(createJoke, {
+  const [state, formAction, pending] = useActionState(createJoke, {
     errors: {} as JokeSchemaErrorType,
     message: '',
     success: false,
@@ -35,7 +34,9 @@ export default function JokeForm() {
         <textarea name="content" />
         <span className="text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
-      <AddButton />
+      <Button disabled={pending} type="submit">
+        {pending ? 'Adding...' : 'Add'}
+      </Button>
       <noscript>{state.message === 'Database error' && <p className="text-red">Failed to create joke...</p>}</noscript>
     </form>
   );

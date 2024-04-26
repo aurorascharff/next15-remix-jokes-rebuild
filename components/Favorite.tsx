@@ -7,7 +7,7 @@ import type { Joke } from '@prisma/client';
 export default function Favorite({ joke }: { joke: Joke }) {
   const favoriteJokeById = favoriteJoke.bind(null, joke.id, joke.favorite);
   const [optimisticFavorite, setOptimsticFavorite] = useOptimistic(joke.favorite);
-  const [, startTransition] = React.useTransition();
+  const [isPending, startTransition] = React.useTransition();
 
   return (
     <form
@@ -16,6 +16,7 @@ export default function Favorite({ joke }: { joke: Joke }) {
         startTransition(async () => {
           e.preventDefault();
           setOptimsticFavorite(!optimisticFavorite);
+          if (isPending) return;
           await favoriteJokeById();
         });
       }}
