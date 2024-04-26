@@ -18,7 +18,7 @@ export default function JokeForm() {
     if (state.success) {
       ref.current?.reset();
       toast.success('Joke added');
-    } else if (state.message === 'Database error') {
+    } else if (state.message === 'DATABASE ERROR') {
       toast.error('Failed to create joke...');
     }
   }, [state.message, state.success]);
@@ -37,7 +37,7 @@ export default function JokeForm() {
       <Button disabled={pending} type="submit">
         {pending ? 'Adding...' : 'Add'}
       </Button>
-      <noscript>{state.message === 'Database error' && <p className="text-red">Failed to create joke...</p>}</noscript>
+      <noscript>{state.message === 'DATABASE ERROR' && <p className="text-red">Failed to create joke...</p>}</noscript>
     </form>
   );
 }
