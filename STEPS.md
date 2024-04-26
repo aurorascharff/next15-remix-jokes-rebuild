@@ -27,16 +27,6 @@ f8bfad14c3c9da662044dd5d5f83d9a4cabd8ea5
 
 Notes: progressively enhanced, calling server from client, action-prop.
 
-## useFormStatus
-
-(Form2 + createJoke3)
-
-e906e55d43dab04f11c66afd32302824f3a7fda6
-
-- Add SubmitButton
-
-Notes: Would be nice with loading feedback.
-
 ## Server side validation
 
 (createJoke2)
@@ -44,7 +34,7 @@ Notes: Would be nice with loading feedback.
 bfb44f93f9125cca58509ab818d28e57e5528cf3
 
 - Show validations/schema
-- Add zod validation and error feedback
+- Add zod validation and error feedback, messages if time
 
 Notes: unsafe submit, what is zod, runtime validation server-side.
 
@@ -56,6 +46,7 @@ Notes: unsafe submit, what is zod, runtime validation server-side.
 
 - Use useFormState
 - Add useFormStatus and modify server action
+- use pending state to disable button and show loading
 
 Notes: progressively enhanced but client-side feedback when possible. All fields uncontrolled. Of course not only for validation. Could be anything like checking if an item is in stock and returning a message.
 
@@ -66,6 +57,7 @@ Notes: progressively enhanced but client-side feedback when possible. All fields
 4baa1c7b642cc2fe930a0b9de0c63b6b7b681ec5
 
 - Add effect to listen for formStatus changes
+- Handle error types if time
 - Reset form after submit
 - Add toast notifications
 - Noscript if time
@@ -78,7 +70,7 @@ Notes: client-side feedback but still prog.enhanched. Can add noscript just for 
 
 (DeleteJokeButton + deleteJoke)
 
-- Code form with DeleteButton
+- Code form with button, move to DeleteButton
 - Show server action
 - Code delete action using bind
 
