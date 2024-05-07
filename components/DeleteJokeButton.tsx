@@ -11,8 +11,8 @@ export default function DeleteJokeButton({ jokeid }: { jokeid: string }) {
     <Button
       disabled={isPending}
       onClick={() => {
-        startTransition(() => {
-          deleteJoke(jokeid);
+        startTransition(async () => {
+          await deleteJoke(jokeid);
         });
       }}
     >

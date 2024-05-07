@@ -17,8 +17,8 @@ export default function UpdateJokeForm({ joke }: { joke: Joke }) {
     if (!e.target.value) {
       return;
     }
-    startTransition(() => {
-      updateJoke(joke.id, activeJoke);
+    startTransition(async () => {
+      await updateJoke(joke.id, activeJoke);
     });
   };
 
