@@ -23,13 +23,12 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   const formRef = React.useRef<HTMLFormElement>(null);
 
   const action = async (formData: FormData) => {
-    const newJoke: JokeSchemaType = {
+    addOptimisticJoke({
       content: formData.get('content') as string,
       name: formData.get('name') as string,
-    };
-    addOptimisticJoke(newJoke);
+    });
     formRef.current?.reset();
-    await createJokeOptimistic(newJoke);
+    await createJokeOptimistic(formData);
   };
 
   return (

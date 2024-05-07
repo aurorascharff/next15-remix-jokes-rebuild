@@ -8,8 +8,8 @@ import { createJokeClientValidation } from '../_actions/createJokeClientValidati
 export default function ClientForm() {
   const clientAction = async (formData: FormData) => {
     const newJoke = {
-      content: formData.get('content') as string,
-      name: formData.get('name') as string,
+      content: formData.get('content'),
+      name: formData.get('name'),
     };
     const result = jokeSchema.safeParse(newJoke);
     if (!result.success) {

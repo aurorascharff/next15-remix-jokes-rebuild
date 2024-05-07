@@ -6,8 +6,8 @@ import { jokeSchema } from '@/validations/jokeSchema';
 
 export async function createJokeServerValidation(data: FormData) {
   const result = jokeSchema.safeParse({
-    content: data.get('content') as string,
-    name: data.get('name') as string,
+    content: data.get('content'),
+    name: data.get('name'),
   });
 
   if (!result.success) {

@@ -1,14 +1,13 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { useFormState } from 'react-dom';
+import React, { useActionState, useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
-import SubmitButton from '@/components/SubmitButton';
+import Button from '@/components/Button';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 
 export default function StateForm() {
-  const [state, formAction] = useFormState(createJokeStateForm, {
+  const [state, formAction, pending] = useActionState(createJokeStateForm, {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
@@ -34,7 +33,9 @@ export default function StateForm() {
         <textarea name="content" />
         <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
-      <SubmitButton />
+      <Button className="flex justify-end" disabled={pending} type="submit">
+        {pending ? 'Adding...' : 'Add'}
+      </Button>
     </form>
   );
 }
