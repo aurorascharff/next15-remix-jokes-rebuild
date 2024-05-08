@@ -4,6 +4,7 @@ import Sidebar from '@/components/Sidebar';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+// Ensure the page is rendered on the server and has fresh data for every reload
 
 export const metadata: Metadata = {
   description: 'Jokes Rebuild',
