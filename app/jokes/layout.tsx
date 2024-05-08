@@ -4,10 +4,10 @@ import Sidebar from '@/components/Sidebar';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
-// Ensure the page is rendered on the server and has fresh data for every reload
+// Opt out of Next.js caching and make the page render on the server for every request
 
 export const metadata: Metadata = {
-  description: 'Jokes Rebuild',
+  description: 'Next 14 Remix Jokes Rebuild',
   title: 'Jokes',
 };
 
