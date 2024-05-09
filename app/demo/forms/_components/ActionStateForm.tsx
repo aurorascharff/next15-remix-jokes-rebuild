@@ -33,9 +33,11 @@ export default function ActionStateForm() {
         <textarea name="content" />
         <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
-      <Button className="flex justify-end" disabled={pending} type="submit">
-        {pending ? 'Adding...' : 'Add'}
-      </Button>
+      <div className="flex justify-end">
+        <Button disabled={pending} type="submit">
+          {pending ? 'Adding...' : 'Add'}
+        </Button>
+      </div>
     </form>
   );
 }
