@@ -1,13 +1,13 @@
 import React from 'react';
 import JokesList from '@/components/JokesList';
-import StateForm from '../_components/StateForm';
+import ActionForm from '../_components/ActionStateForm';
 
-export default async function FormStatePage() {
+export default async function ActionStateFormPage() {
   return (
     <>
-      <h4>FormState form</h4>
-      The useFormState() and useFormStatus() hooks can be used to manage form state and provide progressive enhancement.
-      <StateForm />
+      <h4>ActionState form</h4>
+      The useActionState() hook can be used to manage form state and provide progressive enhancement.
+      <ActionForm />
       <JokesList />
     </>
   );

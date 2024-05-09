@@ -6,7 +6,7 @@ import Button from '@/components/Button';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 
-export default function StateForm() {
+export default function ActionStateForm() {
   const [state, formAction, pending] = useActionState(createJokeStateForm, {
     error: {} as JokeSchemaErrorType,
     success: false,
