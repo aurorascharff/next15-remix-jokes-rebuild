@@ -7,7 +7,7 @@ import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 
 export default function ActionStateForm() {
-  const [state, formAction, pending] = useActionState(createJokeStateForm, {
+  const [state, action, isPending] = useActionState(createJokeStateForm, {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
@@ -22,7 +22,7 @@ export default function ActionStateForm() {
   }, [state.success]);
 
   return (
-    <form autoComplete="off" action={formAction} ref={formRef}>
+    <form autoComplete="off" action={action} ref={formRef}>
       <label>
         Name:
         <input name="name" type="text" />
@@ -34,8 +34,8 @@ export default function ActionStateForm() {
         <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
       <div className="flex justify-end">
-        <Button disabled={pending} type="submit">
-          {pending ? 'Adding...' : 'Add'}
+        <Button disabled={isPending} type="submit">
+          {isPending ? 'Adding...' : 'Add'}
         </Button>
       </div>
     </form>
