@@ -39,14 +39,16 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
   );
 
   const onSubmit = handleSubmit(data => {
+    reset();
     startTransition(async () => {
       addOptimisticJoke(data);
-      reset();
       const response = await createJokeReactHookForm(data);
       if (response?.error) {
         toast.error(response.error);
         setValue('name', data.name, { shouldValidate: true });
         setValue('content', data.content, { shouldValidate: true });
+      } else {
+        toast.success('Joke added!');
       }
     });
   });
