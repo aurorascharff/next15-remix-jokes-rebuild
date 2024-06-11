@@ -16,7 +16,7 @@ export default async function RevalidatePage() {
   return (
     <>
       <div className="flex flex-col gap-y-10 ">
-        <h4>Revalidate</h4>
+        <h4>Revalidation</h4>
         Updating data on the server does not destroy the client state. The RSC payload is used to seamlessly merge the
         refreshed data with the client state.
       </div>

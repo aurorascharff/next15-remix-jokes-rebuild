@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function GlobalStatePage() {
   return (
     <>
-      <h4>Global state</h4>
+      <h4>Global State</h4>
       To share a state between client components in different parts of the component tree, you can use a provider like
       React Context and wrap your components with the provider, or Zustand for a simpler implementation.
       <ThemeContextProvider>
