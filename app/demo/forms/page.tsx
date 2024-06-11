@@ -1,5 +1,5 @@
 import React from 'react';
-import NavButton from '@/components/NavButton';
+import NavButton from '@/components/ui/NavButton';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

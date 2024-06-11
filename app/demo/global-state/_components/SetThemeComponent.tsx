@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Button from '@/components/Button';
+import Button from '@/components/ui/Button';
 import { useThemeContext } from '../_providers/ThemeContext';
 
 export default function SetThemeComponent() {

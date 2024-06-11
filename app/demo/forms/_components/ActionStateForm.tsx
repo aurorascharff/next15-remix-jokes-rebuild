@@ -2,7 +2,7 @@
 
 import React, { useActionState, useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
-import Button from '@/components/Button';
+import Button from '@/components/ui/Button';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJokeStateForm } from '../_actions/createJokeStateForm';
 

@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useOptimistic, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import Button from '@/components/Button';
+import Button from '@/components/ui/Button';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
 import JokesList from '../../_components/JokesList';

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import Button from '@/components/Button';
+import Button from '@/components/ui/Button';
 import { deleteJoke } from '@/lib/actions/deleteJoke';
 
 export default function DeleteJokeButton({ jokeid }: { jokeid: string }) {

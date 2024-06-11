@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useOptimistic } from 'react';
-import Button from '@/components/Button';
+import Button from '@/components/ui/Button';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 import JokesList from '../../_components/JokesList';
 import { createJokeOptimistic } from '../_actions/createJokeOptimistic';
