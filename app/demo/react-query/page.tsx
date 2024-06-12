@@ -1,6 +1,6 @@
 'use client';
 
-import SubmitButton from '@/components/SubmitButton';
+import AddButton from '@/components/AddButton';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { createJoke } from '../_actions/createJoke';
 import JokesList from '../_components/JokesList';
@@ -32,7 +32,7 @@ export default function ReactQueryPage() {
               <textarea name="content" />
             </label>
           </div>
-          <SubmitButton />
+          <AddButton />
         </form>
         <div>
           {isLoading ? (

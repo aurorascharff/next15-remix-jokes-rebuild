@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import SubmitButton from '@/components/SubmitButton';
+import AddButton from '@/components/AddButton';
 import { jokeSchema } from '@/validations/jokeSchema';
 import { createJokeClientValidation } from '../_actions/createJokeClientValidation';
 
@@ -29,7 +29,7 @@ export default function ClientForm() {
         Content:
         <textarea name="content" />
       </label>
-      <SubmitButton />
+      <AddButton />
     </form>
   );
 }

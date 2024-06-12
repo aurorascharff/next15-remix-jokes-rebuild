@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import SubmitButton from '@/components/SubmitButton';
+import AddButton from '@/components/AddButton';
 import { getJokes } from '@/lib/services/getJokes';
 import { createJoke } from '../_actions/createJoke';
 import Counter from '../_components/Counter';
@@ -15,7 +15,7 @@ export default async function RevalidatePage() {
 
   return (
     <>
-      <div className="flex flex-col gap-y-10 ">
+      <div className="flex flex-col gap-y-10">
         <h4>Revalidation</h4>
         Updating data on the server does not destroy the client state. The RSC payload is used to seamlessly merge the
         refreshed data with the client state.
@@ -47,7 +47,7 @@ export default async function RevalidatePage() {
             Content:
             <textarea name="content" />
           </label>
-          <SubmitButton />
+          <AddButton />
         </form>
       </div>
     </>

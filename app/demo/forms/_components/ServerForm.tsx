@@ -1,5 +1,5 @@
 import React from 'react';
-import SubmitButton from '@/components/SubmitButton';
+import AddButton from '@/components/AddButton';
 import { createJokeServerValidation } from '../_actions/createJokeServerValidation';
 
 export default function ServerForm() {
@@ -13,7 +13,7 @@ export default function ServerForm() {
         Content:
         <textarea name="content" />
       </label>
-      <SubmitButton />
+      <AddButton />
     </form>
   );
 }

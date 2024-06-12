@@ -1,5 +1,5 @@
 import React from 'react';
-import SubmitButton from '@/components/SubmitButton';
+import AddButton from '@/components/AddButton';
 import { createJoke } from '@/lib/actions/createJoke';
 import type { Metadata } from 'next';
 
@@ -20,7 +20,7 @@ export default function NewJokePage() {
           Content:
           <textarea name="content" required minLength={5} />
         </label>
-        <SubmitButton />
+        <AddButton />
       </form>
     </div>
   );
