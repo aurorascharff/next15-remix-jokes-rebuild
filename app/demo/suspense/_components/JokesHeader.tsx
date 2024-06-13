@@ -1,8 +1,8 @@
 import React from 'react';
+import { slow } from '@/utils/slow';
 
 export default async function JokesHeader() {
-  await new Promise(resolve => {
-    return setTimeout(resolve, 2000);
-  });
+  await slow(2000);
+
   return <h5>Jokes</h5>;
 }

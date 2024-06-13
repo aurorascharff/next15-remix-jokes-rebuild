@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { slow } from '@/utils/slow';
 import Counter from '../_components/Counter';
 import Jokes from './_components/Jokes';
 import JokesHeader from './_components/JokesHeader';
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function SuspensePage() {
-  await new Promise(resolve => {
-    return setTimeout(resolve, 1000);
-  });
+  await slow(1000);
 
   return (
     <>
