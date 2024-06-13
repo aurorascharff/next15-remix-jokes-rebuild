@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useActionState, useEffect, useRef } from 'react';
+import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import Button from '@/components/ui/Button';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
@@ -12,25 +12,22 @@ export default function ActionStateForm() {
     success: false,
   });
 
-  const formRef = useRef<HTMLFormElement | null>(null);
-
   useEffect(() => {
     if (state.success) {
-      formRef.current?.reset();
       toast.success('Joke added!');
     }
-  }, [state.success]);
+  }, [state.success, state.timestamp]);
 
   return (
-    <form autoComplete="off" action={action} ref={formRef}>
+    <form autoComplete="off" action={action}>
       <label>
         Name:
-        <input name="name" type="text" />
+        <input defaultValue={state.data?.name} name="name" type="text" />
         <span className="text-red">{state.error?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
-        <textarea name="content" />
+        <textarea defaultValue={state.data?.content} name="content" />
         <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
       <div className="flex justify-end">
