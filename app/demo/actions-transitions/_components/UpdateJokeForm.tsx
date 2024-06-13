@@ -2,13 +2,12 @@
 
 import React, { useState, useTransition } from 'react';
 import DeleteJokeButton from '@/components/DeleteJokeButton';
-import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { updateJoke } from '../_actions/updateJoke';
 import type { Joke } from '@prisma/client';
 
 export default function UpdateJokeForm({ joke }: { joke: Joke }) {
   const [isPending, startTransition] = useTransition();
-  const [activeJoke, setActiveJoke] = useState<JokeSchemaType>({
+  const [activeJoke, setActiveJoke] = useState({
     content: joke.content,
     name: joke.name,
   });
@@ -18,7 +17,11 @@ export default function UpdateJokeForm({ joke }: { joke: Joke }) {
       return;
     }
     startTransition(async () => {
-      await updateJoke(joke.id, activeJoke);
+      await updateJoke(joke.id, {
+        ...joke,
+        content: activeJoke.content,
+        name: activeJoke.name,
+      });
     });
   };
 

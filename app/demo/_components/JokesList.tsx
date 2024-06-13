@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
-import type { JokeSchemaType } from '@/validations/jokeSchema';
 
-export default function JokesList({ jokes }: { jokes: JokeSchemaType[] }) {
+export type OptimisticJoke = {
+  content: string;
+  name: string;
+  createdAt: Date;
+  id: string;
+};
+
+export default function JokesList({ jokes }: { jokes: OptimisticJoke[] }) {
   return (
     <ul>
       {jokes

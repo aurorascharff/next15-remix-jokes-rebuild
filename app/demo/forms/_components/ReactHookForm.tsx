@@ -9,6 +9,7 @@ import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
 import JokesList from '../../_components/JokesList';
 import { createJokeReactHookForm } from '../_actions/createJokeReactHookForm';
+import type { OptimisticJoke } from '../../_components/JokesList';
 import type { Joke } from '@prisma/client';
 
 export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
@@ -27,21 +28,20 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
 
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
-    (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
-      return [
-        ...state,
-        {
-          ...newJoke,
-          createdAt: new Date(),
-        },
-      ];
+    (state: OptimisticJoke[], newJoke: OptimisticJoke) => {
+      return [...state, newJoke];
     },
   );
 
   const onSubmit = handleSubmit(data => {
     reset();
     startTransition(async () => {
-      addOptimisticJoke(data);
+      addOptimisticJoke({
+        content: data.content,
+        createdAt: new Date(),
+        id: 'optimistic',
+        name: data.name,
+      });
       const response = await createJokeReactHookForm(data);
       if (response?.error) {
         toast.error(response.error);

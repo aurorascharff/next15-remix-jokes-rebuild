@@ -1,7 +1,6 @@
 'use client';
 
 import AddButton from '@/components/AddButton';
-import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { createJoke } from '../_actions/createJoke';
 import JokesList from '../_components/JokesList';
 import useGetJokes from './_hooks/useGetJokes';
@@ -40,7 +39,7 @@ export default function ReactQueryPage() {
           ) : error ? (
             <span>Error: {(error as Error).message}</span>
           ) : (
-            <JokesList jokes={data as JokeSchemaType[]} />
+            <JokesList jokes={data || []} />
           )}
         </div>
       </div>

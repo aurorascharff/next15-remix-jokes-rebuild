@@ -2,22 +2,16 @@
 
 import React, { useOptimistic } from 'react';
 import Button from '@/components/ui/Button';
-import type { JokeSchemaType } from '@/validations/jokeSchema';
 import JokesList from '../../_components/JokesList';
 import { createJokeOptimistic } from '../_actions/createJokeOptimistic';
+import type { OptimisticJoke } from '../../_components/JokesList';
 import type { Joke } from '@prisma/client';
 
 export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
-    (state: JokeSchemaType[], newJoke: JokeSchemaType) => {
-      return [
-        ...state,
-        {
-          ...newJoke,
-          createdAt: new Date(),
-        },
-      ];
+    (state: OptimisticJoke[], newJoke: OptimisticJoke) => {
+      return [...state, newJoke];
     },
   );
   const formRef = React.useRef<HTMLFormElement>(null);
@@ -25,6 +19,8 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   const action = async (formData: FormData) => {
     addOptimisticJoke({
       content: formData.get('content') as string,
+      createdAt: new Date(),
+      id: 'optimistic',
       name: formData.get('name') as string,
     });
     formRef.current?.reset();
