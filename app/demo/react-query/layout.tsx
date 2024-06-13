@@ -1,6 +1,6 @@
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
+import { getJokes } from '@/lib/services/getJokes';
 import QueryProvider from './_components/QueryProvider';
-import { getJokes } from './_services/getJokes';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
