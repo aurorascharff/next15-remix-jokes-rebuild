@@ -22,7 +22,7 @@ f8bfad14c3c9da662044dd5d5f83d9a4cabd8ea5
 35bab0bd171b35cf36b823a4cbad771fb04b2c3a
 
 - Add new Form _component on new/page.tsx and implement basic form
-- Add submit button
+- Add AddButton
 - Add action prop + code action
 
 Notes: progressively enhanced, calling server from client, action-prop.

@@ -1,7 +1,7 @@
 import React from 'react';
 import JokesList from './JokesList';
-import NavButton from './NavButton';
 import RandomJokeButton from './RandomJokeButton';
+import NavButton from './ui/NavButton';
 
 export default function Sidebar() {
   return (

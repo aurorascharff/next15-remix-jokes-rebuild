@@ -10,7 +10,21 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Getting Started
 
-First, `npm install` and run the development server with `npm run dev`.
+First, force install the dependencies to make the React 19 Beta work:
+
+```bash
+npm install --force
+```
+
+Then, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
