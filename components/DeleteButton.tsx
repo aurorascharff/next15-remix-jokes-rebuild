@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useFormStatus } from 'react-dom';
-import Button from './Button';
+import Button from './ui/Button';
 
 export default function DeleteButton() {
   const { pending } = useFormStatus();

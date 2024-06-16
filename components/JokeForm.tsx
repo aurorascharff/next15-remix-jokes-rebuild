@@ -4,7 +4,7 @@ import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { createJoke } from '@/lib/actions/createJoke';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
-import Button from './Button';
+import Button from './ui/Button';
 
 export default function JokeForm() {
   const [state, formAction, pending] = useActionState(createJoke, {
