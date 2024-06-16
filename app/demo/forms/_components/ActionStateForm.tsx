@@ -2,12 +2,12 @@
 
 import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-import Button from '@/components/ui/Button';
+import AddButton from '@/components/AddButton';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
-import { createJokeStateForm } from '../_actions/createJokeStateForm';
+import { createJokeActionState } from '../_actions/createJokeActionState';
 
 export default function ActionStateForm() {
-  const [state, action, isPending] = useActionState(createJokeStateForm, {
+  const [state, action] = useActionState(createJokeActionState, {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
@@ -31,9 +31,7 @@ export default function ActionStateForm() {
         <span className="text-red">{state.error?.fieldErrors?.content}</span>
       </label>
       <div className="flex justify-end">
-        <Button disabled={isPending} type="submit">
-          {isPending ? 'Adding...' : 'Add'}
-        </Button>
+        <AddButton />
       </div>
     </form>
   );

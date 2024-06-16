@@ -12,18 +12,17 @@ type State = {
   timestamp?: number;
 };
 
-export async function createJokeStateForm(_prevState: State, data: FormData): Promise<State> {
-  const result = jokeSchema.safeParse({
-    content: data.get('content'),
-    name: data.get('name'),
-  });
+export async function createJokeActionState(_prevState: State, data: FormData): Promise<State> {
+  const joke = {
+    content: data.get('content') as string,
+    name: data.get('name') as string,
+  };
+
+  const result = jokeSchema.safeParse(joke);
 
   if (!result.success) {
     return {
-      data: {
-        content: data.get('content') as string,
-        name: data.get('name') as string,
-      },
+      data: joke,
       error: result.error.formErrors,
       success: false,
     };
@@ -34,6 +33,7 @@ export async function createJokeStateForm(_prevState: State, data: FormData): Pr
   });
 
   revalidatePath('/demo/forms');
+
   return {
     error: undefined,
     success: true,

@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-// Not in use, but here for reference
 type Theme = 'yellow' | 'white';
 
 type ThemeStore = {
@@ -9,6 +8,7 @@ type ThemeStore = {
   setTheme: (_theme: Theme) => void;
 };
 
+// Not in use, but here for reference
 export const useThemeStore = create<ThemeStore>()(
   devtools(set => {
     return {
