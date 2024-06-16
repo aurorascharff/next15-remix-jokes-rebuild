@@ -7,7 +7,7 @@ import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import SubmitButton from './ui/SubmitButton';
 
 export default function JokeForm() {
-  const [state, formAction] = useActionState(createJoke, {
+  const [state, createJokeAction] = useActionState(createJoke, {
     errors: {} as JokeSchemaErrorType,
     success: false,
   });
@@ -19,7 +19,7 @@ export default function JokeForm() {
   }, [state.success]);
 
   return (
-    <form action={formAction}>
+    <form action={createJokeAction}>
       <label>
         Name: <input defaultValue={state.data?.name} type="text" name="name" />
         <span className="text-red">{state.errors?.fieldErrors?.name}</span>
