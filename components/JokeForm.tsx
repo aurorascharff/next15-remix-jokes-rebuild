@@ -4,40 +4,32 @@ import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { createJoke } from '@/lib/actions/createJoke';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
-import Button from './ui/Button';
+import SubmitButton from './ui/SubmitButton';
 
 export default function JokeForm() {
-  const [state, formAction, pending] = useActionState(createJoke, {
+  const [state, formAction] = useActionState(createJoke, {
     errors: {} as JokeSchemaErrorType,
-    message: '',
     success: false,
   });
-  const ref = React.useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (state.success) {
-      ref.current?.reset();
       toast.success('Joke added');
-    } else if (state.message === 'DATABASE ERROR') {
-      toast.error('Failed to create joke...');
     }
-  }, [state.message, state.success]);
+  }, [state.success]);
 
   return (
-    <form ref={ref} action={formAction}>
+    <form action={formAction}>
       <label>
-        Name: <input type="text" name="name" />
+        Name: <input defaultValue={state.data?.name} type="text" name="name" />
         <span className="text-red">{state.errors?.fieldErrors?.name}</span>
       </label>
       <label>
         Content:
-        <textarea name="content" />
+        <textarea defaultValue={state.data?.content} name="content" />
         <span className="text-red">{state.errors?.fieldErrors?.content}</span>
       </label>
-      <Button disabled={pending} type="submit">
-        {pending ? 'Adding...' : 'Add'}
-      </Button>
-      <noscript>{state.message === 'DATABASE ERROR' && <p className="text-red">Failed to create joke...</p>}</noscript>
+      <SubmitButton>Add</SubmitButton>
     </form>
   );
 }

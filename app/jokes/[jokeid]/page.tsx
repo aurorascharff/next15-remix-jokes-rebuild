@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import DeleteButton from '@/components/DeleteButton';
 import Favorite from '@/components/Favorite';
+import SubmitButton from '@/components/ui/SubmitButton';
 import { deleteJoke } from '@/lib/actions/deleteJoke';
 import { getJoke } from '@/lib/services/getJoke';
 import type { Metadata } from 'next';
@@ -34,7 +34,7 @@ export default async function JokePage({ params }: PageProps) {
         <Favorite joke={joke} />
       </div>
       <form action={deleteJokeById}>
-        <DeleteButton />
+        <SubmitButton>Delete</SubmitButton>
       </form>
     </div>
   );
