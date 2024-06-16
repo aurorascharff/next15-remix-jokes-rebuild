@@ -1,6 +1,6 @@
 import React from 'react';
 import JokesList from '@/components/JokesList';
-import ClientForm from '../_components/ClientForm';
+import ClientForm from './_components/ClientForm';
 
 export default async function ClientPage() {
   return (

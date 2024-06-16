@@ -1,6 +1,6 @@
 import React from 'react';
 import { getJokes } from '@/lib/services/getJokes';
-import OptimisticForm from '../_components/OptimisticForm';
+import OptimisticForm from './_components/OptimisticForm';
 
 export default async function OptimisticPage() {
   const jokes = await getJokes();

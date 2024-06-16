@@ -3,7 +3,7 @@
 import React from 'react';
 import AddButton from '@/components/AddButton';
 import { jokeSchema } from '@/validations/jokeSchema';
-import { createJokeClientValidation } from '../_actions/createJokeClientValidation';
+import { createJoke } from '../_actions/createJoke';
 
 export default function ClientForm() {
   const clientAction = async (formData: FormData) => {
@@ -16,7 +16,7 @@ export default function ClientForm() {
       console.log('CLIENT ERROR');
       return;
     }
-    await createJokeClientValidation(result.data);
+    await createJoke(result.data);
   };
 
   return (

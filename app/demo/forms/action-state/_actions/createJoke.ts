@@ -12,7 +12,7 @@ type State = {
   timestamp?: number;
 };
 
-export async function createJokeActionState(_prevState: State, data: FormData): Promise<State> {
+export async function createJoke(_prevState: State, data: FormData): Promise<State> {
   const joke = {
     content: data.get('content') as string,
     name: data.get('name') as string,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { getJokes } from '@/lib/services/getJokes';
-import ReactHookForm from '../_components/ReactHookForm';
+import ReactHookForm from './_components/ReactHookForm';
 
 export default async function ReactHookPage() {
   const jokes = await getJokes();

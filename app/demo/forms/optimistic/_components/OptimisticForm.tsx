@@ -2,9 +2,9 @@
 
 import React, { useOptimistic } from 'react';
 import Button from '@/components/ui/Button';
-import JokesList from '../../_components/JokesList';
-import { createJokeOptimistic } from '../_actions/createJokeOptimistic';
-import type { OptimisticJoke } from '../../_components/JokesList';
+import JokesList from '../../../_components/JokesList';
+import { createJoke } from '../_actions/createJoke';
+import type { OptimisticJoke } from '../../../_components/JokesList';
 import type { Joke } from '@prisma/client';
 
 export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
@@ -24,7 +24,7 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
       name: formData.get('name') as string,
     });
     formRef.current?.reset();
-    await createJokeOptimistic(formData);
+    await createJoke(formData);
   };
 
   return (

@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import { jokeSchemaStricter, type JokeSchemaType } from '@/validations/jokeSchema';
 
-export async function createJokeReactHook(data: JokeSchemaType) {
+export async function createJoke(data: JokeSchemaType) {
   const result = jokeSchemaStricter.safeParse(data);
 
   if (!result.success) {

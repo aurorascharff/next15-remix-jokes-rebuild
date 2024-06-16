@@ -4,17 +4,14 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import { jokeSchema } from '@/validations/jokeSchema';
 
-export async function createJokeOptimistic(formData: FormData) {
+export async function createJoke(data: FormData) {
   const result = jokeSchema.safeParse({
-    content: formData.get('content'),
-    name: formData.get('name'),
+    content: data.get('content'),
+    name: data.get('name'),
   });
 
   if (!result.success) {
-    const errorMessages = result.error.issues.reduce((prev, issue) => {
-      return (prev += issue.message);
-    }, '');
-    console.log('SERVER ERROR: ' + errorMessages);
+    console.log('SERVER ERROR');
     return;
   }
 

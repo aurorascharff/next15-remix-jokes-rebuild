@@ -1,6 +1,6 @@
 import React from 'react';
 import JokesList from '@/components/JokesList';
-import ActionStateForm from '../_components/ActionStateForm';
+import ActionStateForm from './_components/ActionStateForm';
 
 export default async function ActionStateFormPage() {
   return (

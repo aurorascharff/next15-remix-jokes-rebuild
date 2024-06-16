@@ -4,14 +4,17 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import { jokeSchema } from '@/validations/jokeSchema';
 
-export async function createJokeServerValidation(data: FormData) {
+export async function createJoke(formData: FormData) {
   const result = jokeSchema.safeParse({
-    content: data.get('content'),
-    name: data.get('name'),
+    content: formData.get('content'),
+    name: formData.get('name'),
   });
 
   if (!result.success) {
-    console.log('SERVER ERROR');
+    const errorMessages = result.error.issues.reduce((prev, issue) => {
+      return (prev += issue.message);
+    }, '');
+    console.log('SERVER ERROR: ' + errorMessages);
     return;
   }
 

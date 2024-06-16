@@ -7,9 +7,9 @@ import toast from 'react-hot-toast';
 import Button from '@/components/ui/Button';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 import { jokeSchema } from '@/validations/jokeSchema';
-import JokesList from '../../_components/JokesList';
-import { createJokeReactHook } from '../_actions/createJokeReactHook';
-import type { OptimisticJoke } from '../../_components/JokesList';
+import JokesList from '../../../_components/JokesList';
+import { createJoke } from '../_actions/createJoke';
+import type { OptimisticJoke } from '../../../_components/JokesList';
 import type { Joke } from '@prisma/client';
 
 export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
@@ -42,7 +42,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
         id: 'optimistic',
         name: data.name,
       });
-      const response = await createJokeReactHook(data);
+      const response = await createJoke(data);
       if (response?.error) {
         toast.error(response.error);
         setValue('name', data.name, { shouldValidate: true });

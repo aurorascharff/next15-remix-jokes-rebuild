@@ -1,6 +1,6 @@
 import React from 'react';
 import JokesList from '@/components/JokesList';
-import ServerForm from '../_components/ServerForm';
+import ServerForm from './_components/ServerForm';
 
 export default async function ServerPage() {
   return (

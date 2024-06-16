@@ -4,10 +4,10 @@ import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import AddButton from '@/components/AddButton';
 import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
-import { createJokeActionState } from '../_actions/createJokeActionState';
+import { createJoke } from '../_actions/createJoke';
 
 export default function ActionStateForm() {
-  const [state, action] = useActionState(createJokeActionState, {
+  const [state, createJokeAction] = useActionState(createJoke, {
     error: {} as JokeSchemaErrorType,
     success: false,
   });
@@ -19,7 +19,7 @@ export default function ActionStateForm() {
   }, [state.success, state.timestamp]);
 
   return (
-    <form autoComplete="off" action={action}>
+    <form autoComplete="off" action={createJokeAction}>
       <label>
         Name:
         <input defaultValue={state.data?.name} name="name" type="text" />

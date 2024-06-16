@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import type { JokeSchemaType } from '@/validations/jokeSchema';
 
-export async function createJokeClientValidation(data: JokeSchemaType) {
+export async function createJoke(data: JokeSchemaType) {
   await prisma.joke.create({
     data,
   });
