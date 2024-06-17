@@ -3,9 +3,6 @@ import { Toaster } from 'react-hot-toast';
 import NavBar from '@/app/demo/_components/NavBar';
 import type { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
-// Opt out of Next.js caching and make the page render on the server for every request
-
 export const metadata: Metadata = {
   description: 'React Server Components Demo',
   title: 'Demo',
