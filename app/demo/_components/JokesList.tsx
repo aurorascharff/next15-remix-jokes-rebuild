@@ -21,9 +21,7 @@ export default function JokesList({ jokes }: { jokes: OptimisticJoke[] }) {
         .map((joke, key) => {
           return (
             <li key={key}>
-              <Link prefetch href={`/jokes/${joke.id}`}>
-                {joke.name}
-              </Link>
+              <Link href={`/jokes/${joke.id}`}>{joke.name}</Link>
             </li>
           );
         })}

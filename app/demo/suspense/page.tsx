@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react';
+import Skeleton from '@/components/ui/Skeleton';
 import { slow } from '@/utils/slow';
 import Counter from '../_components/Counter';
 import Jokes from './_components/Jokes';
 import JokesHeader from './_components/JokesHeader';
-import JokesSkeleton from './_components/JokesSkeleton';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default async function SuspensePage() {
           waiting for the timeouts to finish before the page loads.
           <Counter />
         </div>
-        <Suspense fallback={<JokesSkeleton />}>
+        <Suspense fallback={<Skeleton className="w-1/3" />}>
           <Jokes />
         </Suspense>
       </Suspense>

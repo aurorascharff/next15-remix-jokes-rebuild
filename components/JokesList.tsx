@@ -14,9 +14,7 @@ export default async function JokesList() {
         .map(({ id, name }) => {
           return (
             <li key={id}>
-              <Link prefetch href={`/jokes/${id}`}>
-                {name}
-              </Link>
+              <Link href={`/jokes/${id}`}>{name}</Link>
             </li>
           );
         })}

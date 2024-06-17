@@ -30,9 +30,7 @@ export default async function RevalidatePage() {
             .map(({ id, name }) => {
               return (
                 <li key={id} className="flex justify-between gap-10 py-2">
-                  <Link prefetch href={`/jokes/${id}`}>
-                    {name}
-                  </Link>
+                  <Link href={`/jokes/${id}`}>{name}</Link>
                   <Counter />
                 </li>
               );
