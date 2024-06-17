@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Demo',
 };
 
+// Opt out of Next.js caching to see the suspense boundary every time the page is loaded.
+export const dynamic = 'force-dynamic';
+
 export default function DemoLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-[100svh] w-full flex-col gap-5 bg-purple py-4">
