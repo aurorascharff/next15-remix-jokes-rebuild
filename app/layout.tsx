@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  description: 'Next 14 rebuild of Remix Jokes',
+  description: 'Next.js 15 rebuild of Remix Jokes',
   title: 'Next Jokes',
 };
 
