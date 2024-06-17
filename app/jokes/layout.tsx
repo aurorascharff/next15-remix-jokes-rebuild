@@ -1,12 +1,6 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  description: 'Next 14 Remix Jokes Rebuild',
-  title: 'Jokes',
-};
 
 export default function JokesLayout({ children }: { children: React.ReactNode }) {
   return (
