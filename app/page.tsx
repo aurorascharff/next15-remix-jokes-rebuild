@@ -11,12 +11,12 @@ export default function HomePage() {
         <nav>
           <ul className="flex list-none gap-4 p-0 font-display text-lg leading-none">
             <li>
-              <Link prefetch className="decoration-wavy decoration-1" href="jokes">
+              <Link className="decoration-wavy decoration-1" href="jokes">
                 Read Jokes
               </Link>
             </li>
             <li>
-              <Link prefetch className="decoration-wavy decoration-1" href="/api/jokes.rss">
+              <Link className="decoration-wavy decoration-1" href="/api/jokes.rss">
                 RSS
               </Link>
             </li>
