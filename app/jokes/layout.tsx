@@ -2,6 +2,9 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 
+// Opt out of Next.js caching and server-render on every request
+export const dynamic = 'force-dynamic';
+
 export default function JokesLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex min-h-[100svh] w-full flex-col gap-5 bg-purple">
