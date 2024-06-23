@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Demo',
 };
 
-// Opt out of Next.js caching and server-render on every request
+// Tell Next.js to always generate this page on the server (dynamic rather than static)
 export const dynamic = 'force-dynamic';
 
 export default function DemoLayout({ children }: { children: React.ReactNode }) {
