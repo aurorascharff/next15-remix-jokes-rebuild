@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Button from '@/components/ui/Button';
-import { useThemeContext } from '../_providers/ThemeContext';
+import { useTheme } from '../_providers/ThemeProvider';
 
 export default function SetThemeComponent() {
-  const { theme, setTheme } = useThemeContext();
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className="flex flex-row gap-5 py-5">
