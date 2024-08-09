@@ -18,7 +18,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
     register,
     reset,
     setValue,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<JokeSchemaType>({
     mode: 'onChange',
     resolver: zodResolver(jokeSchema),
@@ -67,9 +67,7 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
           {errors?.content && <p className="text-red">{errors?.content?.message}</p>}
         </div>
         <div className="flex justify-end">
-          <Button disabled={!isValid} type="submit">
-            Add
-          </Button>
+          <Button type="submit">Add</Button>
         </div>
       </form>
       <JokesList jokes={optimisticJokes} />
