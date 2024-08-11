@@ -7,7 +7,7 @@ export default function useGetJokes() {
     queryFn: async () => {
       const res = await fetch('/api/jokes');
       if (!res.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Failed to fetch jokes');
       }
       return res.json();
     },
