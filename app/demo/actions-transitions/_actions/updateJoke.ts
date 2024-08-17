@@ -10,7 +10,7 @@ export async function updateJoke(jokeId: string, joke: Joke) {
   const result = jokeSchema.safeParse(joke);
 
   if (!result.success) {
-    console.log('SERVER ERROR');
+    console.log('VALIDATION ERROR');
     return;
   }
 

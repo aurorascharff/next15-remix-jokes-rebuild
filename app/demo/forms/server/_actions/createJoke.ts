@@ -11,7 +11,7 @@ export async function createJoke(data: FormData) {
   });
 
   if (!result.success) {
-    console.log('SERVER ERROR');
+    console.log('VALIDATION ERROR');
     return;
   }
 

@@ -14,7 +14,7 @@ export async function createJoke(formData: FormData) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {
       return (prev += issue.message);
     }, '');
-    console.log('SERVER ERROR: ' + errorMessages);
+    console.log('VALIDATION ERROR: ' + errorMessages);
     return;
   }
 
