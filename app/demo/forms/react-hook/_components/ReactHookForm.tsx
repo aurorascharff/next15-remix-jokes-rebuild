@@ -29,7 +29,9 @@ export default function ReactHookForm({ jokes }: { jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
     (state: OptimisticJoke[], newJoke: OptimisticJoke) => {
-      return [...state, newJoke];
+      return [...state, newJoke].sort((a, b) => {
+        return b.createdAt.getTime() - a.createdAt.getTime();
+      });
     },
   );
 

@@ -22,19 +22,14 @@ export default async function RevalidatePage() {
       </div>
       <div className="flex flex-col gap-10 md:flex-row">
         <ul>
-          {jokes
-            .sort((a, b) => {
-              return b.createdAt.getTime() - a.createdAt.getTime();
-            })
-            .slice(0, 4)
-            .map(({ id, name }) => {
-              return (
-                <li key={id} className="flex justify-between gap-10 py-2">
-                  <Link href={`/jokes/${id}`}>{name}</Link>
-                  <Counter />
-                </li>
-              );
-            })}
+          {jokes.slice(0, 4).map(({ id, name }) => {
+            return (
+              <li key={id} className="flex justify-between gap-10 py-2">
+                <Link href={`/jokes/${id}`}>{name}</Link>
+                <Counter />
+              </li>
+            );
+          })}
         </ul>
         <form autoComplete="off" action={createJoke}>
           <label>

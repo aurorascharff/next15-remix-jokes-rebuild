@@ -11,7 +11,9 @@ export default function OptimisticForm({ jokes }: { jokes: Joke[] }) {
   const [optimisticJokes, addOptimisticJoke] = useOptimistic(
     jokes,
     (state: OptimisticJoke[], newJoke: OptimisticJoke) => {
-      return [...state, newJoke];
+      return [...state, newJoke].sort((a, b) => {
+        return b.createdAt.getTime() - a.createdAt.getTime();
+      });
     },
   );
   const formRef = React.useRef<HTMLFormElement>(null);
