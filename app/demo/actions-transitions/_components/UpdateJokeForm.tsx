@@ -34,7 +34,7 @@ export default function UpdateJokeForm({ joke }: { joke: Joke }) {
             <input
               disabled={isPending}
               onChange={e => {
-                return setActiveJoke({ ...activeJoke, name: e.target.value });
+                setActiveJoke({ ...activeJoke, name: e.target.value });
               }}
               value={activeJoke.name}
               name="name"
@@ -46,7 +46,7 @@ export default function UpdateJokeForm({ joke }: { joke: Joke }) {
             <textarea
               disabled={isPending}
               onChange={e => {
-                return setActiveJoke({ ...activeJoke, content: e.target.value });
+                setActiveJoke({ ...activeJoke, content: e.target.value });
               }}
               value={activeJoke.content}
               name="content"
