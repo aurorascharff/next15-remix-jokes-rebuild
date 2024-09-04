@@ -2,8 +2,8 @@
 
 import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import type { JokeSchemaErrorType } from '@/app/demo/_validations/jokeSchema';
 import AddButton from '@/components/AddButton';
-import type { JokeSchemaErrorType } from '@/validations/jokeSchema';
 import { createJoke } from '../_actions/createJoke';
 
 export default function ActionStateForm() {

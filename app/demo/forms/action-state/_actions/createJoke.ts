@@ -1,9 +1,9 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
+import type { JokeSchemaErrorType, JokeSchemaType } from '@/app/demo/_validations/jokeSchema';
+import { jokeSchema } from '@/app/demo/_validations/jokeSchema';
 import { prisma } from '@/db';
-import type { JokeSchemaErrorType, JokeSchemaType } from '@/validations/jokeSchema';
-import { jokeSchema } from '@/validations/jokeSchema';
 
 type State = {
   success?: boolean;

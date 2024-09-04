@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
+import { jokeSchema } from '@/app/demo/_validations/jokeSchema';
 import AddButton from '@/components/AddButton';
-import { jokeSchema } from '@/validations/jokeSchema';
 import { createJoke } from '../_actions/createJoke';
 
 export default function ClientForm() {
