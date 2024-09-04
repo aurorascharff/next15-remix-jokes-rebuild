@@ -7,11 +7,10 @@ import { createJoke } from '../_actions/createJoke';
 
 export default function ClientForm() {
   const clientAction = async (formData: FormData) => {
-    const newJoke = {
+    const result = jokeSchema.safeParse({
       content: formData.get('content'),
       name: formData.get('name'),
-    };
-    const result = jokeSchema.safeParse(newJoke);
+    });
     if (!result.success) {
       console.log('CLIENT ERROR');
       return;
