@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getRandomJoke } from '@/lib/services/getRandomJoke';
+import { getRandomJoke } from '@/data/services/getRandomJoke';
 
 export default async function JokesPage() {
   const randomJoke = await getRandomJoke();

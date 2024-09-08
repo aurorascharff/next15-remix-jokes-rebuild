@@ -1,5 +1,5 @@
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
-import { getJokes } from '@/lib/services/getJokes';
+import { getJokes } from '@/data/services/getJokes';
 import QueryProvider from './_components/QueryProvider';
 import type { Metadata } from 'next';
 

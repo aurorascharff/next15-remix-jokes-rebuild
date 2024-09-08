@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import DeleteJokeButton from '@/components/DeleteJokeButton';
-import { getJoke } from '@/lib/services/getJoke';
+import { getJoke } from '@/data/services/getJoke';
 import type { Metadata } from 'next';
 
 type PageProps = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getJokes } from '@/lib/services/getJokes';
+import { getJokes } from '@/data/services/getJokes';
 import OptimisticForm from './_components/OptimisticForm';
 
 export default async function OptimisticPage() {

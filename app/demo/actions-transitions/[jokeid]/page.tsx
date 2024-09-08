@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { getJoke } from '@/lib/services/getJoke';
+import { getJoke } from '@/data/services/getJoke';
 import UpdateJokeForm from '../_components/UpdateJokeForm';
 import type { Metadata } from 'next';
 

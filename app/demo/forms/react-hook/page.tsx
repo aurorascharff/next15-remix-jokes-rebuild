@@ -1,5 +1,5 @@
 import React from 'react';
-import { getJokes } from '@/lib/services/getJokes';
+import { getJokes } from '@/data/services/getJokes';
 import ReactHookForm from './_components/ReactHookForm';
 
 export default async function ReactHookPage() {

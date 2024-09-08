@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import AddButton from '@/components/AddButton';
-import { getJokes } from '@/lib/services/getJokes';
+import { getJokes } from '@/data/services/getJokes';
 import { createJoke } from '../_actions/createJoke';
 import Counter from '../_components/Counter';
 import type { Metadata } from 'next';
