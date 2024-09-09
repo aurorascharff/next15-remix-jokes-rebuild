@@ -49,6 +49,10 @@ const JOKES = [
     name: 'JavaScript',
   },
   {
+    content: 'Why do frontend developers eat lunch alone? They dont know how to join tables.',
+    name: 'Tables',
+  },
+  {
     content: 'Why did the web developer leave the restaurant? Because of the table layout.',
     name: 'Layout',
   },
