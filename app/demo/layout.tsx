@@ -46,8 +46,8 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
             path: '/demo/react-query',
           },
           {
-            name: 'Server Functions & Transitions',
-            path: '/demo/functions-transitions',
+            name: 'Server Functions',
+            path: '/demo/server-functions',
           },
         ]}
       />

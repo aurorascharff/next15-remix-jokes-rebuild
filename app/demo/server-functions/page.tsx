@@ -4,10 +4,10 @@ import UpdateJokeForm from './_components/UpdateJokeForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Demo - Server Functions & Transitions',
+  title: 'Demo - Server Functions',
 };
 
-export default async function ActionsTransitionsPage() {
+export default async function ServerFunctionsPage() {
   const joke = await getRandomJoke();
 
   if (!joke) {
