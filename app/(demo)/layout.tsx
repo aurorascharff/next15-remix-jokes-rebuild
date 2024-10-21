@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
-import NavBar from '@/app/demo/_components/NavBar';
+import NavBar from './_components/NavBar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -23,31 +23,31 @@ export default function DemoLayout({ children }: { children: React.ReactNode }) 
           },
           {
             name: 'Nesting',
-            path: '/demo/nesting',
+            path: '/nesting',
           },
           {
             name: 'Revalidate',
-            path: '/demo/revalidate',
+            path: '/revalidate',
           },
           {
             name: 'Global State',
-            path: '/demo/global-state',
+            path: '/global-state',
           },
           {
             name: 'Forms',
-            path: '/demo/forms',
+            path: '/forms',
           },
           {
             name: 'Suspense',
-            path: '/demo/suspense',
+            path: '/suspense',
           },
           {
             name: 'React Query',
-            path: '/demo/react-query',
+            path: '/react-query',
           },
           {
             name: 'Server Functions',
-            path: '/demo/server-functions',
+            path: '/server-functions',
           },
         ]}
       />

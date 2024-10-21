@@ -9,7 +9,7 @@ export default function Footer() {
         <Link target="_blank" href="https://remix.run/docs/en/main/tutorials/jokes">
           Remix Jokes
         </Link>
-        <Link href="/demo">Demo</Link>
+        <Link href="/nesting">Demo</Link>
         <Link target="_blank" href="https://github.com/aurorascharff/next14-remix-jokes-rebuild">
           GitHub
         </Link>

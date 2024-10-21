@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { jokeSchema } from '@/app/demo/_validations/jokeSchema';
+import { jokeSchema } from '@/app/(demo)/_validations/jokeSchema';
 import { prisma } from '@/db';
 
 export async function createJoke(data: FormData) {
@@ -18,5 +18,5 @@ export async function createJoke(data: FormData) {
   await prisma.joke.create({
     data: result.data,
   });
-  revalidatePath('/demo/forms');
+  revalidatePath('/forms');
 }

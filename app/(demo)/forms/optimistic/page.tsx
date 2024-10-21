@@ -8,7 +8,7 @@ export default async function OptimisticPage() {
   return (
     <>
       <h4>Optimistic update</h4>
-      Submitting with the experimental hook useOptimistic to update the UI before the server responds.
+      Submitting with the React 19 hook useOptimistic to update the UI before the server responds.
       <OptimisticForm jokes={jokes} />
     </>
   );

@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next.js 15 with Server Functions, Tailwind CSS, and Prisma.
 
-It has additional /demo routes for React Server Component and Next.js 15 functionality examples.
+It has additional /(demo) routes for React Server Component and Next.js 15 functionality examples.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 

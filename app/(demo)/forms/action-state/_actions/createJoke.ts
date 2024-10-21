@@ -1,8 +1,8 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import type { JokeSchemaErrorType, JokeSchemaType } from '@/app/demo/_validations/jokeSchema';
-import { jokeSchema } from '@/app/demo/_validations/jokeSchema';
+import type { JokeSchemaErrorType, JokeSchemaType } from '@/app/(demo)/_validations/jokeSchema';
+import { jokeSchema } from '@/app/(demo)/_validations/jokeSchema';
 import { prisma } from '@/db';
 
 type State = {
@@ -32,7 +32,7 @@ export async function createJoke(_prevState: State, data: FormData): Promise<Sta
     data: result.data,
   });
 
-  revalidatePath('/demo/forms');
+  revalidatePath('/forms');
 
   return {
     error: undefined,

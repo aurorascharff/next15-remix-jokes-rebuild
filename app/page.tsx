@@ -21,7 +21,7 @@ export default function HomePage() {
               </Link>
             </li>
             <li>
-              <Link className="decoration-wavy decoration-1" href="demo">
+              <Link className="decoration-wavy decoration-1" href="/nesting">
                 Demo
               </Link>
             </li>

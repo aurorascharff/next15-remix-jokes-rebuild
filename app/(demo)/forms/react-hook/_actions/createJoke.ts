@@ -1,8 +1,8 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import type { JokeSchemaType } from '@/app/demo/_validations/jokeSchema';
-import { jokeSchemaStricter } from '@/app/demo/_validations/jokeSchema';
+import type { JokeSchemaType } from '@/app/(demo)/_validations/jokeSchema';
+import { jokeSchemaStricter } from '@/app/(demo)/_validations/jokeSchema';
 import { prisma } from '@/db';
 
 export async function createJoke(data: JokeSchemaType) {
@@ -26,5 +26,5 @@ export async function createJoke(data: JokeSchemaType) {
       error: 'SERVER ERROR',
     };
   }
-  revalidatePath('/demo/forms');
+  revalidatePath('/forms');
 }
