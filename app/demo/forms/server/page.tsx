@@ -6,7 +6,7 @@ export default async function ServerPage() {
   return (
     <>
       <h4>Server-side validation</h4>
-      Validation is happening inside the server action using Zod.
+      Validation is happening inside the server function using Zod.
       <ServerForm />
       <JokesList />
     </>

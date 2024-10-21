@@ -4,7 +4,7 @@ import UpdateJokeForm from './_components/UpdateJokeForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Demo - Server Actions & Transitions',
+  title: 'Demo - Server Functions & Transitions',
 };
 
 export default async function ActionsTransitionsPage() {

@@ -16,5 +16,5 @@ export async function updateJoke(jokeId: string, joke: Joke) {
 
   await prisma.joke.update({ data: joke, where: { id: jokeId } });
   revalidatePath('/jokes');
-  redirect('/demo/actions-transitions/' + jokeId);
+  redirect('/demo/functions-transitions/' + jokeId);
 }
