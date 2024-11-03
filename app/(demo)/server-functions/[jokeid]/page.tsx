@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 type PageProps = {
-  params: { jokeid: string };
+  params: Promise<{ jokeid: string }>;
 };
 
 export default async function ActionsTransitionsJokePage({ params }: PageProps) {
-  const joke = await getJoke(params.jokeid);
+  const joke = await getJoke((await params).jokeid);
 
   return <UpdateJokeForm joke={joke} />;
 }

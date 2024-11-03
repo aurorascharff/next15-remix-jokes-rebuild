@@ -2,9 +2,9 @@
 
 import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import type { JokeSchemaErrorType } from '@/app/(demo)/_validations/jokeSchema';
 import AddButton from '@/components/AddButton';
 import { createJoke } from '../_actions/createJoke';
-import { JokeSchemaErrorType } from '@/app/(demo)/_validations/jokeSchema';
 
 export default function ActionStateForm() {
   const [state, createJokeAction] = useActionState(createJoke, {

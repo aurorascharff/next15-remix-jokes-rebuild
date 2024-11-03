@@ -15,7 +15,7 @@ function escapeHtml(s: string) {
 }
 
 export async function GET() {
-  const headersList = headers();
+  const headersList = await headers();
   const jokes = await prisma.joke.findMany({
     take: 100,
   });

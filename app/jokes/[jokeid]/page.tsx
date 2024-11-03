@@ -5,11 +5,11 @@ import { getJoke } from '@/data/services/getJoke';
 import type { Metadata } from 'next';
 
 type PageProps = {
-  params: { jokeid: string };
+  params: Promise<{ jokeid: string }>;
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const joke = await getJoke(params.jokeid);
+  const joke = await getJoke((await params).jokeid);
 
   return joke
     ? {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function JokePage({ params }: PageProps) {
-  const joke = await getJoke(params.jokeid);
+  const joke = await getJoke((await params).jokeid);
 
   return (
     <div className="flex flex-col gap-y-4">
