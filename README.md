@@ -53,6 +53,10 @@ Seed prisma/seed.ts for initial data:
 npm run prisma.seed
 ```
 
+## Application Structure
+
+I have added a diagram of the application structure in `jokes.excalidraw`, made by [aisiklar](https://github.com/aisiklar/next15-remix-jokes-rebuild/blob/main/jokes.excalidraw)! Awesome job! View it using the [Excalidraw extension](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor).
+
 ## Development Info
 
 ### Development Tools
