@@ -15,6 +15,7 @@ export default async function FormsPage() {
       <NavButton href="/forms/optimistic">Optimistic update</NavButton>
       <NavButton href="/forms/react-hook">React Hook Form</NavButton>
       <NavButton href="/forms/action-state">ActionState form</NavButton>
+      <NavButton href="/forms/conform">Conform form</NavButton>
     </>
   );
 }

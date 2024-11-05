@@ -12,10 +12,10 @@ type State = {
   timestamp?: number;
 };
 
-export async function createJoke(_prevState: State, data: FormData): Promise<State> {
+export async function createJoke(_prevState: State, formData: FormData): Promise<State> {
   const joke = {
-    content: data.get('content') as string,
-    name: data.get('name') as string,
+    content: formData.get('content') as string,
+    name: formData.get('name') as string,
   };
 
   const result = jokeSchema.safeParse(joke);

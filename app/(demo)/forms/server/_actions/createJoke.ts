@@ -4,10 +4,10 @@ import { revalidatePath } from 'next/cache';
 import { jokeSchema } from '@/app/(demo)/_validations/jokeSchema';
 import { prisma } from '@/db';
 
-export async function createJoke(data: FormData) {
+export async function createJoke(formData: FormData) {
   const result = jokeSchema.safeParse({
-    content: data.get('content'),
-    name: data.get('name'),
+    content: formData.get('content'),
+    name: formData.get('name'),
   });
 
   if (!result.success) {
