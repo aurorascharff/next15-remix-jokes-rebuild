@@ -2,9 +2,9 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next.js 15 with Server Functions, Tailwind CSS, and Prisma.
+It is a rebuild of [Remix Jokes](https://remix.run/docs/en/main/tutorials/jokes) using Next.js 15 with Server Functions, Tailwind CSS, and Prisma. The /joke page contains simple implementations since it's supposed to be a beginners-friendly sample.
 
-It has additional /(demo) routes for React Server Component and Next.js 15 functionality examples.
+It has additional /(demo) routes for more advanced React Server Component and Next.js 15 functionality examples.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 

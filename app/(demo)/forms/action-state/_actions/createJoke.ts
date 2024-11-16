@@ -35,7 +35,6 @@ export async function createJoke(_prevState: State, formData: FormData): Promise
   revalidatePath('/forms');
 
   return {
-    error: undefined,
     success: true,
     timestamp: Date.now(),
   };
