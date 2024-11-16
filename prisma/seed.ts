@@ -12,6 +12,18 @@ const JOKES = [
     name: 'Arrays',
   },
   {
+    content: 'Whats the object oriented way to become wealthy? Inheritance.',
+    name: 'Wealthy',
+  },
+  {
+    content: 'Why do programmers prefer dark mode? Because light attracts bugs.',
+    name: 'Dark Mode',
+  },
+  {
+    content: 'Whats a frontend developers favorite place to visit? The viewport.',
+    name: 'Visit',
+  },
+  {
     content: 'Why was the function sad after a successful first call? Because he didnt get a callback.',
     name: 'Callback',
   },
