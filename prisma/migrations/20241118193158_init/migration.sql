@@ -6,6 +6,7 @@ BEGIN TRAN;
 CREATE TABLE [dbo].[Joke] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Joke_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [favorite] BIT NOT NULL CONSTRAINT [Joke_favorite_df] DEFAULT 0,
     [updatedAt] DATETIME2 NOT NULL,
     [name] NVARCHAR(1000) NOT NULL,
     [content] NVARCHAR(1000) NOT NULL,
