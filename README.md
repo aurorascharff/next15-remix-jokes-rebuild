@@ -37,7 +37,7 @@ When using sqlserver, you need to migrate the database schema with:
 npm run prisma.migrate
 ```
 
-When using sqllite, initialize with:
+When using sqlite, initialize with:
 
 ```bash
 npm run prisma.push
