@@ -21,7 +21,7 @@ export async function createJoke(data: JokeSchemaType) {
     await prisma.joke.create({
       data,
     });
-  } catch (error) {
+  } catch {
     return {
       error: 'SERVER ERROR',
     };
