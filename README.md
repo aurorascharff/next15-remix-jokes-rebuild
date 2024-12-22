@@ -67,19 +67,30 @@ The project uses [ESLint](https://eslint.org/) for linting and [Prettier](https:
 
 ### Folder Structure
 
-With Next.js, the folder structure is very important. The following folders are required:
-
 - `public` - contains the static assets of the application
-- `/` - contains the source code of the application
-- `/app` - contains the pages of the application using file based routing. Folders below this directory will be routes in the application unless they are prefixed with an underscore `_` (ignore from routing) or grouped with parentheses `()` (ignore but keep subfolders in routing).
-- When using brackets `[]` in the name of a folder, the folder will be a dynamic route. The name of the folder will be the name of the parameter in the route.
-- For each route inside `/app` that is meant to be a route, there should be a `page.tsx` and alternatively `layout.tsx` for the route.
-- Each route can also have a `error.tsx` page for error handling, and a `not-found.tsx` page for handling 404 errors.
-- `/components` - contains shared components used across the application, same goes for the other folders in `/`.
-- `/data` - contains server-side data fetching and mutations.
-- For each route, `_components` can be used to store components that are only used in that route. Same goes for `_hooks`, `_utils`, etc. Every page folder should contain everything it needs to work. And every component or function should live at the nearest shared space in the hierarchy.
+- `src` - contains the source code of the application
+- `src/app` - contains the pages of the application using file based routing.
+- `src/components` - contains shared components used across the application. The same goes for the other shared folder like `providers`, `hooks`, `utils`, etc.
+- For each route, a local `_components`-folder can be used to store components that are only used in that route. Same goes for `_hooks`, `_utils`, etc.
+- `src/data` - contains server-side data fetching and mutations.
 
-Refer to the [Next.js App Router](https://nextjs.org/docs/app) documentation for more information.
+Every page folder should contain everything it needs to work. And every component or function should live at the nearest shared space in the hierarchy.
+
+### Routing
+
+The project uses Next.js filesystem-based routing. To give a brief overview:
+
+- Folders below the `app/`-directory will be routes in the application.
+- For each folders inside `src/app` that is meant to be a route, there should be a `page.tsx` and alternatively `layout.tsx` for the route.
+- When using brackets `[]` in the name of a folder, the folder will be a dynamic route. The name of the folder will be the name of the parameter in the route.
+- There are additional tools, such as ignoring folders from routing by prefixing with `_`, and creating groups by wrapping with `()`.
+- Each route can also have a `error.tsx` file for handling application errors, and a `not-found.tsx` page for handling 404 errors with notFound().
+
+Please refer to the [Next.js App Router](https://nextjs.org/docs/app) documentation for more information.
+
+### Note on React 19
+
+The Next.js App Router uses React 19 Server Components, and by default all components are server components unless opted into client-side rendering with `"use client"`. In addition, the project uses other React 19 features such as Server Functions, `useFormStatus()`, `useOptimistic()`, `useActionState()`, and async transitions with `useTransition()`. Please read the [React docs](https://react.dev/reference/react) on these features to understand how to use them. Read more about the use of Server Functions under [Data Fetching and Mutation](#data-fetching-and-mutation).
 
 ### Styling
 
